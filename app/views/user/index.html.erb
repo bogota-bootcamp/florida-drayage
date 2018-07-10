@@ -1,2 +1,5 @@
 <h1>Florida drayage</h1>
 
+<% if user_signed_in?%>
+	<%= current_user.id%>
+<% end %>
