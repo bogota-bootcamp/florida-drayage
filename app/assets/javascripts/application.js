@@ -19,3 +19,11 @@
 //= require popper
 //= require bootstrap-sprockets
 //= require_tree .
+
+(function($){
+  $(function(){
+
+    $('.sidenav').sidenav();
+
+  }); // end of document ready
+})(jQuery);
