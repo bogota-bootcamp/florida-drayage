@@ -1,5 +1,4 @@
 <h1>Florida drayage</h1>
+<ul id="message-container"></ul>
 
-<% if user_signed_in?%>
-	<%= current_user.id%>
-<% end %>
+<%= render partial: 'form_messages', locals: { message: @message }%>
