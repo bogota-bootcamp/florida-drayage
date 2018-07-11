@@ -1,4 +1,8 @@
 <h1>Florida drayage</h1>
+<h4>you are the user: <%= current_user.has_role? :admin %></h4>
 <ul id="message-container"></ul>
-
-<%= render partial: 'form_messages', locals: { message: @message }%>
+<% if  current_user.has_role? :admin %>
+	<%= render partial: 'form_messages', locals: { message: @message }%>
+<% else %>
+	<%= render partial: 'form_client_messages', locals: { message: @message }%>
+<%end%>
