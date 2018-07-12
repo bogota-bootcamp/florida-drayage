@@ -1,6 +1,8 @@
+###
 App.chat = App.cable.subscriptions.create "ChatChannel",
   connected: ->
     # Called when the subscription is ready for use on the server
+    console.log("conectado")
 
   disconnected: ->
     # Called when the subscription has been terminated by the server
@@ -9,4 +11,4 @@ App.chat = App.cable.subscriptions.create "ChatChannel",
     # Called when there's incoming data on the websocket for this channel    
     if data.action == "created"
     	$('#message-container').append(data.msg)
-
+###

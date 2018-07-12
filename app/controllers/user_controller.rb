@@ -1,5 +1,4 @@
 class UserController < ApplicationController
-	def index
-		@message= current_user.messages.new
+	def index		
 	end
 end
