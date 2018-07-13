@@ -1,0 +1,5 @@
+<ul>
+	<% @conversations.each do |conversation| %>
+		<li><%= link_to "#{conversation.id}- #{conversation.name}",conversation %></li>
+	<% end%>
+</ul>

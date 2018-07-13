@@ -2,6 +2,15 @@ class ConversationsController < ApplicationController
 	
 	before_action :delete_conversation_cookie
 
+	def index
+		user= current_user
+		if (user.has_role? :admin)
+			@conversations = Conversation.all
+		else
+			render plain: "unauthorized to see this conversation", status:401
+		end
+	end
+
 	def show
 		if (cookies[:conversation_id] || user_signed_in? )  
 			@conversation = Conversation.find(params[:id])			
