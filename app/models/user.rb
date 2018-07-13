@@ -9,7 +9,7 @@ class User < ApplicationRecord
   
   after_create :assign_default_role
   rolify
-
+  has_many :messages
 
   def assign_default_role
     self.add_role(:newuser) if self.roles.blank?

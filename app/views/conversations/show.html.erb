@@ -1,0 +1,17 @@
+<h4>Conversation's show: <%=@conversation.name %></h4>
+
+
+
+<ul id= '<%= "#{@conversation.id}"%>'>
+	<% if @messages%>
+		<%@messages.each do |message|%>
+			<li><%= message.body %></li>
+		<%end%>
+	<%end%>
+
+</ul>
+<%= render partial: '/messages/form_messages', locals: { message: @message }%>
+
+<script>
+	App.cable.connect()
+</script>
