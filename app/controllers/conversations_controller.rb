@@ -2,8 +2,12 @@ class ConversationsController < ApplicationController
 	
 	
 	def show
-		@conversation = Conversation.find(params[:id])
-		@message=@conversation.messages.new
+		if (cookies[:conversation_id] || user_signed_in? )  
+			@conversation = Conversation.find(params[:id])
+			@message=@conversation.messages.new
+		else
+			render plain: "unauthorized to see this conversation", status:401
+		end
 	end
 
 	def new 

@@ -1,12 +1,14 @@
 <h4>Conversation's show: <%=@conversation.name %></h4>
 
-<script>
-	App.cable.connect()
-</script>
+
 
 <ul id="message-container"></ul>
 <% if  current_user %>
 	<%= render partial: '/messages/form_messages', locals: { message: @message }%>
 <% else %>
-	<%= render partial: '/messages/form_client_messages', locals: { message: @message }%>
+	<%= render partial: '/messages/form_client_messages' %>
 <%end%>
+
+<script>
+	App.cable.connect()
+</script>
