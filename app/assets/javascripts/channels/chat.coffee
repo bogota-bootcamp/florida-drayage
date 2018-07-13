@@ -9,6 +9,6 @@ App.chat = App.cable.subscriptions.create "ChatChannel",
 
   received: (data) ->
     # Called when there's incoming data on the websocket for this channel    
-    if data.action == "created"    	
-    	$('#message-container').append(data.msg)
+    if data.action == "created"    	    	
+    	$("#"+ data.conversation_id).append(data.msg)
 

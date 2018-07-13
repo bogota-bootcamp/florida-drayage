@@ -2,12 +2,15 @@
 
 
 
-<ul id="message-container"></ul>
-<% if  current_user %>
-	<%= render partial: '/messages/form_messages', locals: { message: @message }%>
-<% else %>
-	<%= render partial: '/messages/form_client_messages' %>
-<%end%>
+<ul id= '<%= "#{@conversation.id}"%>'>
+	<% if @messages%>
+		<%@messages.each do |message|%>
+			<li><%= message.body %></li>
+		<%end%>
+	<%end%>
+
+</ul>
+<%= render partial: '/messages/form_messages', locals: { message: @message }%>
 
 <script>
 	App.cable.connect()

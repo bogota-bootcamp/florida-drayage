@@ -5,8 +5,8 @@ class MessagesController < ApplicationController
 		@message = conversation.messages.create(message_params)
 		response = render :partial => "messages/message"
 		#creates 
-	  ActionCable.server.broadcast "user_conversation_#{conversation.id}", {action: "created", msg: response	 }
-		ActionCable.server.broadcast "user_admin", {action: "created", msg: response	 }
+	  ActionCable.server.broadcast "user_conversation_#{conversation.id}", {action: "created", msg: response, conversation_id:conversation.id	 }
+		ActionCable.server.broadcast "user_admin", {action: "created", msg: response, conversation_id:conversation.id	 }
 	end
 
 	private
