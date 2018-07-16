@@ -2,7 +2,15 @@ class MessagesController < ApplicationController
 
 	def create
 		conversation = Conversation.find(params[:conversation_id])
-		@message = conversation.messages.create(message_params)
+		@message = conversation.messages.new(message_params)
+		if user_signed_in?
+			@message.sender= "admin"
+		else
+			@message.sender= "client"
+		end
+		@message.save
+		puts '*'*50
+		puts @message
 		response = render :partial => "messages/message"
 		#creates 
 	  ActionCable.server.broadcast "user_conversation_#{conversation.id}", {action: "created", msg: response, conversation_id:conversation.id	 }

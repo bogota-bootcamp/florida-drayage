@@ -5,7 +5,7 @@
 <ul id= '<%= "#{@conversation.id}"%>'>
 	<% if @messages%>
 		<%@messages.each do |message|%>
-			<li><%= message.body %></li>
+			<li class="<%= message.sender%>"><%= message.body %></li>
 		<%end%>
 	<%end%>
 
