@@ -9,8 +9,6 @@ class MessagesController < ApplicationController
 			@message.sender= "client"
 		end
 		@message.save
-		puts '*'*50
-		puts @message
 		response = render :partial => "messages/message"
 		#creates 
 	  ActionCable.server.broadcast "user_conversation_#{conversation.id}", {action: "created", msg: response, conversation_id:conversation.id	 }
