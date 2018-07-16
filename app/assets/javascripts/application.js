@@ -20,10 +20,18 @@
 //= require bootstrap-sprockets
 //= require_tree .
 
+
+
+
+
+//side bar functionality
 (function($){
   $(function(){
 
     $('.sidenav').sidenav();
+    $('#about-link').click(function (){
+      $('#about').toggle();
+    });
 
   }); // end of document ready
 })(jQuery);

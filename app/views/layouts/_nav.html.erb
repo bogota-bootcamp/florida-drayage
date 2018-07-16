@@ -4,9 +4,17 @@
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <li><a href="">Payment</a></li>
-        <li><a href="#about">About us</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a id="about-link">About us</a></li>
+        <li><a href="#services" >Services</a></li>
+        <li><a href="#contact" >Contact</a></li>
+        <% unless user_signed_in?%>
+     		    <li><a href="/users/sign_up"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      	   	<li><a href="/users/sign_in"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    	   <% else%>
+      	   <li><%= link_to destroy_user_session_path, method: :delete do %>
+      	     <span class="glyphicon glyphicon-log-out">	Logout </span>
+           <% end %>
+        <% end %>
       </ul>
     </div>
   </nav>
