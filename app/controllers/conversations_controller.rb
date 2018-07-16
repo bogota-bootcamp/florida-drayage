@@ -4,7 +4,7 @@ class ConversationsController < ApplicationController
 
 	def index
 		user= current_user
-		if (user.has_role? :admin)
+		if (user && user.has_role? :admin)
 			@conversations = Conversation.all
 		else
 			render plain: "unauthorized to see this conversation", status:401
