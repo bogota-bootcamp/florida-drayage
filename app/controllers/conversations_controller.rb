@@ -16,6 +16,7 @@ class ConversationsController < ApplicationController
 			@conversation = Conversation.find(params[:id])			
 			@message=@conversation.messages.new
 			@messages=@conversation.messages.all if ((user_signed_in?) and  (current_user.has_role? :admin))
+			render partial: "/conversations/show", locals: {conversation: @conversation, message: @message, messages: @messages}, layout: false
 		else
 			render plain: "unauthorized to see this conversation", status:401
 		end
