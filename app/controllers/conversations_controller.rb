@@ -4,7 +4,7 @@ class ConversationsController < ApplicationController
 
 	def index
 		user= current_user
-		if (user.has_role? :admin)
+		if (user && (user.has_role? :admin ))
 			@conversations = Conversation.all
 		else
 			render plain: "unauthorized to see this conversation", status:401
@@ -23,7 +23,7 @@ class ConversationsController < ApplicationController
 	end
 
 	def new 
-		@conversation = Conversation.new
+		@conversation = Conversation.new		
 	end
 
 	def create
@@ -31,6 +31,8 @@ class ConversationsController < ApplicationController
 		if @conversation.save
 			redirect_to @conversation
 			cookies[:conversation_id] =@conversation.id
+			mail=ConversationMailer.new_conversation(@conversation)
+			response = mail.deliver_now
 		else
 			puts '*'*50
 			puts 'error creando conversacion'
@@ -47,8 +49,7 @@ class ConversationsController < ApplicationController
 	end
 
 	def delete_conversation_cookie
-		#this method deleted such reques the  conversation cookie if current user is admin
-		puts 'blah'*50
+		#this method deleted such reques the  conversation cookie if current user is admin		
 		cookies.delete :conversation_id if user_signed_in? && (current_user.has_role? :admin)
 	end
 
