@@ -52,8 +52,10 @@ gem 'devise'
 gem 'authority'
 gem 'rolify'
 
-gem 'mailjet'
 gem 'figaro'
+
+gem 'mailjet'
+
 
 
 group :development, :test do
