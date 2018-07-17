@@ -1,19 +1,40 @@
   <nav>
     <div class="nav-wrapper">
-      <a href="#about" class="brand-logo">Drayage</a>
+      <%=link_to "Drayage","#{root_path}", class: "brand-logo" %>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <li><a href="">Payment</a></li>
-        <li><a href="#about">About us</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#contact">Contact</a></li>
+
+        <li><%=link_to "About us","#{root_path}#about", id: "about-link" %></li>
+        <li><%=link_to "Services","#{root_path}#services", id: "services-link" %></li>
+        <li><%=link_to "Contact","#{root_path}#contact", id: "contact-link" %></li>
+        <% unless user_signed_in?%>
+     		    <li><a href="/users/sign_up"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      	   	<li><a href="/users/sign_in"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    	   <% else%>
+           <li><%= link_to "Chat", conversations_path %></li>
+      	   <li><%= link_to destroy_user_session_path, method: :delete do %>
+
+      	     <span class="glyphicon glyphicon-log-out">	Logout </span>
+           <% end %></li>
+        <% end %>
       </ul>
     </div>
   </nav>
 
   <ul class="sidenav" id="mobile-demo">
     <li><a href="">Payment</a></li>
-    <li><a href="#about">About us</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><%=link_to "About us","#{root_path}#about", id: "about-link" %></li>
+    <li><%=link_to "Services","#{root_path}#services", id: "services-link" %></li>
+    <li><%=link_to "Contact","#{root_path}#contact", id: "contact-link" %></li>
+    <% unless user_signed_in?%>
+        <li><a href="/users/sign_up"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="/users/sign_in"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+     <% else%>
+       <li><%= link_to "Chat", conversations_path %></li>
+       <li><%= link_to destroy_user_session_path, method: :delete do %>
+
+         <span class="glyphicon glyphicon-log-out">	Logout </span>
+       <% end %></li>
+    <% end %>
   </ul>
