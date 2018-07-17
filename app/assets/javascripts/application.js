@@ -29,9 +29,12 @@
   $(function(){
 
     $('.sidenav').sidenav();
+
     $('#about-link').click(function (){
       $('#about').toggle();
     });
+
+
 
   }); // end of document ready
 })(jQuery);
