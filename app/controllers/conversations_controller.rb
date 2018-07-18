@@ -16,14 +16,20 @@ class ConversationsController < ApplicationController
 			@conversation = Conversation.find(params[:id])			
 			@message=@conversation.messages.new
 			@messages=@conversation.messages.all if ((user_signed_in?) and  (current_user.has_role? :admin))
-			render partial: "/conversations/show", locals: {conversation: @conversation, message: @message, messages: @messages}, layout: false
+			#render partial: "/conversations/show", locals: {conversation: @conversation, message: @message, messages: @messages}, layout: false
 		else
 			render plain: "unauthorized to see this conversation", status:401
 		end
 	end
 
 	def new 
-		@conversation = Conversation.new		
+		conversation = Conversation.find_by_id(cookies[:conversation_id])
+		unless (cookies[:conversation_id] && conversation)
+			@conversation = Conversation.new
+			render partial: "/conversations/new", locals: {conversation: @conversation}, layout:false
+		else
+			redirect_to conversation_path(conversation)	
+		end
 	end
 
 	def create
