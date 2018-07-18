@@ -1,5 +1,7 @@
 nav{
     background: #ff9c39 !important;
+    position: fixed;
+    z-index: 10;
     a, a:hover,a:visited {
       color: white !important;
     }
