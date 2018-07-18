@@ -4,7 +4,7 @@
 			1
 		</div>
 	</div>
-	
+
 	<div class="row">
 		<div class="col-sm">
 			2
@@ -18,21 +18,11 @@
 	</div>
 	<ul
 		<% @conversations.each do |conversation| %>
-			
-			<li> <p onclick="getConversation(<%=conversation.id%>)"><%= conversation.id%>-<%= conversation.name%></p></li>
+			<li> <%=link_to "#{conversation.id}-#{conversation.name}",conversation , remote: true%></li>
 		<% end%>
 	</ul>
 <div>
 
 <div id="conversation">
-	
+
 </div>
-
-
-<script>
-	getConversation = function(id){
-		$.get("/conversations/"+id,function(data, g){
-			$("#conversation").html(data)
-		})
-	}	
-</script>
