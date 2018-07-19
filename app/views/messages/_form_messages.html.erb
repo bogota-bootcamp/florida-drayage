@@ -1,7 +1,14 @@
 <%= form_for [@conversation,@message]  ,:remote => true do |f| %>
-<div class="form-group">
-	<%= f.label "Chat:" %>
-    <%= f.text_area :body, class: "form-control"%>		
+
+<div class="chat-footer">
+	<div class="form-cont">
+		<div class="form-group">
+			<!-- <%= f.label "Chat:" %> -->
+		    <%= f.text_area :body, class: "form-control"%>
+		</div>
+	</div>
+	<div class="send-cont">
+			<%= f.submit %>
+	</div>
 </div>
-	<%= f.submit %>
 <% end %>

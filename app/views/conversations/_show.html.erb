@@ -5,9 +5,10 @@
 			<div class="<%= message.sender%>"><%= message.body %></div>
 		<%end%>
 	<%end%>
-
 </ul>
 <%= render partial: '/messages/form_messages', locals: { message: @message }%>
+
+
 
 <script>
 	App.cable.connect()

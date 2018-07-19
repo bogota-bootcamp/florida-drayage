@@ -1,2 +1,14 @@
 <h4>new</h4>
-<%= render partial: "form_conversation" %>
+<%= form_for @conversation, html:{id: "create-conversation", data-turbolinks:"false"},remote:true do |f| %>
+
+<div class="form-group">
+	<%= f.label "Nombre" %>
+   <%= f.text_field :name, class: "form-control"%>
+</div>
+
+<div class="form-group">
+	<%= f.label "Email:" %>
+    <%= f.text_field :mail, class: "form-control"%>
+</div>
+	<%= f.submit%>
+<% end %> 
