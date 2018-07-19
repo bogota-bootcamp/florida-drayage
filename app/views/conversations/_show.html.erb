@@ -2,14 +2,11 @@
 <ul id= '<%= "#{@conversation.id}"%>'>
 	<% if @messages%>
 		<%@messages.each do |message|%>
-			<div class="<%= message.sender%>"><%= message.body %></div>
+			<%= render partial: "/messages/message",locals:{message: message}%>
 		<%end%>
 	<%end%>
 </ul>
-<%= render partial: '/messages/form_messages', locals: { message: @message }%>
-
-
-
+<%= render partial: "messages/form_messages",layout:false%>
 <script>
-	App.cable.connect()
+	plantApp()
 </script>
