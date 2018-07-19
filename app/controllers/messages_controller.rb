@@ -9,10 +9,10 @@ class MessagesController < ApplicationController
 			@message.sender= "client"
 		end
 		@message.save
-		response = render :partial => "messages/message"
+		response = render :partial => "messages/message",:locals=>{message: @message}
 		#creates 
-	  ActionCable.server.broadcast "user_conversation_#{conversation.id}", {action: "created", msg: response, conversation_id:conversation.id	 }
-		ActionCable.server.broadcast "user_admin", {action: "created", msg: response, conversation_id:conversation.id	 }
+	  ActionCable.server.broadcast "user_conversation_#{conversation.id}", {action: "new-message", msg: response, conversation_id:conversation.id	 }
+		ActionCable.server.broadcast "user_admin", {action: "new-message", msg: response, conversation_id:conversation.id	 }
 	end
 
 	private

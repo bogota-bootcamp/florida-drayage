@@ -1,16 +1,13 @@
 <h4>Conversation's show: <%=@conversation.name %></h4>
 <ul id= '<%= "#{@conversation.id}"%>'>
 	<% if @messages%>
-		<%@messages.each do |message|%>
-			<li class="<%= message.sender%>"><%= message.body %></li>
+		<%@messages.each do |message|%>			
+			<%= render partial: "/messages/message",locals:{message: message}%>
 		<%end%>
 	<%end%>
 
 </ul>
-<%= form_for [@conversation,@message]  ,:remote => true do |f| %>
-<div class="form-group">
-	<%= f.label "Chat:" %>
-    <%= f.text_area :body, class: "form-control"%>		
-</div>
-	<%= f.submit %>
-<% end %>
+<%= render partial: "messages/form_messages",layout:false%>
+<script>
+	plantApp()
+</script>

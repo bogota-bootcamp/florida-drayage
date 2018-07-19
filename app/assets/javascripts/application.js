@@ -34,7 +34,7 @@
       $('#about').toggle();
     });
 
-
+  
 
   }); // end of document ready
 })(jQuery);

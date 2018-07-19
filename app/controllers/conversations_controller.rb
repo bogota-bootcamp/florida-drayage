@@ -5,7 +5,7 @@ class ConversationsController < ApplicationController
 	def index
 		user= current_user
 		if (user && (user.has_role? :admin ))
-			@conversations = Conversation.all
+			@conversations = Conversation.order('id DESC')
 		else
 			render plain: "unauthorized to see this conversation", status:401
 		end
@@ -36,7 +36,9 @@ class ConversationsController < ApplicationController
 		@conversation = Conversation.new(conversation_parameters)
 		if @conversation.save
 			cookies[:conversation_id] =@conversation.id
-			mail=ConversationMailer.new_conversation(@conversation)
+			#response = render :partial => "conversations/client_cart",:locals=>{conversation: @conversation} 
+			ActionCable.server.broadcast "user_admin", {action: "new-conversation", conversation: @conversation }
+			#mail=ConversationMailer.new_conversation(@conversation)
 			#response = mail.deliver_now
 			#@message=@conversation.messages.new
 			#render :show
