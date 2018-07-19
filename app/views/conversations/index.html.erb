@@ -1,28 +1,46 @@
-<div class="container chat-cont"> 
-	<div class="row">
-		<div class="col-sm">
-			1
-		</div>
-	</div>
+<div class="container-fluid chat-cont d-flex flex-row">
+	<div class="row" style="width:100% !important">
 
-	<div class="row">
-		<div class="col-sm">
-			2
-		</div>
-	</div>
+		<div class=" col-md-3  col-sm-3 col-xs-12  flex-column align-items-center justify-content-start clients-section">
+			<ul
+				<% @conversations.each do |conversation| %>
 
-	<div class="row">
-		<div class="col-sm">
+					<li>
+						<div class="client-card  d-flex flex-row align-items-center justify-content-center">
+							<div class="col-2 col-height padding-0  flex-b ">
+								<i class="material-icons user-icon">person_pin</i>
+							</div>
+							<div class="col-7 col-height padding-0 d-flex flex-column justify-content-center align-items-user">
+								<p class="client-name"><%= conversation.id %> - <%=conversation.name %></p>
+								<p class="client-mail"><%= conversation.mail %> </p>
+							</div>
+							<div class="col-3 col-height padding-0 flex-b">
+								<%=link_to ">",conversation , class: "go-chat", remote: true%>
+							</div>
+
+						</div>
+					</li>
+
+
+				<% end%>
+			</ul>
+		</div>
+
+
+
+		<div class=" col-md-5 col-sm-5 col-xs-12">
+
+			<p>Chat </p>
+			<div id="conversation">
+
+			</div>
+		</div>
+
+
+		<div class=" col-md-4 col-sm-4 col-xs-12">
 			3
 		</div>
+
 	</div>
-	<ul
-		<% @conversations.each do |conversation| %>
-			<li> <%=link_to "#{conversation.id}-#{conversation.name}",conversation , remote: true%></li>
-		<% end%>
-	</ul>
+
 <div>
-
-<div id="conversation">
-
-</div>
