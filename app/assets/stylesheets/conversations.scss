@@ -15,12 +15,13 @@
    background: #f3f3fd ;
     height:90vh;
     padding: 0 !important;
+    overflow-y: auto;
   }
 
   .client-card {
     background: white;
     width: 95%;
-    height: 60px;
+    height: 80px;
     margin: 0 auto;
     margin-top: 10px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
@@ -56,10 +57,55 @@
   .client-mail {
     color: #b2b2b2;
     font-size: 14PX;
+    margin-top: 5px;
   }
 .go-chat, .go-chat:hover {
   font-size: 25px;
   font-weight: bolder;
   color: #eb6422;
   text-decoration: none;
+}
+
+
+// client chat
+
+.title-2 {
+  font-family: 'Carme';
+  color: #eb6422;
+  font-size: 36px;
+  font-weight: 500;
+}
+
+.description-chat {
+  color: #b2b2b2;
+  font-size: 18px;
+}
+.orange-text-2 {
+  color: #eb6422;
+  font-weight: bolder;
+}
+
+.admin {
+  border: 2px solid #eb6422;
+  min-height: 50px;
+  width: 50%;
+  float: right;
+  margin: 10px;
+  color: #b2b2b2;
+  padding: 5px;
+  /* background: #eb6422; */
+  border-radius: 10px 10px 1px 10px;
+
+}
+.client {
+  border: 2px solid #eb6422;
+  min-height: 50px;
+  width: 50%;
+  float: left;
+  margin: 10px;
+  color: #b2b2b2;
+  padding: 5px;
+  /* background: #eb6422; */
+  border-radius: 10px 10px 10px 1px;
+
 }
