@@ -38,8 +38,9 @@ class ConversationsController < ApplicationController
 			cookies[:conversation_id] =@conversation.id
 			mail=ConversationMailer.new_conversation(@conversation)
 			#response = mail.deliver_now
-			@message=@conversation.messages.new
-			render :show	
+			#@message=@conversation.messages.new
+			#render :show
+			redirect_to root_path
 		else
 			puts '*'*50
 			puts 'error creando conversacion'
