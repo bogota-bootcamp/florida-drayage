@@ -25,7 +25,11 @@
 
   <body>
       <%= render "layouts/nav" %>
-    <%= yield %>
+    <div >
+      <%= yield %>
+    </div>
+    
+
     <% if(  user_signed_in?)%>
       <script >
         plantApp()
