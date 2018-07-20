@@ -88,7 +88,7 @@
   </a>
   <div class="chat-box"></div>
 </div> -->
-<%= render partial:"/user/chat_box", layout: false%>
+<%= render partial:"/user/chat_box", layout: false  unless (current_user && (current_user.has_role? :admin)) %>
  
 </section>
 

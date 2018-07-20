@@ -20,3 +20,4 @@ class MessagesController < ApplicationController
 		params.require(:message).permit(:body)
 	end
 end
+
