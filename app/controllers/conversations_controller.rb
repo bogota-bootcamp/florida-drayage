@@ -15,8 +15,13 @@ class ConversationsController < ApplicationController
 		if (cookies[:conversation_id] || user_signed_in? )  
 			@conversation = Conversation.find(params[:id])			
 			@message=@conversation.messages.new
-			@messages=@conversation.messages.all if ((user_signed_in?) and  (current_user.has_role? :admin))
-			#render partial: "/conversations/show", locals: {conversation: @conversation, message: @message, messages: @messages}, layout: false	
+			if ((user_signed_in?) and  (current_user.has_role? :admin))
+				@messages=@conversation.messages.all
+				respond_to do |format|
+					format.js { render :file => "/conversations/show_admin.js.erb" }
+				end
+				#render partial: "/conversations/show_admin", locals: {conversation: @conversation, message: @message, messages: @messages}, layout: false
+			end	
 		else
 			render plain: "unauthorized to see this conversation", status:401
 		end
