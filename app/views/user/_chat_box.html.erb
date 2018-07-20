@@ -1,8 +1,6 @@
 	<div id="live-chat">
 
-		<header class="clearfix">
-
-			<a href="#" class="chat-close">x</a>
+		<header class="clearfix">			
 
 			<h4><%= @conversation.name%></h4>
 
@@ -39,12 +37,4 @@ $('#live-chat header').on('click', function() {
   $('.chat-message-counter').fadeToggle(300, 'swing');
 
 });
-
-$('.chat-close').on('click', function(e) {
-
-  e.preventDefault();
-  $('#live-chat').fadeOut(300);
-
-});
-
 </script>
