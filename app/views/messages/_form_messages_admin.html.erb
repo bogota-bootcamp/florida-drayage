@@ -1,0 +1,19 @@
+<%= form_for [@conversation,@message]  ,:remote => true do |f| %>
+
+<div class="container-fluid">
+	<div class="row d-flex justify-content-center align-items-center" style="margin-bottom: 0 !important; padding-top: 15px;">
+		<div class="form-cont col-9">
+			<div class="form-group">
+				<!-- <%= f.label "Chat:" %> -->
+			    <%= f.text_area :body, class: "form-control input-admin", placeholder: "Write your text here"%>
+			</div>
+		</div>
+		<div class="send-cont col-3">
+				<!-- <%= f.submit 'Send', class: "btn-send" %> -->
+				<%= f.button :submit , class: "btn-send" do %>
+  				  <i class="material-icons" style="font-size: 20px;">send</i>
+				<% end %>
+		</div>
+	</div>
+</div>
+<% end %>

@@ -1,12 +1,16 @@
-<h4>Hola mi perro</h4>
-<p class="description-chat "> Conversation with: <span class="orange-text-2"><%=@conversation.name %></span></p>
+<div class="chat-description-admin">
+	<p class="description-chat "> Conversation with: <span class="orange-text-2"><%=@conversation.name %></span></p>
+</div>
+<div class="chat-container-admin">
 
-<ul id= '<%= "#{@conversation.id}"%>'>
-	<% if @messages%>
-		<%@messages.each do |message|%>
-			<%= render partial: "/messages/message",locals:{message: message}%>
+	<ul id= '<%= "#{@conversation.id}"%>'>
+		<% if @messages%>
+			<%@messages.each do |message|%>
+				<%= render partial: "/messages/message",locals:{message: message}%>
+			<%end%>
 		<%end%>
-	<%end%>
-</ul>
-<%= render partial: "messages/form_messages",layout:false%>
-
+	</ul>
+</div>
+<div class="chat-footer-admin">
+	<%= render partial: "messages/form_messages_admin",layout:false%>
+</div>
