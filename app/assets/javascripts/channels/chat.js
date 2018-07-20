@@ -8,8 +8,9 @@
       received: function(data) {
         console.log(data);
         if (data.action === "new-message") {
-          
-          return $("#" + data.conversation_id).append(data.msg);
+          $("#message_body").val("")
+          $("#" + data.conversation_id).append(data.msg);
+          return
         }
 
         if (data.action === "new-conversation"){
