@@ -1,8 +1,12 @@
+<h4>Hola mi perro</h4>
 <p class="description-chat "> Conversation with: <span class="orange-text-2"><%=@conversation.name %></span></p>
+
 <ul id= '<%= "#{@conversation.id}"%>'>
-	
+	<% if @messages%>
+		<%@messages.each do |message|%>
+			<%= render partial: "/messages/message",locals:{message: message}%>
+		<%end%>
+	<%end%>
 </ul>
 <%= render partial: "messages/form_messages",layout:false%>
-<script>
-	plantApp()
-</script>
+
