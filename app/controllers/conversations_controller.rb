@@ -55,6 +55,11 @@ class ConversationsController < ApplicationController
 	end
 
 	def destroy
+		conversation= Conversation.find(params[:id])
+		conversation.destroy
+		redirect_to conversations_path
+		#state active conversation an desactivate when user end conversation,admin only 
+		#can delete conversation if the state is desactive
 	end
 
 	private

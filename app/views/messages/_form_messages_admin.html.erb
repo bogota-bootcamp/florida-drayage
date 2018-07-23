@@ -17,3 +17,11 @@
 	</div>
 </div>
 <% end %>
+<script >
+	$('#message_body').keypress(function (e) {
+  if (e.which == 13) {
+  	e.preventDefault()
+    $(".btn-send").click()
+  }
+});
+</script>
