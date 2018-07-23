@@ -16,18 +16,18 @@
         if (data.action === "new-conversation"){
           return $("#cart-container").prepend(`
             <li>
-              <div class="client-card  d-flex flex-row align-items-center justify-content-center">
-                <div class="col-2 col-height padding-0  flex-b ">
-                  <i class="material-icons user-icon">person_pin</i>
+                <div class="client-card  d-flex flex-row align-items-center justify-content-center">
+                  <div class="col-2 col-height padding-0  flex-b ">
+                    <i class="material-icons user-icon">person_pin</i>
+                  </div>
+                  <div class="col-7 col-height padding-0 d-flex flex-column justify-content-center align-items-user">
+                    <p class="client-name"><a class="go-chat" data-remote="true" href="/conversations/`+data.conversation.id+`">`+data.conversation.id+`-`+data.conversation.name+`</a></p>
+                    <p class="client-mail">`+data.conversation.mail+`</p>
+                  </div>
+                  <div class="col-3 col-height padding-0 flex-b">
+                    <a class="go-chat" data-confirm="Are you sure?" data-remote="true" rel="nofollow" data-method="delete" href="/conversations/`+data.conversation.id+`">x</a>
+                  </div>
                 </div>
-                <div class="col-7 col-height padding-0 d-flex flex-column justify-content-center align-items-user">
-                  <p class="client-name">`+data.conversation.id+`- `+data.conversation.name+`</p>
-                  <p class="client-mail">`+data.conversation.mail+` </p>
-                </div>
-                <div class="col-3 col-height padding-0 flex-b">
-                  <a class="go-chat" data-remote="true" href="/conversations/`+data.conversation.id+`">></a>
-                </div>
-              </div>
             </li>
             `)
         }

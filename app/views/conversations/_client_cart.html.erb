@@ -4,11 +4,11 @@
 				<i class="material-icons user-icon">person_pin</i>
 			</div>
 			<div class="col-7 col-height padding-0 d-flex flex-column justify-content-center align-items-user">
-				<p class="client-name"><%= conversation.id %> - <%=conversation.name %></p>
+				<p class="client-name"><%=link_to "#{conversation.id}-#{conversation.name}",conversation , class: "go-chat", remote: true%></p>
 				<p class="client-mail"><%= conversation.mail %> </p>
 			</div>
 			<div class="col-3 col-height padding-0 flex-b">
-				<%=link_to ">",conversation , class: "go-chat", remote: true%>
+				<%=link_to "x",conversation , class: "go-chat", remote: true, method: :delete,data: {confirm: "Are you sure?"}%>
 			</div>
 		</div>
 </li>
