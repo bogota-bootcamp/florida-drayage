@@ -33,5 +33,7 @@
     $('#about-link').click(function (){
       $('#about').toggle();
     });
+
+    $("#cart-container").on("click","li",function(e){ $(this).find( "a" )[0].click();})
   }); // end of document ready
 })(jQuery);
