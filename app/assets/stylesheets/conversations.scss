@@ -47,11 +47,14 @@
     font-size: 24px;
     color: #eb6422;
   }
-  .client-name {
+  .client-name, .client-name:visited,.client-name:hover {
     font-size: 16px;
     font-weight: bold;
-    color: #eb6422;
+    color: #eb6422 !important;
     margin-top:10px;
+  }
+
+  .client-border {
     border-bottom: 1px solid #eb6422;
     margin-bottom: 0 !important;
   }
