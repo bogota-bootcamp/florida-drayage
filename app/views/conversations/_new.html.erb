@@ -2,13 +2,15 @@
 <%= form_for @conversation, html:{id: "create-conversation", data-turbolinks:"false"},remote:true do |f| %>
 
 <div class="form-group">
-	<%= f.label "Nombre" %>
-   <%= f.text_field :name, class: "form-control"%>
+	<%= f.label "Name" %>
+   <%= f.text_field :name , placeholder: "write your name here", class: "form-control"%>
 </div>
 
 <div class="form-group">
 	<%= f.label "Email:" %>
-    <%= f.text_field :mail, class: "form-control"%>
+    <%= f.text_field :mail , placeholder: "youremail@example.com", class: "form-control"%>
 </div>
-	<%= f.submit%>
+	<%= f.button :submit , class: "btn-send" do %>
+  	<i class="material-icons" style="font-size: 20px;">send</i>
+	<% end %> 
 <% end %> 
