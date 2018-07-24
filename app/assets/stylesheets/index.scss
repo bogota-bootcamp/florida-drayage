@@ -119,7 +119,7 @@
 }
 
 #live-chat form {
-	padding: 24px;
+	padding: 10px;
 }
 
 #live-chat input[type="text"] {
@@ -192,4 +192,21 @@
 .chat-feedback {
 	font-style: italic;
 	margin: 0 0 0 80px;
+}
+
+.form-cont {
+	width: 100%;
+}
+
+.chat-user-cont {
+	position: relative;
+	height: 200px;
+	overflow-y: auto;
+	box-shadow: inset 0 -14px 30px -12px;
+}
+.chat-link {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
 }

@@ -82,7 +82,8 @@
 
 .description-chat {
   color: #b2b2b2;
-  font-size: 18px;
+  font-size: 16px;
+  text-align: center;
 }
 .orange-text-2 {
   color: #eb6422;
@@ -104,10 +105,11 @@
 .client {
   border: 2px solid #eb6422;
   min-height: 50px;
-  width: 50%;
+  width: auto;
+  min-width: 50%;
   float: left;
   margin: 10px;
-  color: #2b2b2;
+  color: #2b2b2b;
   padding: 5px;
   /* background: #eb6422; */
   border-radius: 10px 10px 10px 1px;

@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   resources :conversations, only:[:create,:new,:destroy,:show] do
   	resources :messages, only:[:create]
   end
+
+ resources :quotations
 end
