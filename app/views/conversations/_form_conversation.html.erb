@@ -1,5 +1,7 @@
+
 <%= form_for @conversation, html:{id: "create-conversation"},remote:true do |f| %>
 
+<p style="color: #B2B2B2 ;text-align:center; padding-top: 5px; font-size: 14px">Speak with our asessor</p>
 <div class="input-field">	
   <%= f.text_field :name, placeholder: "write your name here",class: "form-control"%>
 </div>
@@ -7,5 +9,9 @@
 <div class="input-field">	
    <%= f.text_field :mail, placeholder: "youremail@example.com", class: "form-control"%>
 </div>
-	<%= f.submit%>
+<div style="text-align: center;">
+	<%= f.button :submit , class: "btn-send" do %>
+  	<i class="material-icons" style="font-size: 30px;">arrow_forward</i>
+	<% end %> 
+</div>
 <% end %>
