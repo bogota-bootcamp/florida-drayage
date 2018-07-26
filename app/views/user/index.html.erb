@@ -50,34 +50,45 @@
     </div>
 
     <div class="row d-flex section-box justify-content-md-center " id="contact">
-    <div class="col-12 d-flex  flex-column justify-content-center align-items-center">
-      <p class="title-text">Contact</p>
-      <p class="desc-text">Write About the services of Drayage that you offer for your costumers.</p>
-    </div>
+      <div class="col-12 d-flex  flex-column justify-content-center align-items-center">
+        <p class="title-text">Contact</p>
+        <p class="desc-text">Write About the services of Drayage that you offer for your costumers.</p>
+      </div>
 
-    <div class="col-6">
-      <div class=" row contact-table" style="margin-left: 0; margin-right: 0">
-        <div class="col-6 d-flex flex-column justify-content-center align-items-center  contact-border-1">
+      <div class="col-6">
+        <div class=" row contact-table" style="margin-left: 0; margin-right: 0">
+          <div class="col-6 d-flex flex-column justify-content-center align-items-center  contact-border-1">
               <i class="material-icons c-icon">email</i>
 
-          <p class="contact-text">youremail@gmail.com</p>
-        </div>
-        <div class="col-6  d-flex flex-column justify-content-center align-items-center">
+            <p class="contact-text">youremail@gmail.com</p>
+          </div>
+          <div class="col-6  d-flex flex-column justify-content-center align-items-center">
               <i class="material-icons c-icon">phone</i>
               <p class="contact-text">+1-202-555-0109</p>
 
-        </div>
-        <div class="col-6 d-flex flex-column justify-content-center align-items-center contact-border-1 contact-border-2">
-          <i class="material-icons c-icon">place</i>
-          <p class="contact-text">New York, NY 10005</p>
-        </div>
-        <div class="col-6 d-flex flex-column justify-content-center align-items-center contact-border-2">
-          <i class="fab fa-linkedin c-icon"></i>
-          <p class="contact-text">Some social network</p>
+          </div>
+          <div class="col-6 d-flex flex-column justify-content-center align-items-center contact-border-1 contact-border-2">
+            <i class="material-icons c-icon">place</i>
+            <p class="contact-text">New York, NY 10005</p>
+          </div>
+          <div class="col-6 d-flex flex-column justify-content-center align-items-center contact-border-2">
+            <i class="fab fa-linkedin c-icon"></i>
+            <p class="contact-text">Some social network</p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+
+    <div class="row d-flex section-box justify-content-md-center" id="Quotation" >
+        <div class="col-12 d-flex  flex-column justify-content-center align-items-center">
+          <p class="title-text">New Quotation</p>
+          <p class="desc-text">Send us a quote, we will contact you soon </p>
+        </div>
+      <div class="d-flex section-box justify-content-md-center">
+        <%= render partial: "/quotations/form_quotation"%>
+      <div>
+    </div>
+
 
 
 

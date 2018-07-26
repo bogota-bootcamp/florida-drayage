@@ -1,3 +1,30 @@
 // Place all the styles related to the user controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.material-icons{
+color: #f8f9fa;
+	
+}
+
+ .input-field input:focus + label, textarea:focus + label {
+   color: #FFF10D !important;
+ }
+
+ /* label underline focus color */
+ .row .input-field input:focus ,textarea:focus {
+   border-bottom: 1px solid #FFF10D !important;
+   box-shadow: 0 1px 0 0 #FFF10D !important
+ }
+
+.input-field .prefix.active{
+	color:#FFF10D !important;
+	}
+
+	.input-field>label{
+	color: #f8f9fa !important;	
+   																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																															
+}
+
+input:not([type]), input[type=text]:not(.browser-default), input[type=password]:not(.browser-default), input[type=email]:not(.browser-default), input[type=url]:not(.browser-default), input[type=time]:not(.browser-default), input[type=date]:not(.browser-default), input[type=datetime]:not(.browser-default), input[type=datetime-local]:not(.browser-default), input[type=tel]:not(.browser-default), input[type=number]:not(.browser-default), input[type=search]:not(.browser-default), textarea.materialize-textarea {
+  border-bottom: 1px solid #f8f9fa !important;    
+}

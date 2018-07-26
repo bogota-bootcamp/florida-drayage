@@ -10,6 +10,10 @@ class QuotationsController < ApplicationController
 	end
 
 	def create
+		quotation= Quotation.new(quotation_parameters)
+		if quotation.save
+			redirect_to root_path
+		end
 	end
 
 	def delete
@@ -17,6 +21,6 @@ class QuotationsController < ApplicationController
 
 	private
 	def quotation_parameters
-		params.require(:quotation).permit()
+		params.require(:quotation).permit(:first_name,:last_name,:title,:company,:email,:comments)
 	end
 end
