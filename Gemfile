@@ -35,14 +35,14 @@ gem 'jbuilder', '~> 2.5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
-
-# materialize
-gem 'materialize-sass', '~> 0.100.2'
-
-# bootstrap
-gem 'bootstrap', '~> 4.1.1'
 # jquery
 gem 'jquery-rails'
+#Bootstrap
+gem 'bootstrap', '~> 4.0.0'
+
+# materialize
+gem 'materialize-sass'
+gem 'material_icons'
 
 # devise
 gem 'devise'
