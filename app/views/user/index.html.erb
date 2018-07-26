@@ -1,29 +1,19 @@
 <section id="about-us" class="container-box">
   <div class="row section-box" id="about">
-        <div class="col-12 col-md-3 d-flex  flex-column justify-content-center align-items-center">
-          <p class="title-text">welcome to drayage</p>
-          <p class="desc-text">Write some description of Drayage or call to action or tell something about your business.</p>
-        </div>
-        <div class="col-12 col-md-6 d-flex justify-content-center align-items-center">
+        <div class="col-12 col-md-8 d-flex  flex-column justify-content-center align-items-center">
             <div class="logo-cont d-flex justify-content-center align-items-center">
                 <%= image_tag("logo.svg", class: 'logo-svg') %>
             </div>
         </div>
-        <div class="col-12 col-md-3 d-flex flex-column justify-content-center align-items-center">
-          <div class="icon-chat">
-              <%= image_tag("chat.svg", class: 'logo-svg') %>
-          </div>
-          <p class="desc-text">you have something to deliver? Chat with us</p>
-         </div>
+
+        <div class="col-12 col-md-4 d-flex flex-column justify-content-center align-items-center">
+          <p class="title-text">welcome to drayage</p>
+          <p class="desc-text">Write some description of Drayage or call to action or tell something about your business.</p>
+        </div>
   </div>
 
 
     <div class="row section-box" id="services">
-        <div class="col-12 d-flex  flex-column justify-content-center align-items-center">
-          <p class="title-text">Services</p>
-          <p class="desc-text">You can count on Drayage Florida for dependable container drayage services. With wide reach throughout the State of Florida.</p>
-        </div>
-
         <div class="col-12 col-md-4 d-flex flex-column justify-content-center align-items-center">
           <div class="icon-chat">
               <%= image_tag("florida.svg", class: 'service-logo') %>
@@ -49,6 +39,20 @@
           </div>
     </div>
 
+    <div class="row d-flex section-box justify-content-md-center" id="advantages" >
+      <div class="col-12 d-flex  flex-column justify-content-center align-items-center">
+        <p class="title-text">Advantages</p>        
+      </div>
+      <div class="d-flex section-box justify-content-md-center">
+          <ul class="collection">
+            <li class="collection-item">Service 24 Hours a Day -7 Days a Week</li>
+            <li class="collection-item">Asset Based</li>
+            <li class="collection-item">ELD Compliant</li>
+            <li class="collection-item">GPS Enabled Trucks and Chassis</li>
+          </ul>
+      </div>
+    </div>
+
     <div class="row d-flex section-box justify-content-md-center " id="contact">
       <div class="col-12 d-flex  flex-column justify-content-center align-items-center">
         <p class="title-text">Contact</p>
@@ -60,7 +64,7 @@
           <div class="col-6 d-flex flex-column justify-content-center align-items-center  contact-border-1">
               <i class="material-icons c-icon">email</i>
 
-            <p class="contact-text">youremail@gmail.com</p>
+            <p class="contact-text">sales@drayage-fla.com</p>
           </div>
           <div class="col-6  d-flex flex-column justify-content-center align-items-center">
               <i class="material-icons c-icon">phone</i>
@@ -86,7 +90,7 @@
         </div>
       <div class="d-flex section-box justify-content-md-center">
         <%= render partial: "/quotations/form_quotation"%>
-      <div>
+      </div>
     </div>
 
 
