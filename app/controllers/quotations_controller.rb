@@ -1,12 +1,15 @@
 class QuotationsController < ApplicationController
 
 	def index
+		@quotations= Quotation.all
 	end
 
 	def new
 	end
 
 	def show
+		@quotation = Quotation.find(params[:id])
+		@invoice = Invoice.new
 	end
 
 	def create

@@ -5,10 +5,18 @@ Rails.application.routes.draw do
   mount ActionCable.server => "/cable"
   
   get "conversations", to: "conversations#index"
-  resources :quotations
+
+  get "quotations", to: "quotations#index"
+
+  resources :quotations do
+  	resources :invoices 
+  end
+
   resources :conversations, only:[:create,:new,:destroy,:show] do
   	resources :messages, only:[:create]
   end
 
+  
+  resources :invoices 
 
 end
