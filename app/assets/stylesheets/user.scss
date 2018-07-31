@@ -28,3 +28,32 @@ color: #f8f9fa;
 input:not([type]), input[type=text]:not(.browser-default), input[type=password]:not(.browser-default), input[type=email]:not(.browser-default), input[type=url]:not(.browser-default), input[type=time]:not(.browser-default), input[type=date]:not(.browser-default), input[type=datetime]:not(.browser-default), input[type=datetime-local]:not(.browser-default), input[type=tel]:not(.browser-default), input[type=number]:not(.browser-default), input[type=search]:not(.browser-default), textarea.materialize-textarea {
   border-bottom: 1px solid #f8f9fa !important;    
 }
+
+
+.wrapper {
+  display: flex;  
+}
+
+.flexitem{
+	
+	flex: 1;
+	height:30vw;
+	background-color: white;
+	box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+	div{
+		
+	}
+	
+}
+
+.flex-active{
+	flex: 2 1 auto;
+	box-shadow: 0 19px 38px 19px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+	border: 2px solid white;
+	z-index:1;
+}
+
+.flex-sibling{
+	box-shadow: 0 19px 38px 19px rgba(0,0,0,0), 0 15px 12px rgba(0,0,0,0);
+}
+

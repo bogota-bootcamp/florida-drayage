@@ -21,5 +21,20 @@
 
 
 $(document).ready(function(){
-		
+		$(".wrapper").on('click', '.flexitem', function (e) {
+    // your function here
+    	$(".flex-sibling").removeClass("flex-sibling")
+    	if ($(this).hasClass( "flex-active" )){
+    		$(".flex-active").removeClass("flex-active")
+
+
+    	}
+    	else{
+    		$(".flex-active").removeClass("flex-active")
+				$(this).addClass("flex-active")
+                $(this).next().addClass("flex-sibling")
+
+			}
+
+		});
 })
