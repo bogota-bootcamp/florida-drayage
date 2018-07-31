@@ -1,3 +1,3 @@
 class Quotation < ApplicationRecord
-	has_one :invoice
+	has_many :invoices
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_30_210406) do
+ActiveRecord::Schema.define(version: 2018_07_31_165118) do
 
   create_table "conversations", force: :cascade do |t|
     t.string "name"
@@ -23,6 +23,8 @@ ActiveRecord::Schema.define(version: 2018_07_30_210406) do
     t.integer "quotation_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "price"
+    t.boolean "paid_out"
     t.index ["quotation_id"], name: "index_invoices_on_quotation_id"
   end
 
