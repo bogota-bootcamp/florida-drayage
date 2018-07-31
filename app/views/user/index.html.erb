@@ -1,52 +1,115 @@
 <section id="about-us" class="container-box">
   <div class="row section-box" id="about">
-        <div class="col-12 col-md-3 d-flex  flex-column justify-content-center align-items-center">
-          <p class="title-text">welcome to drayage</p>
-          <p class="desc-text">Write some description of Drayage or call to action or tell something about your business.</p>
-        </div>
-        <div class="col-12 col-md-6 d-flex justify-content-center align-items-center">
+        <div class="col-12 col-md-8 d-flex  flex-column justify-content-center align-items-center">
             <div class="logo-cont d-flex justify-content-center align-items-center">
                 <%= image_tag("logo.svg", class: 'logo-svg') %>
             </div>
         </div>
-        <div class="col-12 col-md-3 d-flex flex-column justify-content-center align-items-center">
-          <div class="icon-chat">
-              <%= image_tag("chat.svg", class: 'logo-svg') %>
-          </div>
-          <p class="desc-text">you have something to deliver? Chat with us</p>
-         </div>
+
+        <div class="col-12 col-md-4 d-flex flex-column justify-content-center align-items-center">
+          <p class="title-text">welcome to drayage</p>
+          <p class="desc-text">Write some description of Drayage or call to action or tell something about your business.</p>
+        </div>
   </div>
 
-
-    <div class="row section-box" id="services">
-        <div class="col-12 d-flex  flex-column justify-content-center align-items-center">
-          <p class="title-text">Services</p>
-          <p class="desc-text">Write About the services of Drayage that you offer for your costumers.</p>
-        </div>
-
-        <div class="col-12 col-md-4 d-flex flex-column justify-content-center align-items-center">
-          <div class="icon-chat">
-              <%= image_tag("pack.svg", class: 'service-logo') %>
+  <div class="section-box" id="services" >
+    <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-4">
+              <div class="image-flip" ">
+                  <div class="mainflip">
+                      <div class="frontside">
+                          <div class="card">
+                              <div class="card-body text-center">
+                                  <p><%= image_tag("florida.svg", class: 'service-logo') %></p>
+                                  <h4 class="card-title">Service</h4>
+                                  <p class="card-text">We are strategically located in South Florida with easy access to all of Florida’s seaports making it easy to pull or deliver containers from the port as well as the rail yards.</p>
+                                 
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
           </div>
-          <p class="title-text">Service</p>
-          <p class="desc-text">Chat with us and know the best delivery options we have for you.</p>
-         </div>
-
-        <div class="col-12 col-md-4 d-flex flex-column justify-content-center align-items-center">
-          <div class="icon-chat">
-            <%= image_tag("truck.svg", class: 'service-logo') %>
+          <!-- ./Services -->
+          <!-- Services -->
+          <div class="col-xs-12 col-sm-12 col-md-4">
+              <div class="image-flip" ">
+                  <div class="mainflip">
+                      <div class="frontside">
+                          <div class="card">
+                              <div class="card-body text-center">
+                                  <p><%= image_tag("truck.svg", class: 'service-logo') %></p>
+                                  <h4 class="card-title">Service 2</h4>
+                                  <p class="card-text">We offer Full Truckload and LTL Trucking, Transloading, Load Consolidation/Deconsolidation, Bonded Trucking & Bonded Warehousing, Brokerage, Bonded Carrier and Warehouse, and Local Deliveries.</p>
+                                  
+                              </div>
+                          </div>
+                      </div>    
+                  </div>
+              </div>
           </div>
-            <p class="title-text">Service 2</p>
-          <p class="desc-text">Chat with us and know the best delivery options we have for you.</p>
-         </div>
+          <!-- ./Services -->
+          <!-- Services -->
+          <div class="col-xs-12 col-sm-12 col-md-4">
+              <div class="image-flip" ">
+                  <div class="mainflip">
+                      <div class="frontside">
+                          <div class="card">
+                              <div class="card-body text-center">
+                                  <p><%= image_tag("clock.svg", class: 'service-logo') %></p>
+                                  <h4 class="card-title">24/7</h4>
+                                  <p class="card-text">We are able to pull containers effectively and with ease utilizing our asset-based fleet 24 hours a day, 7 days a week.</p>
+                                  
+                              </div>
+                          </div>
+                      </div>
 
-         <div class="col-12 col-md-4 d-flex flex-column justify-content-center align-items-center">
-           <div class="icon-chat">
-               <%= image_tag("clock.svg", class: 'service-logo-2') %>
-           </div>
-            <p class="title-text">Service 3</p>
-           <p class="desc-text">Chat with us and know the best delivery options we have for you.</p>
+                  </div>
+              </div>
           </div>
+          <!-- ./Services -->
+      </div>      
+  </div>
+  <!-- ./Section-->
+
+
+
+<div class="wrapper">
+  <div class="flexitem">
+    <div> <p>Service 24 Hours a Day -7 Days a Week <p></div>
+  </div>
+  <div class="flexitem">
+    <div><p>Asset Based</p></div>
+  </div>
+  <div class="flexitem">
+    <div><p>ELD Compliant</p></div>
+  </div>
+  <div class="flexitem">
+    <div><p>GPS Enabled Trucks and Chassis</p></div>
+  </div>
+</div>
+
+
+
+
+
+
+    <div class="row d-flex section-box justify-content-md-center" id="advantages" >
+      <div class="col-12 d-flex  flex-column justify-content-center align-items-center">
+        <p class="title-text">Advantages</p>        
+      </div>
+      <div class="d-flex section-box justify-content-md-center">
+          <ul class="collection">
+            <li class="collection-item">Service 24 Hours a Day -7 Days a Week</li>
+            <li class="collection-item">Asset Based</li>
+            <li class="collection-item">ELD Compliant</li>
+            <li class="collection-item">GPS Enabled Trucks and Chassis</li>
+            <li class="collection-item">Competitive Rates</li>
+            <li class="collection-item">Pilot Car Services</li>
+            <li class="collection-item">Online Payment</li>
+            <li class="collection-item">Secured Yard</li>
+          </ul>
+      </div>
     </div>
 
     <div class="row d-flex section-box justify-content-md-center " id="contact">
@@ -60,7 +123,7 @@
           <div class="col-6 d-flex flex-column justify-content-center align-items-center  contact-border-1">
               <i class="material-icons c-icon">email</i>
 
-            <p class="contact-text">youremail@gmail.com</p>
+            <p class="contact-text">sales@drayage-fla.com</p>
           </div>
           <div class="col-6  d-flex flex-column justify-content-center align-items-center">
               <i class="material-icons c-icon">phone</i>
@@ -86,7 +149,7 @@
         </div>
       <div class="d-flex section-box justify-content-md-center">
         <%= render partial: "/quotations/form_quotation"%>
-      <div>
+      </div>
     </div>
 
 

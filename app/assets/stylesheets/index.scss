@@ -7,12 +7,17 @@
     // height: 650px;
 }
 
+.row{
+	padding-bottom: 20px;
+}
+
+
 .section-box{
     // height: 100% !important;
     height: auto;
     margin: auto !important;
     margin-bottom: 30px;
-    margin-top: 30px;
+    padding-top: 10vh !important;
 }
 
 .logo-cont {
@@ -28,7 +33,8 @@
     width: 250px;
 }
 .service-logo  {
-  width:100px;
+  height:100px;
+   width: 100px;
 }
 .service-logo-2  {
   width:60px;
@@ -97,7 +103,7 @@
 	border-radius: 5px 5px 0 0;
 	color: #fff;
 	cursor: pointer;
-	padding: 16px 24px;
+	padding: 4px 24px;
 }
 
 #live-chat h4:before {
