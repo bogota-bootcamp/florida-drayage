@@ -1,0 +1,5 @@
+<%= form_for [@quotation, @invoice] do |f| %>
+	<label>Price:</label>
+	<%= f.text_field :price, class: "validate", :html=>{:id=>"icon_prefix"}%>
+	<%= f.submit%>
+ <% end %>

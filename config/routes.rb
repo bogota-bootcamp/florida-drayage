@@ -9,14 +9,16 @@ Rails.application.routes.draw do
   get "quotations", to: "quotations#index"
 
   resources :quotations do
-  	resources :invoices 
+  	resources :invoices
+    post "invoices/:id", to: "invoices#payment" 
+    
   end
 
   resources :conversations, only:[:create,:new,:destroy,:show] do
   	resources :messages, only:[:create]
   end
 
+ 
   
-  resources :invoices 
 
 end

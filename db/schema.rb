@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2018_07_31_165118) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "price"
-    t.boolean "paid_out"
+    t.boolean "paid_out", default: false
     t.index ["quotation_id"], name: "index_invoices_on_quotation_id"
   end
 

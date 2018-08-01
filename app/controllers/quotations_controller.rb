@@ -9,7 +9,8 @@ class QuotationsController < ApplicationController
 
 	def show
 		@quotation = Quotation.find(params[:id])
-		@invoice = Invoice.new
+		@invoices = @quotation.invoices		
+		@invoice = @quotation.invoices.new
 	end
 
 	def create

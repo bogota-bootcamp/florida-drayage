@@ -1,6 +1,6 @@
 class AddPriceInvoice < ActiveRecord::Migration[5.2]
   def change
   	add_column :invoices, :price, :integer
-  	add_column :invoices, :paid_out, :boolean
+  	add_column :invoices, :paid_out, :boolean , :default => false
   end
 end
