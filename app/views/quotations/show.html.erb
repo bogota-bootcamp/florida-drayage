@@ -19,14 +19,28 @@
     <div class="card-header" id="headingTwo">
       <h5 class="mb-0">
         <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-          New Invoice
+          Invoices
         </button>
       </h5>
     </div>
     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-      <div class="card-body">
-        <h4>New Invoice</h4>
-				<%= render partial: "/invoices/form_invoice",locals:{quotation: @quotation, invoice: @invoice}%>
+      <div class="card-body">        
+      	<ul class="collection">
+	        <% @invoices.each do |_invoice|%>
+						<%if _invoice.id%> 		
+							<li class="collection-item avatar <%= 'active' if _invoice.paid_out  %>">
+								<img  src= "" alt="" class="circle"> 
+								<span class="title"><%="Invoice: #{_invoice.id}" %></span>
+								<p><%= "#{@quotation.first_name} #{@quotation.last_name}"%> <br>
+         					<%= "#{@quotation.email}"%>
+     					 	</p>
+								<%= link_to  quotation_invoice_path(@quotation,_invoice),:class => "secondary-content"  do %>
+									<i class="material-icons">send</i>
+								<% end%>									
+							</li>
+						<% end %> 
+					<% end%>
+				</ul>
       </div>
     </div>
   </div>
@@ -34,17 +48,14 @@
     <div class="card-header" id="headingThree">
       <h5 class="mb-0">
         <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-          Invoices
+          New Invoice
         </button>
       </h5>
     </div>
     <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
       <div class="card-body">
-        <% @invoices.each do |_invoice|%>
-					<%if _invoice.id%> 		
-						<li> <%= link_to "#{_invoice.id}", quotation_invoice_path(@quotation,_invoice)%></li>
-					<% end %> 
-				<% end%>
+        <h4>New Invoice</h4>
+				<%= render partial: "/invoices/form_invoice",locals:{quotation: @quotation, invoice: @invoice}%>
       </div>
     </div>
   </div>
