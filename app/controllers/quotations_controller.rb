@@ -1,7 +1,13 @@
 class QuotationsController < ApplicationController
 
 	def index
-		@quotations= Quotation.all
+
+		user= current_user
+		if (user && (user.has_role? :admin ))		
+			@quotations= Quotation.all
+		else
+			render plain: "unauthorized to see this page", status:401
+		end
 	end
 
 	def new
