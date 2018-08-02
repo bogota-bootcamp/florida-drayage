@@ -47,6 +47,7 @@ class ConversationsController < ApplicationController
 			#response = mail.deliver_now
 			#@message=@conversation.messages.new
 			#render :show
+			flash[:success] = "Conversation created"
 			redirect_to root_path
 		else
 			puts '*'*50
@@ -57,6 +58,7 @@ class ConversationsController < ApplicationController
 	def destroy
 		conversation= Conversation.find(params[:id])
 		conversation.destroy
+		flash[:info] = "Conversation Deleted"
 		redirect_to conversations_path
 		#state active conversation an desactivate when user end conversation,admin only 
 		#can delete conversation if the state is desactive
