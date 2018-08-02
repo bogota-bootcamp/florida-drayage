@@ -2,7 +2,9 @@ class InvoicesController < ApplicationController
 	def create    
     quotation= Quotation.find(params[:quotation_id])    
     invoice=quotation.invoices.new(invoice_parameters)
-    invoice.save
+    invoice.save    
+    mail=InvoiceMailer.new_invoice(quotation,invoice)
+    response = mail.deliver_now
     redirect_to quotation
   end
 
