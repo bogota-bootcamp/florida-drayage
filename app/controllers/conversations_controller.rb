@@ -47,12 +47,12 @@ class ConversationsController < ApplicationController
 			#response = mail.deliver_now
 			#@message=@conversation.messages.new
 			#render :show
-			flash[:success] = "Conversation created"
-			redirect_to root_path
+			flash[:success] = "Conversation created"	
 		else
-			puts '*'*50
-			puts 'error creando conversacion'
+      @errors= @conversation.errors.full_messages
+      flash[:danger] = @error   
 		end
+		redirect_to root_path
 	end
 
 	def destroy
