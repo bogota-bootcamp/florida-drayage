@@ -18,21 +18,23 @@
   <body>
     <%= render "layouts/nav" %>
     <div class="body-container">
-      <% flash.each do |key, value| %> 
-        <% if value.is_a?(Array) %>
-          <% value.each do |element|%>
-            <div class="alert alert-<%= key %> alert-dismissible" style= "z-index: 1040;">
+      <div class= "cont-flash-messages">
+        <% flash.each do |key, value| %> 
+          <% if value.is_a?(Array) %>
+            <% value.each do |element|%>
+              <div class="alert alert-<%= key %> alert-dismissible" style= "z-index: 1040;">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <%= element %>                
+              </div>
+            <% end %>
+          <% else %>
+            <div class="alert alert-<%= key %>" style= "z-index: 1040;">
               <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-              <%= element %>                
+              <%= value %>            
             </div>
-          <% end %>
-        <% else %>
-          <div class="alert alert-<%= key %>" style= "z-index: 1040;">
-            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-            <%= value %>            
-          </div>
-        <% end %>        
-      <% end %>
+          <% end %>        
+        <% end %>
+      </div>
       <%= yield %>
     </div>
     <% if(  user_signed_in?)%>
