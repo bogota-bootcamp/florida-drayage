@@ -1,0 +1,10 @@
+<li class="collection-item avatar <%= 'active' if _invoice.paid_out  %>">
+	<img  src= "" alt="" class="circle"> 
+	<span class="title"><%="Invoice: #{_invoice.id}" %></span>
+	<p><%= "#{@quotation.first_name} #{@quotation.last_name}"%> <br>
+			<%= "#{@quotation.email}"%>
+	 	</p>
+	<%= link_to  quotation_invoice_path(@quotation,_invoice),:class => "secondary-content"  do %>
+		<i class="material-icons">send</i>
+	<% end%>
+</li>

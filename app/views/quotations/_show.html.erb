@@ -1,57 +1,53 @@
-<%= form_for [@quotation]  do |f| %>
-	<div class="row">
-    <div class="input-field col s6">
-      <i class="material-icons prefix">account_circle</i>
-      <label for="icon_prefix" class="active">First Name</label>          
-      <%= f.text_field :first_name, class: "validate", :html=>{:id=>"icon_prefix"}, disabled: true%>
-      
-    </div>    
-  </div>
+<div id="accordion">
+  <div class="card">
+    <div class="card-header" id="headingOne">
+      <h5 class="mb-0">
+        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Quotation
+        </button>
+      </h5>
+    </div>
 
-  <div class="row">
-    <div class="input-field col s6">
-      <i class="material-icons prefix">account_circle</i>          
-      <%= f.text_field :last_name, class: "validate", :html=>{:id=>"icon_prefix"},disabled: true%>
-      <label for="icon_prefix" class="active">Last Name</label>
+    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+      <div class="card-body">
+        <%= render partial: "/quotations/quotation_header.html.erb"%>
+      </div>
     </div>
   </div>
-  <div class="row">      
-		<div class="input-field col s6">
-			<i class="material-icons prefix">account_circle</i>          
-			<%= f.text_field :title, class: "validate", :html=>{:id=>"icon_prefix"}, disabled: true%>
-			<label for="icon_prefix" class="active">Title</label>
-		</div>
-  </div>
-  <div class="row">      
-   	<div class="input-field col s6">
-    	<i class="material-icons prefix">domain</i>          
-     	<%= f.text_field :company, class: "validate", :html=>{:id=>"icon_prefix"}, disabled: true%>
-    		<label for="icon_prefix" class="active">Company</label>
-  		</div>
-	</div>
-
-	<div class="row">
-    <div class="input-field col s6">
-      <i class="material-icons prefix">phone</i>
-      <%= f.text_field :phone, :html=>{:id=>"icon_prefix"},disabled: true%>
-      <label for="icon_telephone" class="active">Telephone</label>
+  <div class="card">
+    <div class="card-header" id="headingTwo">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Invoices
+        </button>
+      </h5>
+    </div>
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+      <div class="card-body">        
+      	<ul class="collection" id="invoices-container">
+	        <% @invoices.each do |_invoice|%>
+						<%if _invoice.id%> 		
+							<%= render partial: "/invoices/invoice_item",locals:{quotation:@quotation,_invoice:_invoice} %>
+						<% end %> 
+					<% end%>
+				</ul>
+      </div>
     </div>
   </div>
-  <div class="row">
-		<div class="input-field col s6">
-			<i class="material-icons prefix">email</i>          
-			<%= f.text_field :email, :html=>{:id=>"icon_prefix"},disabled: true%>
-			<label for="icon_prefix" class="active" >E-mail</label>
-		</div>
+  <div class="card">
+    <div class="card-header" id="headingThree">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          New Invoice
+        </button>
+      </h5>
+    </div>
+    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+      <div class="card-body">
+        <h4>New Invoice</h4>
+				<%= render partial: "/invoices/form_invoice_remote",locals:{quotation: @quotation, invoice: @invoice}%>
+      </div>
+    </div>
   </div>
-
-  <div class="row">
-		<div class="input-field col s6">
-			<i class="material-icons prefix">comment</i>          
-		 	<%= f.text_area :comments, class: "validate materialize-textarea", :html=>{:id=>"icon_prefix"}, disabled: true%>
-				<label for="icon_prefix" class="active" >Comments</label>
-			</div>
-  </div> 
-<% end %>
-
+</div>
 

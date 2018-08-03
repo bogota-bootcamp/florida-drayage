@@ -1,6 +1,6 @@
 <div class="chat-cont">
 
-<%= render partial: "/quotations/show.html.erb"%>
+<%= render partial: "/quotations/quotation_header"%>
 <%= form_tag quotation_invoice_path(@quotation,@invoice)  do %>
   <article>
     <% if flash[:error].present? %>

@@ -1,16 +1,21 @@
 class InvoicesController < ApplicationController
 	def create    
-    quotation= Quotation.find(params[:quotation_id])    
-    invoice=quotation.invoices.new(invoice_parameters)
-    if invoice.save    
-      mail=InvoiceMailer.new_invoice(quotation,invoice)
-      response = mail.deliver_now
+    @quotation= Quotation.find(params[:quotation_id])    
+    @invoice=@quotation.invoices.new(invoice_parameters)
+    if @invoice.save    
+      mail=InvoiceMailer.new_invoice(@quotation,@invoice)
+      #response = mail.deliver_now
       flash[:success] = "Invoice created"
     else
       @errors= invoice.errors.full_messages
       flash[:danger] = @error
     end
-    redirect_to quotation
+
+    respond_to do |format|
+      format.html { redirect_to quotations_path }
+      format.js      
+    end
+    
   end
 
   def show
