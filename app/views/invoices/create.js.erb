@@ -1,0 +1,3 @@
+$("#invoice_price").val("")
+$("#invoices-container").append("<%= j render partial: '/invoices/invoice_item',locals:{quotation:@quotation,_invoice:@invoice}, layout:false  %>")
+$(".cont-flash-messages").append('<div class="alert alert-success alert-dismissible" style= "z-index: 1040;"> <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> Invoice created</div>')

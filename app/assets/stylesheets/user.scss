@@ -1,39 +1,13 @@
 // Place all the styles related to the user controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.material-icons{
-color: #f8f9fa;
-	
-}
-
- .input-field input:focus + label, textarea:focus + label {
-   color: #FFF10D !important;
- }
-
- /* label underline focus color */
- .row .input-field input:focus ,textarea:focus {
-   border-bottom: 1px solid #FFF10D !important;
-   box-shadow: 0 1px 0 0 #FFF10D !important
- }
-
-.input-field .prefix.active{
-	color:#FFF10D !important;
-	}
-
-	.input-field>label{
-	color: #f8f9fa !important;	
-   																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																															
-}
-
-input:not([type]), input[type=text]:not(.browser-default), input[type=password]:not(.browser-default), input[type=email]:not(.browser-default), input[type=url]:not(.browser-default), input[type=time]:not(.browser-default), input[type=date]:not(.browser-default), input[type=datetime]:not(.browser-default), input[type=datetime-local]:not(.browser-default), input[type=tel]:not(.browser-default), input[type=number]:not(.browser-default), input[type=search]:not(.browser-default), textarea.materialize-textarea {
-  border-bottom: 1px solid #f8f9fa !important;    
-}
-
 
 .wrapper {
   display: flex;  
 }
-
+.send{
+  cursor: pointer
+}
 .flexitem{
 	
 	flex: 1;
@@ -57,3 +31,46 @@ input:not([type]), input[type=text]:not(.browser-default), input[type=password]:
 	box-shadow: 0 19px 38px 19px rgba(0,0,0,0), 0 15px 12px rgba(0,0,0,0);
 }
 
+
+/*form estile*/
+
+
+  /* label color */
+   .input-field label {
+     color: #000;
+   }
+   /* label focus color */
+   .input-field input[type=text]:focus + label {
+     color: #000;
+   }
+   /* label underline focus color */
+   .input-field input[type=text]:focus {
+     border-bottom: 1px solid #000;
+     box-shadow: 0 1px 0 0 #000;
+   }
+   /* valid color */
+   .input-field input[type=text].valid {
+     border-bottom: 1px solid #000;
+     box-shadow: 0 1px 0 0 #000;
+   }
+   /* invalid color */
+   .input-field input[type=text].invalid {
+     border-bottom: 1px solid #000;
+     box-shadow: 0 1px 0 0 #000;
+   }
+   /* icon prefix focus color */
+   .input-field .prefix.active {
+     color: #000;
+   }
+
+/*flash messages*/
+.cont-flash-messages {
+    z-index: 1;
+    position: fixed;
+    top: 70px;
+    right: 15px;
+}
+
+.alert{
+  min-width: 165px;
+}

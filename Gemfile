@@ -55,6 +55,9 @@ gem 'figaro'
 
 gem 'mailjet'
 
+#stripe for payments
+gem 'stripe'
+
 
 
 group :development, :test do

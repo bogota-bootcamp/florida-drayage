@@ -1,0 +1,23 @@
+
+
+<div class="container-fluid chat-cont d-flex flex-row">
+	<div class="row" style="width:100% !important">
+
+		<div class=" col-md-3  col-sm-3 col-xs-12  flex-column align-items-center justify-content-start ">
+			<ul class="collection">
+				<% @quotations.each do |quotation|%>
+					<li class="collection-item"> <%= link_to  "#{quotation.id}-#{quotation.email}", quotation , remote: true%> </li>
+				<% end %>
+			</ul>
+		</div>
+
+
+		<div class=" col-md-9 col-sm-9 col-xs-12 " id="quotation-container" >
+
+			
+		</div>
+
+		
+
+	</div>
+</div>
