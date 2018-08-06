@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  city: one
+  price: 1.5
+  zipcode: 1
+
+two:
+  city: two
+  price: 1.5
+  zipcode: 1
