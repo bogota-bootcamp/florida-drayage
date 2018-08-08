@@ -50,6 +50,95 @@
 			</div>
   </div>
 
+  <br>
+  <div class="row">
+    <div class="input-field col s12">
+      <i class="material-icons prefix">markunread_mailbox</i> 
+      <input id="origin-city" type="text" class="validate autocomplete city">
+      <label for="disabled">Origin city</label>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s6">
+      <i class="material-icons prefix">map</i>          
+      <%= f.text_field :origin_zipcode, class: "validate autocomplete ", :html=>{:id=>"icon_prefix"},required:true%>
+        <label for="icon_prefix">Origin Zipcode</label>
+      </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s12">
+      <i class="material-icons prefix">markunread_mailbox</i> 
+      <input id="destination-city" type="text" class="validate autocomplete city">
+      <label for="disabled">Destination city</label>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s6">
+      <i class="material-icons prefix">map</i>          
+      <%= f.text_field :destination_zipcode, class: "validate autocomplete", :html=>{:id=>"icon_prefix"},required:true%>
+        <label for="icon_prefix">Destination Zipcode</label>
+      </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s6">
+      <i class="material-icons prefix">comment</i>          
+      <%= f.text_field :commodity, class: "validate materialize-textarea", :html=>{:id=>"icon_prefix"},required:true%>
+        <label for="icon_prefix">commodity</label>
+      </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s6">       
+      <label>        
+        <input type="checkbox" name="quotation[hazardous]" id="quotation_bonded_cargo" />
+        <span>Hazardous</span>
+      </label>
+    </div>
+
+    <div class="input-field col s6">      
+      <label>
+        <input type="checkbox" name="quotation[bonded_cargo]" id="quotation_bonded_cargo" />
+        <span>Bonded Cargo</span>
+      </label>         
+    </div>
+      
+  </div>
+
+  <div class="row">
+    <div class="input-field col s6">
+      <i class="material-icons prefix">comment</i>          
+      <%= f.text_field :overweight, class: "validate materialize-textarea", :html=>{:id=>"icon_prefix"},required:true%>
+        <label for="icon_prefix">Overweight</label>
+      </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s6">
+      <i class="material-icons prefix">date_range</i>          
+      <%= f.text_field :pickup_date, class: "validate datepicker", :html=>{:id=>"icon_prefix"},required:true%>
+        <label for="icon_prefix">PickUp Date</label>
+      </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s6">
+      <i class="material-icons prefix">date_range</i>          
+      <%= f.text_field :drop_date, class: "validate datepicker", :html=>{:id=>"icon_prefix"},required:true%>
+        <label for="icon_prefix">Drop Date</label>
+      </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s6">
+      <i class="material-icons prefix">comment</i>          
+      <%= f.text_field :equipment_type, class: "validate materialize-textarea", :html=>{:id=>"icon_prefix"},required:true%>
+        <label for="icon_prefix">Equipment Type</label>
+      </div>
+  </div>
+
   <div class="row">       
 		<!-- <%= f.submit 'Send', class: "btn-send" %> -->
 		<%= f.button :submit , class: "btn-send" do %>
@@ -57,6 +146,21 @@
 		<% end %>			
   </div>
 <% end %>
+
+<script>
+  $(document).ready(function(){
+    $('.datepicker').datepicker();
+    $.ajax({
+        url: "/cities",
+        context: document.body
+      })
+      .done(function(data) {
+        $('input.autocomplete').autocomplete({
+        data: data,
+        });
+      });
+  });
+</script>
 
 
 

@@ -10,10 +10,7 @@ class Quotation < ApplicationRecord
 	validates :hazardous, :presence=> true
 	validates :bonded_cargo, :presence=> true
 	validates :equipment_type, :presence=> true
-	:
 	
-	
-
 	def origin_zipcode_object
 		 zipcode= Zipcode.find(self.origin_zipcode) if self.origin_zipcode
 	end	
