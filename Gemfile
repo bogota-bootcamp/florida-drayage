@@ -41,7 +41,7 @@ gem 'jquery-rails'
 gem 'bootstrap', '~> 4.0.0'
 
 # materialize
-gem 'materialize-sass'
+gem 'materialize-sass', '~> 1.0.0.rc2'
 gem 'material_icons'
 
 # devise

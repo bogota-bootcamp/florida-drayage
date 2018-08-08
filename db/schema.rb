@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_06_152005) do
+ActiveRecord::Schema.define(version: 2018_08_06_212058) do
 
   create_table "cities", force: :cascade do |t|
     t.string "name"
@@ -54,6 +54,15 @@ ActiveRecord::Schema.define(version: 2018_08_06_152005) do
     t.text "comments"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "origin_zipcode"
+    t.integer "destination_zipcode"
+    t.string "commodity"
+    t.boolean "hazardous"
+    t.boolean "bonded_cargo"
+    t.float "overweight"
+    t.date "pickup_date"
+    t.date "drop_date"
+    t.string "equipment_type"
   end
 
   create_table "roles", force: :cascade do |t|

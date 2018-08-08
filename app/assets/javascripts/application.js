@@ -16,7 +16,7 @@
 //= require turbolinks
 //= require popper
 //= require bootstrap-sprockets
-//= require materialize-sprockets
+//= require materialize
 //= require_tree .
 
 
