@@ -22,8 +22,12 @@ class QuotationsController < ApplicationController
 	def create
 		quotation= Quotation.new(quotation_parameters)
 		if quotation.save
-			redirect_to root_path
+			flash[:success] = "Invoice created"			
+		else
+			errors= quotation.errors.full_messages
+			flash[:danger] = errors			
 		end
+		redirect_to root_path
 	end
 
 	def delete
@@ -31,6 +35,9 @@ class QuotationsController < ApplicationController
 
 	private
 	def quotation_parameters
-		params.require(:quotation).permit(:first_name,:last_name,:title,:company,:email,:comments,:phone)
+		params.require(:quotation).permit(:first_name,:last_name,:title,:company,:phone,:email,:comments,:origin_zipcode,:destination_zipcode,:commodity,:hazardous,:bonded_cargo,:overweight,:pickup_date,:drop_date,:equipment_type)
 	end
 end
+
+
+
