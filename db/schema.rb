@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_06_212058) do
+ActiveRecord::Schema.define(version: 2018_08_09_205840) do
 
   create_table "cities", force: :cascade do |t|
     t.string "name"
@@ -57,12 +57,14 @@ ActiveRecord::Schema.define(version: 2018_08_06_212058) do
     t.integer "origin_zipcode"
     t.integer "destination_zipcode"
     t.string "commodity"
-    t.boolean "hazardous"
-    t.boolean "bonded_cargo"
+    t.boolean "hazardous", default: false
+    t.boolean "bonded_cargo", default: false
     t.float "overweight"
     t.date "pickup_date"
     t.date "drop_date"
     t.string "equipment_type"
+    t.string "origin_city"
+    t.string "destination_city"
   end
 
   create_table "roles", force: :cascade do |t|
