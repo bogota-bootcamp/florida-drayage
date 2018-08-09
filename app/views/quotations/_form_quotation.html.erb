@@ -54,7 +54,7 @@
   <div class="row">
     <div class="input-field col s12">
       <i class="material-icons prefix">markunread_mailbox</i> 
-      <input id="origin-city" type="text" class="validate autocomplete city">
+      <input id="origin-city"  name="quotation[origin_city]" type="text" class="validate autocomplete city">
       <label for="disabled">Origin city</label>
     </div>
   </div>
@@ -63,14 +63,14 @@
     <div class="input-field col s6">
       <i class="material-icons prefix">map</i>          
       <%= f.text_field :origin_zipcode, class: "validate  ", :html=>{:id=>"icon_prefix"},required:true%>
-        <label for="icon_prefix">Origin Zipcode</label>
+      <label for="icon_prefix">Origin Zipcode</label> 
       </div>
   </div>
 
   <div class="row">
     <div class="input-field col s12">
       <i class="material-icons prefix">markunread_mailbox</i> 
-      <input id="destination-city" type="text" class="validate autocomplete city">
+      <input id="destination-city" name="quotation[destination_city]" type="text" class="validate autocomplete city">
       <label for="disabled">Destination city</label>
     </div>
   </div>

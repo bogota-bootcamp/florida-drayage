@@ -1,57 +1,147 @@
 <%= form_for [@quotation]  do |f| %>
 	<div class="row">
-    <div class="input-field col s6">
-      <i class="material-icons prefix">account_circle</i>
-      <label for="icon_prefix" class="active">First Name</label>          
-      <%= f.text_field :first_name, class: "validate", :html=>{:id=>"icon_prefix"}, disabled: true%>
-      
-    </div>    
-  </div>
+		<div class="input-field col s6">
+			<i class="material-icons prefix">account_circle</i>
+			<label for="icon_prefix" class="active">First Name</label>          
+			<%= f.text_field :first_name, class: "validate", :html=>{:id=>"icon_prefix"}, disabled: true%>
+			
+		</div>    
+	</div>
 
-  <div class="row">
-    <div class="input-field col s6">
-      <i class="material-icons prefix">account_circle</i>          
-      <%= f.text_field :last_name, class: "validate", :html=>{:id=>"icon_prefix"},disabled: true%>
-      <label for="icon_prefix" class="active">Last Name</label>
-    </div>
-  </div>
-  <div class="row">      
+	<div class="row">
+		<div class="input-field col s6">
+			<i class="material-icons prefix">account_circle</i>          
+			<%= f.text_field :last_name, class: "validate", :html=>{:id=>"icon_prefix"},disabled: true%>
+			<label for="icon_prefix" class="active">Last Name</label>
+		</div>
+	</div>
+	<div class="row">      
 		<div class="input-field col s6">
 			<i class="material-icons prefix">account_circle</i>          
 			<%= f.text_field :title, class: "validate", :html=>{:id=>"icon_prefix"}, disabled: true%>
 			<label for="icon_prefix" class="active">Title</label>
 		</div>
-  </div>
-  <div class="row">      
-   	<div class="input-field col s6">
-    	<i class="material-icons prefix">domain</i>          
-     	<%= f.text_field :company, class: "validate", :html=>{:id=>"icon_prefix"}, disabled: true%>
-    		<label for="icon_prefix" class="active">Company</label>
-  		</div>
+	</div>
+	<div class="row">      
+		<div class="input-field col s6">
+			<i class="material-icons prefix">domain</i>          
+			<%= f.text_field :company, class: "validate", :html=>{:id=>"icon_prefix"}, disabled: true%>
+				<label for="icon_prefix" class="active">Company</label>
+			</div>
 	</div>
 
 	<div class="row">
-    <div class="input-field col s6">
-      <i class="material-icons prefix">phone</i>
-      <%= f.text_field :phone, :html=>{:id=>"icon_prefix"},disabled: true%>
-      <label for="icon_telephone" class="active">Telephone</label>
-    </div>
-  </div>
-  <div class="row">
+		<div class="input-field col s6">
+			<i class="material-icons prefix">phone</i>
+			<%= f.text_field :phone, :html=>{:id=>"icon_prefix"},disabled: true%>
+			<label for="icon_telephone" class="active">Telephone</label>
+		</div>
+	</div>
+	<div class="row">
 		<div class="input-field col s6">
 			<i class="material-icons prefix">email</i>          
 			<%= f.text_field :email, :html=>{:id=>"icon_prefix"},disabled: true%>
 			<label for="icon_prefix" class="active" >E-mail</label>
 		</div>
-  </div>
+	</div>
 
-  <div class="row">
+	<div class="row">
 		<div class="input-field col s6">
 			<i class="material-icons prefix">comment</i>          
-		 	<%= f.text_area :comments, class: "validate materialize-textarea", :html=>{:id=>"icon_prefix"}, disabled: true%>
+			<%= f.text_area :comments, class: "validate materialize-textarea", :html=>{:id=>"icon_prefix"}, disabled: true%>
 				<label for="icon_prefix" class="active" >Comments</label>
 			</div>
-  </div> 
+	</div>
+
+	<br>
+	<div class="row">
+		<div class="input-field col s12">
+			<i class="material-icons prefix">markunread_mailbox</i> 
+			<input id="origin-city" type="text" class="validate autocomplete city" disabled="disabled" value= <%= @quotation.origin_zipcode_object.city.name%>>
+			<label for="disabled" class="active" >Origin city</label>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="input-field col s6">
+			<i class="material-icons prefix">map</i>          
+			<input class="validate  " html="{:id=>&quot;icon_prefix&quot;}" disabled="disabled" type="text" value=<%= @quotation.origin_zipcode_object.code %> id="quotation_origin_zipcode">
+				<label for="icon_prefix" class="active">Origin Zipcode</label>
+			</div>
+	</div>
+
+	<div class="row">
+		<div class="input-field col s12">
+			<i class="material-icons prefix">markunread_mailbox</i> 
+			<input id="destination-city" type="text" class="validate autocomplete city" disabled="disabled" value= <%= @quotation.destination_zipcode_object.city.name%>>
+			<label for="disabled" class="active">Destination city</label>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="input-field col s6">
+			<i class="material-icons prefix">map</i>          
+			<input class="validate " html="{:id=>&quot;icon_prefix&quot;}" disabled="disabled" type="text" value=<%= @quotation.destination_zipcode_object.code %>  id="quotation_destination_zipcode">
+			<label for="icon_prefix" class="active">Destination Zipcode</label>
+			</div>
+	</div>
+	<div class="row">
+		<div class="input-field col s6">
+			<i class="material-icons prefix">comment</i>          
+			<%= f.text_field :commodity, class: "validate materialize-textarea", :html=>{:id=>"icon_prefix"},disabled:true%>
+				<label for="icon_prefix" class="active">commodity</label>
+			</div>
+	</div>
+
+	<div class="row">
+		<div class="input-field col s6">       
+			<label>        
+				<input type="checkbox" name="quotation[hazardous]" id="quotation_bonded_cargo" />
+				<span>Hazardous</span>
+			</label>
+		</div>
+
+		<div class="input-field col s6">      
+			<label>
+				<input type="checkbox" name="quotation[bonded_cargo]" id="quotation_bonded_cargo" />
+				<span>Bonded Cargo</span>
+			</label>         
+		</div>
+			
+	</div>
+
+	<div class="row">
+		<div class="input-field col s6">
+			<i class="material-icons prefix">comment</i>          
+			<%= f.text_field :overweight, class: "validate materialize-textarea", :html=>{:id=>"icon_prefix"},disabled:true%>
+				<label for="icon_prefix" class="active">Overweight</label>
+			</div>
+	</div>
+
+	<div class="row">
+		<div class="input-field col s6">
+			<i class="material-icons prefix">date_range</i>          
+			<%= f.text_field :pickup_date, class: "validate datepicker", :html=>{:id=>"icon_prefix"},disabled:true%>
+				<label for="icon_prefix" class="active">PickUp Date</label>
+			</div>
+	</div>
+
+	<div class="row">
+		<div class="input-field col s6">
+			<i class="material-icons prefix">date_range</i>          
+			<%= f.text_field :drop_date, class: "validate datepicker", :html=>{:id=>"icon_prefix"},disabled:true%>
+				<label for="icon_prefix" class="active">Drop Date</label>
+			</div>
+	</div>
+
+	<div class="row">
+		<div class="input-field col s6">
+			<i class="material-icons prefix">comment</i>          
+			<%= f.text_field :equipment_type, class: "validate materialize-textarea", :html=>{:id=>"icon_prefix"},disabled:true%>
+				<label for="icon_prefix" class="active">Equipment Type</label>
+			</div>
+	</div>
+
 <% end %>
 
 
