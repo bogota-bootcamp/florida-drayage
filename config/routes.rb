@@ -19,5 +19,6 @@ Rails.application.routes.draw do
   end
 
   get "cities", to: "cities#index"
+  get "zipcodes", to: "cities#zipcodes"
   
 end

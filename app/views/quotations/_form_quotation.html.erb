@@ -62,7 +62,7 @@
   <div class="row">
     <div class="input-field col s6">
       <i class="material-icons prefix">map</i>          
-      <%= f.text_field :origin_zipcode, class: "validate autocomplete ", :html=>{:id=>"icon_prefix"},required:true%>
+      <%= f.text_field :origin_zipcode, class: "validate  ", :html=>{:id=>"icon_prefix"},required:true%>
         <label for="icon_prefix">Origin Zipcode</label>
       </div>
   </div>
@@ -78,7 +78,7 @@
   <div class="row">
     <div class="input-field col s6">
       <i class="material-icons prefix">map</i>          
-      <%= f.text_field :destination_zipcode, class: "validate autocomplete", :html=>{:id=>"icon_prefix"},required:true%>
+      <%= f.text_field :destination_zipcode, class: "validate ", :html=>{:id=>"icon_prefix"},required:true%>
         <label for="icon_prefix">Destination Zipcode</label>
       </div>
   </div>
@@ -159,6 +159,32 @@
         data: data,
         });
       });
+
+    $("#quotation_origin_zipcode").focus(function(){
+       let cityo=$("#origin-city").val()
+        $.ajax({
+        url: "/zipcodes?name="+cityo,
+        context: document.body
+        })
+        .done(function(data) {
+          $('#quotation_origin_zipcode').autocomplete({
+          data: data,
+          });
+        });
+    })
+
+    $("#quotation_destination_zipcode").focus(function(){
+       let cityo=$("#destination-city").val()
+        $.ajax({
+        url: "/zipcodes?name="+cityo,
+        context: document.body
+        })
+        .done(function(data) {
+          $('#quotation_destination_zipcode').autocomplete({
+          data: data,
+          });
+        });
+    })
   });
 </script>
 
