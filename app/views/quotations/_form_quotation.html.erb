@@ -53,8 +53,8 @@
   <br>
   <div class="row">
     <div class="input-field col s12">
-      <i class="material-icons prefix">markunread_mailbox</i> 
-      <input id="origin-city" type="text" class="validate autocomplete city">
+      <i class="material-icons prefix">markunread_mailbox</i>     
+      <%= f.text_field :origin_city, class: "validate autocomplete city", :html=>{:id=>"icon_prefix"},required:true%>
       <label for="disabled">Origin city</label>
     </div>
   </div>
@@ -63,14 +63,14 @@
     <div class="input-field col s6">
       <i class="material-icons prefix">map</i>          
       <%= f.text_field :origin_zipcode, class: "validate  ", :html=>{:id=>"icon_prefix"},required:true%>
-        <label for="icon_prefix">Origin Zipcode</label>
+      <label for="icon_prefix">Origin Zipcode</label> 
       </div>
   </div>
 
   <div class="row">
     <div class="input-field col s12">
       <i class="material-icons prefix">markunread_mailbox</i> 
-      <input id="destination-city" type="text" class="validate autocomplete city">
+      <%= f.text_field :destination_city, class: "validate autocomplete city", :html=>{:id=>"icon_prefix"},required:true%>
       <label for="disabled">Destination city</label>
     </div>
   </div>
@@ -161,7 +161,7 @@
       });
 
     $("#quotation_origin_zipcode").focus(function(){
-       let cityo=$("#origin-city").val()
+       let cityo=$("#quotation_origin_city").val()
         $.ajax({
         url: "/zipcodes?name="+cityo,
         context: document.body
@@ -174,7 +174,7 @@
     })
 
     $("#quotation_destination_zipcode").focus(function(){
-       let cityo=$("#destination-city").val()
+       let cityo=$("#quotation_destination_city").val()
         $.ajax({
         url: "/zipcodes?name="+cityo,
         context: document.body

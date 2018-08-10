@@ -7,8 +7,6 @@ class Quotation < ApplicationRecord
 	validates :phone, :presence => true
 	validates :email, :presence => true
 	validates :comments, :presence => true
-	validates :hazardous, :presence=> true
-	validates :bonded_cargo, :presence=> true
 	validates :equipment_type, :presence=> true
 	
 	def origin_zipcode_object
