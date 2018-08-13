@@ -27,7 +27,7 @@ class InvoicesController < ApplicationController
 
     invoice= Invoice.find(params[:id])
     quotation= Quotation.find(params[:quotation_id])
-
+    #debugger
 
     customer = Stripe::Customer.create(
       :email => params[:stripeEmail],
@@ -39,22 +39,23 @@ class InvoicesController < ApplicationController
       :amount      => invoice.price*100,
       :description => "#{quotation.id}-#{invoice.id}",
       :currency    => 'usd'
-    )
-    
+    )   
+
+    invoice.uploads.attach(params[quotation_invoice_path(quotation,invoice)][:uploads]) 
     invoice.update(paid_out: true)
     flash[:success] = "payment accepted"
-
+      
+    redirect_to  quotation_invoice_path(quotation,invoice)
+    
     rescue Stripe::CardError => e
       flash[:error] = e.message
       redirect_to back
-      
-    redirect_to  quotation_invoice_path(quotation,invoice)
   end
 
   private
 
   def invoice_parameters
-    params.require(:invoice).permit(:price)
+    params.require(:invoice).permit(:price, uploads:[])
   end
 end
 
