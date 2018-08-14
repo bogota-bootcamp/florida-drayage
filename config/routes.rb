@@ -6,13 +6,16 @@ Rails.application.routes.draw do
   
   get "conversations", to: "conversations#index"
 
-  get "quotations", to: "quotations#index"
+  get "quotations", to: "quotations#index" 
 
   resources :quotations do
-  	resources :invoices
+    patch "invoices/:id", to: "invoices#upload"
+  	resources :invoices do      
+    end
+
     post "invoices/:id", to: "invoices#payment" 
     
-  end
+  end 
 
   resources :conversations, only:[:create,:new,:destroy,:show] do
   	resources :messages, only:[:create]

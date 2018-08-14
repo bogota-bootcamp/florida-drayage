@@ -1,0 +1,2 @@
+$("#upload-container").html( "<%= j render partial: '/invoices/upload_list', locals:{quotation:@quotation,_invoice:@invoice},layout:false %>")
+$(".cont-flash-messages").append('<div class="alert alert-success alert-dismissible" style= "z-index: 1040;"> <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> Files uploaded successfully</div>')

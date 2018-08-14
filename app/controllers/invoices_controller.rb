@@ -39,17 +39,22 @@ class InvoicesController < ApplicationController
       :amount      => invoice.price*100,
       :description => "#{quotation.id}-#{invoice.id}",
       :currency    => 'usd'
-    )   
+    )
 
-    invoice.uploads.attach(params[quotation_invoice_path(quotation,invoice)][:uploads]) 
     invoice.update(paid_out: true)
     flash[:success] = "payment accepted"
       
     redirect_to  quotation_invoice_path(quotation,invoice)
-    
+
     rescue Stripe::CardError => e
       flash[:error] = e.message
       redirect_to back
+  end
+
+  def upload
+    @invoice= Invoice.find(params[:id])
+    @invoice.uploads.attach(params[:invoice][:uploads])
+    @quotation= @invoice.quotation
   end
 
   private

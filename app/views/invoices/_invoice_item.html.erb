@@ -9,4 +9,8 @@
   <% end%>
 </li>
 
-<%=  render partial: "/invoices/upload_list", locals:{_invoice:_invoice},layout:false %>
+<ul class="collapsible" id="upload-container">
+	<%=  render partial: "/invoices/upload_list", locals:{_invoice:_invoice},layout:false %>
+<ul>
+
+ 

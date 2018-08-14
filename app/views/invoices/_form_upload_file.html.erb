@@ -1,0 +1,5 @@
+
+<%= form_for [quotation,_invoice],  remote: true do |f|%>
+  <%= f.file_field :uploads, multiple: true%>
+  <%= f.submit %>
+<% end%> 

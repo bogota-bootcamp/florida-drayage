@@ -1,8 +1,11 @@
-<%=  render partial: "/invoices/upload_list", locals:{_invoice:@invoice},layout:false %>
-<%= form_for quotation_invoice_path(@quotation,@invoice)  do |f| %>
-  
-  <%= f.file_field :uploads, multiple: true%>
+<ul class="collapsible" id="upload-container">
+<%=  render partial: "/invoices/upload_list", locals:{quotation:@quotation,_invoice:@invoice},layout:false %>
+</ul>
 
+
+
+
+<%= form_for quotation_invoice_path(@quotation,@invoice)  do |f| %>
   <article>
     <% if flash[:error].present? %>
       <div id="error_explanation">
