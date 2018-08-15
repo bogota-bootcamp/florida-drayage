@@ -1,10 +1,16 @@
 <li class="collection-item avatar <%= 'active' if _invoice.paid_out  %>">
-	<img  src= "" alt="" class="circle"> 
-	<span class="title"><%="Invoice: #{_invoice.id}" %></span>
-	<p><%= "#{@quotation.first_name} #{@quotation.last_name}"%> <br>
-			<%= "#{@quotation.email}"%>
-	 	</p>
-	<%= link_to  quotation_invoice_path(@quotation,_invoice),:class => "secondary-content"  do %>
-		<i class="material-icons">send</i>
-	<% end%>
+  <img  src= "" alt="" class="circle"> 
+  <span class="title"><b>Invoice:</b><%="#{_invoice.id}" %></span>
+  <p> <b>Name: </b><%= "#{@quotation.first_name} #{@quotation.last_name}"%> <br>
+      <b>E-mail: </b><%= "#{@quotation.email}"%>
+    </p>
+  <%= link_to  quotation_invoice_path(@quotation,_invoice),:class => "secondary-content"  do %>
+    <i class="material-icons">send</i>
+  <% end%>
 </li>
+
+<ul class="collapsible" id="upload-container">
+	<%=  render partial: "/invoices/upload_list", locals:{_invoice:_invoice},layout:false %>
+<ul>
+
+ 

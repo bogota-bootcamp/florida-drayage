@@ -1,0 +1,33 @@
+<li>
+  <div class="collapsible-header"><i class="material-icons">attach_file</i>Uploads</div>
+  <div class="collapsible-body">
+    <table>
+      <thead>
+        <th>Name </th>
+        <th>Size</th>
+        <th>Link</th>
+      </thead>
+
+      <tbody >            
+        <% _invoice.uploads.each do |upload|%>
+          <tr>
+            <td> <%=upload.filename%></td>
+            <td> <%=upload.blob.byte_size%></td>
+            <td><%= link_to upload,:target => "_blank" do  %>
+              <i class="material-icons">file_download</i>
+              <%end%>
+            </td>
+          </tr>
+        <% end%>
+  
+      </tbody>
+    </table>
+    <%= render partial: "/invoices/form_upload_file",layout: false, locals:{quotation:@quotation,_invoice: _invoice}%>   
+  </div>
+
+</li>
+<script>
+  $(document).ready(function(){
+    $('.collapsible').collapsible();
+  });        
+</script>

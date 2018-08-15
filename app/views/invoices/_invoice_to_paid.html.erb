@@ -1,0 +1,25 @@
+<ul class="collapsible" id="upload-container">
+<%=  render partial: "/invoices/upload_list", locals:{quotation:@quotation,_invoice:@invoice},layout:false %>
+</ul>
+
+
+
+
+<%= form_for quotation_invoice_path(@quotation,@invoice)  do |f| %>
+  <article>
+    <% if flash[:error].present? %>
+      <div id="error_explanation">
+        <p><%= flash[:error] %></p>
+      </div>
+    <% end %>
+    <label class="amount">
+      <span>Amount: $<%= @invoice.price%></span>
+    </label>
+  </article>
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description=<%= "#{@invoice.id}"%>
+          data-amount= <%= "#{@invoice.price*100}"%>
+          data-locale="auto"></script>
+<% end %>

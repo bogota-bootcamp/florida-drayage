@@ -28,7 +28,7 @@
       	<ul class="collection" id="invoices-container">
 	        <% @invoices.each do |_invoice|%>
 						<%if _invoice.id%> 		
-							<%= render partial: "/invoices/invoice_item",locals:{quotation:@quotation,_invoice:_invoice} %>
+							<%= render partial: "/invoices/invoice_item",locals:{quotation:@quotation,_invoice:_invoice} %>              
 						<% end %> 
 					<% end%>
 				</ul>
