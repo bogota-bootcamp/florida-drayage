@@ -9,12 +9,10 @@ class Quotation < ApplicationRecord
 	validates :comments, :presence => true
 	validates :equipment_type, :presence=> true
 	
-	def origin_zipcode_object
-		 zipcode= Zipcode.find(self.origin_zipcode) if self.origin_zipcode
+	def suggested_price
+		 zipcode= Zipcode.find_by(code:self.destination_zipcode) 
+		 price= zipcode.price
 	end	
 
-	def destination_zipcode_object
-		zipcode= Zipcode.find(self.destination_zipcode) if self.destination_zipcode
-	end
 end
 	
