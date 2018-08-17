@@ -1,6 +1,6 @@
 <%= form_for [@quotation, @invoice] do |f| %>
 	<h4>Suggested Price: $<%= @quotation.suggested_price %></h4>
 	<label>Price($USD):</label>
-	<%= f.text_field :price, class: "validate", :html=>{:id=>"icon_prefix"} ,placeholder: @quotation.sugested_price,required: true%>
+	<%= f.text_field :price, class: "validate", :html=>{:id=>"icon_prefix"} ,required: true%>
 	<%= f.submit%>
  <% end %>

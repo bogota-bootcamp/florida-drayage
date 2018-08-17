@@ -1,20 +1,7 @@
 // Place all the styles related to the quotations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.modal {
-    display: none;
-    position: fixed;
-    left: 0;
-    right: 0;
-    background-color: #fafafa;
-    padding: 0;
-    max-height: 70%;
-    width: 100%;
-    margin: auto;
-    overflow-y: auto;
-    border-radius: 2px;
-    will-change: top, opacity;
-}
+
 .button-region{
 
   position: absolute;
