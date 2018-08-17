@@ -1,7 +1,8 @@
 <div class="chat-cont">
+	<div class="container">
   <%= render partial: "/quotations/quotation_header"%>
   <% unless @invoice.paid_out %>
     <%= render partial: "/invoices/invoice_to_paid" %>  
   <% end %>
-  
+  </div>
 </div>
