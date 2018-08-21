@@ -13,7 +13,7 @@
           <tr>
             <td> <%=upload.filename%></td>
             <td> <%=upload.blob.byte_size%></td>
-            <td><%= link_to upload,:target => "_blank" do  %>
+            <td><%= link_to upload,:target => "_blank",:class => "icon-color" do  %>
               <i class="material-icons">file_download</i>
               <%end%>
             </td>

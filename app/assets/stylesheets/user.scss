@@ -82,3 +82,85 @@
 .datepicker-modal {
   height:343px
 }
+
+
+/* quotation header */
+
+.btn,.btn:hover{
+  background-color: #ff9c39 !important;
+}
+
+.collection .collection-item.active {
+    background-color: #ff9c39 !important;
+    .secondary-content{
+      color: #fff !important;
+   }
+  }
+
+.secondary-content {
+    float: right;
+    color: #ff9c39 !important;
+}
+
+.icon-color, .icon-color:hover {
+  color: #ff9c39 !important;
+}
+
+
+/* label focus color */
+   .input-field input[type=text]:focus + label {
+     color: #ff9c39 !important;
+}
+/* label underline focus color */
+   .input-field input[type=text]:focus {
+     border-bottom: 1px solid #ff9c39 !important;
+     box-shadow: 0 1px 0 0 #ff9c39 !important;
+   }
+
+.input-field .prefix.active{color:#ff9c39 !important}
+
+textarea.materialize-textarea:focus:not([readonly]),
+input.valid[type=text]:not(.browser-default),
+input.valid[type=text]:not(.browser-default):focus,
+input.valid[type=text]:not(.browser-default):focus:not([readonly]),
+textarea.materialize-textarea.valid
+ {
+border-bottom:1px solid #ff9c39 !important;
+-webkit-box-shadow:0 1px 0 0 #ff9c39 !important;
+box-shadow:0 1px 0 0 #ff9c39 !important}
+
+textarea.materialize-textarea:focus:not([readonly])+label,
+input.valid[type=text]:not(.browser-default):focus.valid ~ label,
+.dropdown-content li>span{
+  color: #ff9c39 !important;
+  }
+
+ input[type=email]:not(.browser-default):focus:not([readonly]){
+ border-bottom:1px solid #ff9c39 !important;
+-webkit-box-shadow:0 1px 0 0 #ff9c39 !important;
+box-shadow:0 1px 0 0 #ff9c39 !important}
+
+input[type=email]:not(.browser-default):focus:not([readonly])+label{
+  color: #ff9c39 !important;
+  }
+
+  [type="checkbox"]:checked+span:not(.lever):before {
+    border-right: 2px solid #ff9c39 !important;
+    border-bottom: 2px solid #ff9c39 !important;
+  }
+.datepicker-date-display,
+button:focus {
+      background-color: #ff9c39 !important;
+}
+
+.datepicker-table td.is-selected {
+    background-color:#ff9c39 !important;}
+
+.datepicker-table td.is-today, .datepicker-cancel, 
+.datepicker-done{
+     color: #ff9c39 !important; 
+}
+
+.btn-link:hover{
+  color: #fff !important;
+}

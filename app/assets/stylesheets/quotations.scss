@@ -1,6 +1,19 @@
 // Place all the styles related to the quotations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+ 
+
+.quotation-item{
+
+  text-align: center;
+  cursor: pointer;
+
+  a {
+    color:black;
+    text-decoration: none;
+  }
+
+}
 
 .button-region{
 

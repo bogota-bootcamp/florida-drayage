@@ -30,7 +30,7 @@ class QuotationsController < ApplicationController
       response = mail.deliver_now
 			flash[:success] = "Invoice created"			
 		else
-			errors= quotation.errors.full_messages
+			errors= @quotation.errors.full_messages
 			flash[:danger] = errors			
 		end
 		redirect_to root_path
