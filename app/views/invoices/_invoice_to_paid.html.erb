@@ -6,20 +6,22 @@
 
 
 <%= form_for quotation_invoice_path(@quotation,@invoice)  do |f| %>
-  <article>
-    <% if flash[:error].present? %>
-      <div id="error_explanation">
-        <p><%= flash[:error] %></p>
-      </div>
-    <% end %>
-    <label class="amount">
-      <span>Amount: $<%= @invoice.price%></span>
-    </label>
-  </article>
+  <div style="text-align: center; margin-bottom: 55px;">
+    <article>
+      <% if flash[:error].present? %>
+        <div id="error_explanation">
+          <p><%= flash[:error] %></p>
+        </div>
+      <% end %>
+      <label class="amount">
+        <span>Amount: $<%= @invoice.price%></span>
+      </label>
+    </article>
 
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description=<%= "#{@invoice.id}"%>
-          data-amount= <%= "#{@invoice.price*100}"%>
-          data-locale="auto"></script>
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+            data-description=<%= "Invoice:#{@invoice.id}"%>
+            data-amount= <%= "#{@invoice.price*100}"%>
+            data-locale="auto"></script>
+  </div>
 <% end %>

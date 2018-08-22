@@ -1,9 +1,14 @@
 nav{
-    background: #ff9c39 !important;
+    background: #607D8B !important;
     position: fixed;
     z-index: 10;
     a, a:hover,a:visited {
       color: white !important;
+      ul{
+        li{
+              margin-left: 5px
+        }
+      }
     }
 
 
@@ -28,7 +33,7 @@ nav{
 }
 
 .navbar-toggler, .navbar-toggler:active{
-	background-color: #ff9c39 !important
+	background-color: #607D8B !important
 }
 
 body{

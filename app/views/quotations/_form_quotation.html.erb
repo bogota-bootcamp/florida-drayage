@@ -1,154 +1,231 @@
-<%= form_for [@quotation]  do |f| %>
-	<div class="row">
-    <div class="input-field col s6">
-      <i class="material-icons prefix">account_circle</i>          
-      <%= f.text_field :first_name, class: "validate", :html=>{:id=>"icon_prefix"},required:true%>
-      <label for="icon_prefix">First Name</label>
+<style type="text/css">
+  .modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    background-color: #fafafa;
+    padding: 0;
+    max-height: 70%;
+    width: 100%;
+    margin: auto;
+    overflow-y: auto;
+    border-radius: 2px;
+    will-change: top, opacity;
+}
+</style>
+<div class="modal-wrap">
+  <div class="modal-header">
+    <span class="is-active"></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <div class="modal-bodies">
+    <%= form_for [@quotation]  do |f| %>
+    <div class="modal-body modal-body-step-1 is-showing">
+      <div class="title">Step 1</div>
+      <div class="description"></div>      
+        <div class="row">
+          <div class="input-field col s6">
+            <i class="material-icons prefix">account_circle</i>          
+            <%= f.text_field :first_name, class: "validate", :html=>{:id=>"icon_prefix"}%>
+            <label for="icon_prefix">First Name</label>
+          </div>
+
+          <div class="input-field col s6">
+            <i class="material-icons prefix">account_circle</i>          
+            <%= f.text_field :last_name, class: "validate", :html=>{:id=>"icon_prefix"}%>
+            <label for="icon_prefix">Last Name</label>
+          </div>
+        </div>
+        <div class="row">      
+          <div class="input-field col s6">
+            <i class="material-icons prefix">account_circle</i>        
+            <%= f.text_field :title, class: "validate", :html=>{:id=>"icon_prefix"}%>
+            <label for="icon_prefix">Title</label>
+          </div>
+        </div>
+        <div class="row">      
+          <div class="input-field col s6">
+            <i class="material-icons prefix">domain</i>          
+            <%= f.text_field :company, class: "validate", :html=>{:id=>"icon_prefix"}%>
+              <label for="icon_prefix">Company</label>
+            </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6">
+            <i class="material-icons prefix">phone</i>
+            <%= f.text_field :phone, class: "validate", :html=>{:id=>"icon_prefix"}%>
+            <label for="icon_telephone">Telephone</label>
+          </div>
+        </div>
+        <div class="text-center button-region">
+          <div class="button foward">Next</div>
+        </div>      
     </div>
 
-    <div class="input-field col s6">
-      <i class="material-icons prefix">account_circle</i>          
-      <%= f.text_field :last_name, class: "validate", :html=>{:id=>"icon_prefix"},required:true%>
-    	<label for="icon_prefix">Last Name</label>
-    </div>
-  </div>
-  <div class="row">      
-		<div class="input-field col s6">
-			<i class="material-icons prefix">account_circle</i>          
-			<%= f.text_field :title, class: "validate", :html=>{:id=>"icon_prefix"}%>
-			<label for="icon_prefix">Title</label>
-		</div>
-  </div>
-  <div class="row">      
-   	<div class="input-field col s6">
-    	<i class="material-icons prefix">domain</i>          
-     	<%= f.text_field :company, class: "validate", :html=>{:id=>"icon_prefix"} , required:true%>
-    		<label for="icon_prefix">Company</label>
-  		</div>
-	</div>
+    <div class="modal-body modal-body-step-2">
+      <div class="title">Step 2</div>
+      <div class="description"></div>      
 
-	<div class="row">
-    <div class="input-field col s6">
-      <i class="material-icons prefix">phone</i>
-      <%= f.text_field :phone, class: "validate", :html=>{:id=>"icon_prefix"},required:true%>
-      <label for="icon_telephone">Telephone</label>
-    </div>
-  </div>
-  <div class="row">
-		<div class="input-field col s6">
-			<i class="material-icons prefix">email</i>          
-			<%= f.email_field :email, :html=>{:id=>"icon_prefix"},required:true%>
-			<label for="icon_prefix">E-mail</label>
-		</div>
-  </div>
-
-  <div class="row">
-		<div class="input-field col s6">
-			<i class="material-icons prefix">comment</i>          
-		 	<%= f.text_area :comments, class: "validate materialize-textarea", :html=>{:id=>"icon_prefix"},required:true%>
-				<label for="icon_prefix">Comments</label>
-			</div>
-  </div>
-
-  <br>
-  <div class="row">
-    <div class="input-field col s12">
-      <i class="material-icons prefix">markunread_mailbox</i>     
-      <%= f.text_field :origin_city, class: "validate autocomplete city", :html=>{:id=>"icon_prefix"},required:true%>
-      <label for="disabled">Origin city</label>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="input-field col s6">
-      <i class="material-icons prefix">map</i>          
-      <%= f.text_field :origin_zipcode, class: "validate  ", :html=>{:id=>"icon_prefix"},required:true%>
-      <label for="icon_prefix">Origin Zipcode</label> 
+      <div class="row">
+        <div class="input-field col s6">
+          <i class="material-icons prefix">email</i>          
+          <%= f.email_field :email, :html=>{:id=>"icon_prefix"}%>
+          <label for="icon_prefix">E-mail</label>
+        </div>
       </div>
-  </div>
 
-  <div class="row">
-    <div class="input-field col s12">
-      <i class="material-icons prefix">markunread_mailbox</i> 
-      <%= f.text_field :destination_city, class: "validate autocomplete city", :html=>{:id=>"icon_prefix"},required:true%>
-      <label for="disabled">Destination city</label>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="input-field col s6">
-      <i class="material-icons prefix">map</i>          
-      <%= f.text_field :destination_zipcode, class: "validate ", :html=>{:id=>"icon_prefix"},required:true%>
-        <label for="icon_prefix">Destination Zipcode</label>
+      <div class="row">
+        <div class="input-field col s6">
+          <i class="material-icons prefix">comment</i>          
+          <%= f.text_area :comments, class: "validate materialize-textarea", :html=>{:id=>"icon_prefix"}%>
+          <label for="icon_prefix">Comments</label>
+        </div>
       </div>
-  </div>
-  <div class="row">
-    <div class="input-field col s6">
-      <i class="material-icons prefix">comment</i>          
-      <%= f.text_field :commodity, class: "validate materialize-textarea", :html=>{:id=>"icon_prefix"},required:true%>
-        <label for="icon_prefix">commodity</label>
+      <div class="row">
+        <div class="input-field col m12 s12">
+          <i class="material-icons prefix">markunread_mailbox</i>     
+          <%= f.text_field :origin_city, class: "validate autocomplete city", :html=>{:id=>"icon_prefix"}%>
+          <label for="icon_prefix">Origin city</label>
+        </div>
       </div>
-  </div>
-
-  <div class="row">
-    <div class="input-field col s6">       
-      <label>        
-        <input type="checkbox" name="quotation[hazardous]" id="quotation_bonded_cargo" />
-        <span>Hazardous</span>
-      </label>
-    </div>
-
-    <div class="input-field col s6">      
-      <label>
-        <input type="checkbox" name="quotation[bonded_cargo]" id="quotation_bonded_cargo" />
-        <span>Bonded Cargo</span>
-      </label>         
-    </div>
+      <div class="row">
+        <div class="input-field col m12 s12">
+          <i class="material-icons prefix">map</i>          
+          <%= f.text_field :origin_zipcode, class: "validate  ", :html=>{:id=>"icon_prefix"}%>
+          <label for="icon_prefix">Origin Zipcode</label> 
+        </div>
+      </div>
+      <div class="text-center button-region">
+        <div class="button back">Back</div>
+        <div class="button foward">Next</div>        
+      </div>
       
-  </div>
+    </div>
 
-  <div class="row">
-    <div class="input-field col s6">
-      <i class="material-icons prefix">comment</i>          
-      <%= f.text_field :overweight, class: "validate materialize-textarea", :html=>{:id=>"icon_prefix"},required:true%>
-        <label for="icon_prefix">Overweight</label>
+    <div class="modal-body modal-body-step-3">
+      <div class="title">Step 3</div>
+      <div class="description"></div>
+   
+
+        <div class="row">
+          <div class="input-field col m12 s12">
+            <i class="material-icons prefix">markunread_mailbox</i> 
+            <%= f.text_field :destination_city, class: "validate autocomplete city", :html=>{:id=>"icon_prefix"}%>
+            <label for="icon_prefix">Destination city</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col m12 s12">
+            <i class="material-icons prefix">map</i>          
+            <%= f.text_field :destination_zipcode, class: "validate ", :html=>{:id=>"icon_prefix"}%>
+            <label for="icon_prefix">Destination Zipcode</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6">
+            <i class="material-icons prefix">comment</i>          
+            <%= f.text_field :commodity, class: "validate", :html=>{:id=>"icon_prefix"}%>
+            <label for="icon_prefix">commodity</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col m12 s12">       
+            <label>        
+              <input type="checkbox" name="quotation[hazardous]" id="quotation_bonded_cargo">
+              <span>Hazardous</span>
+            </label>
+          </div>
+
+          <div class="input-field col m12 s12">      
+            <label>
+              <input type="checkbox" name="quotation[bonded_cargo]" id="quotation_bonded_cargo">
+              <span>Bonded Cargo</span>
+            </label>         
+          </div>            
+        </div>
+      <div class="text-center button-region">
+        <div class="button back">Back</div>
+        <div class="button foward">Next</div> 
       </div>
-  </div>
+    </div>
 
-  <div class="row">
-    <div class="input-field col s6">
-      <i class="material-icons prefix">date_range</i>          
-      <%= f.text_field :pickup_date, class: "validate datepicker", :html=>{:id=>"icon_prefix"},required:true%>
-        <label for="icon_prefix">PickUp Date</label>
+    <div class="modal-body modal-body-step-2">
+      <div class="title">Step 4</div>
+      <div class="description"></div>      
+      <div class="row">
+        <div class="input-field col s6">
+          <i class="material-icons prefix">comment</i>          
+          <input class="validate" html="{:id=>&quot;icon_prefix&quot;}"  type="text" name="quotation[overweight]" id="quotation_overweight">
+            <label for="icon_prefix">Overweight</label>
+          </div>
       </div>
-  </div>
 
-  <div class="row">
-    <div class="input-field col s6">
-      <i class="material-icons prefix">date_range</i>          
-      <%= f.text_field :drop_date, class: "validate datepicker", :html=>{:id=>"icon_prefix"},required:true%>
-        <label for="icon_prefix">Drop Date</label>
+      <div class="row">
+        <div class="input-field col s6">
+          <i class="material-icons prefix">date_range</i>          
+          <%= f.text_field :pickup_date, class: "validate datepicker", :html=>{:id=>"icon_prefix"}%>
+          <label for="icon_prefix">PickUp Date</label>
+        </div>
       </div>
-  </div>
 
-  <div class="row">
-    <div class="input-field col s6">
-      <i class="material-icons prefix">comment</i>          
-      <%= f.text_field :equipment_type, class: "validate materialize-textarea", :html=>{:id=>"icon_prefix"},required:true%>
-        <label for="icon_prefix">Equipment Type</label>
+      <div class="row">
+        <div class="input-field col s6">
+          <i class="material-icons prefix">date_range</i>          
+          <%= f.text_field :drop_date, class: "validate datepicker", :html=>{:id=>"icon_prefix"}%>
+          <label for="icon_prefix">Drop Date</label>
+        </div>
       </div>
-  </div>
 
-  <div class="row">       
-		<!-- <%= f.submit 'Send', class: "btn-send" %> -->
-		<%= f.button :submit , class: "btn-send" do %>
-			<i class="material-icons send" style="font-size: 20px;">send</i>
-		<% end %>			
+      <div class="row">
+        <div class="input-field col s6">
+          <i class="material-icons prefix">comment</i>          
+          <%= f.text_field :equipment_type, class: "validate", :html=>{:id=>"icon_prefix"}%>
+          <label for="icon_prefix">Equipment Type</label>
+        </div>
+      </div> 
+
+      <div class="text-center button-region">    
+      <!-- <input type="submit" name="commit" value="Send" class="btn-send" data-disable-with="Send" /> -->
+        <div class="button back">Back</div>
+        <%= f.button :submit , class: "btn-send button" do %>
+          <i class="material-icons send" style="font-size: 20px;">send</i>
+        <% end %>             
+      </div>       
+    </div>
+
+    <% end %>
   </div>
-<% end %>
+</div>
 
 <script>
   $(document).ready(function(){
+    $('.carousel.carousel-slider').carousel({
+      fullWidth: true,
+      indicators: true
+    });
+    $.ajaxSetup({
+        headers: {
+    'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+      }
+      });
+    $("form").submit(function(e) {
+
+    var form = $(this);
+    var url = form.attr('action');
+
+    $.ajax({
+           type: "POST",
+           url: url,
+           data: form.serialize(), // serializes the form's elements.          
+         });
+
+        e.preventDefault(); // avoid to execute the actual submit of the form.
+      });
+
+
     $('.datepicker').datepicker();
     $.ajax({
         url: "/cities",
@@ -162,6 +239,7 @@
 
     $("#quotation_origin_zipcode").focus(function(){
        let cityo=$("#quotation_origin_city").val()
+       if (cityo !== "") {
         $.ajax({
         url: "/zipcodes?name="+cityo,
         context: document.body
@@ -170,11 +248,14 @@
           $('#quotation_origin_zipcode').autocomplete({
           data: data,
           });
+        
         });
+      }
     })
 
     $("#quotation_destination_zipcode").focus(function(){
        let cityo=$("#quotation_destination_city").val()
+        if (cityo !== "") {
         $.ajax({
         url: "/zipcodes?name="+cityo,
         context: document.body
@@ -184,8 +265,72 @@
           data: data,
           });
         });
+      }
     })
   });
+</script>
+<script type="text/javascript">
+
+  $('.foward').click(function(){
+  var $btn = $(this),
+      $step = $btn.parents('.modal-body'),
+      stepIndex = $step.index()-2,
+      $pag = $('.modal-header span').eq(stepIndex);
+
+  if(stepIndex === 0 || stepIndex === 1 || stepIndex === 2) { foward($step, $pag); }  
+});
+
+  $('.back').click(function(){
+  var $btn = $(this),
+      $step = $btn.parents('.modal-body'),
+      stepIndex = $step.index()-2,
+      $pag = $('.modal-header span').eq(stepIndex);
+
+  if(stepIndex === 3 || stepIndex === 1 || stepIndex === 2) { back($step, $pag); }  
+});
+
+
+function foward($step, $pag){
+
+  // animate the step out
+  $step.addClass('animate-out');
+  
+  // animate the step in
+  setTimeout(function(){
+    $step.removeClass('animate-out is-showing')
+         .next().addClass('animate-in');
+    $pag.removeClass('is-active')
+          .next().addClass('is-active');
+  }, 500);
+  
+  // after the animation, adjust the classes
+  setTimeout(function(){
+    $step.next().removeClass('animate-in')
+          .addClass('is-showing');
+    
+  }, 1200);
+}
+
+function back($step, $pag){
+
+  // animate the step out
+  $step.addClass('animate-out');
+  
+  // animate the step in
+  setTimeout(function(){
+    $step.removeClass('animate-out is-showing')
+         .prev().addClass('animate-in');
+    $pag.removeClass('is-active')
+          .prev().addClass('is-active');
+  }, 200);
+  
+  // after the animation, adjust the classes
+  setTimeout(function(){
+    $step.prev().removeClass('animate-in')
+          .addClass('is-showing');
+    
+  }, 1200);
+}
 </script>
 
 

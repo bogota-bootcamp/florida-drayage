@@ -3,16 +3,16 @@
 <div class="container-fluid chat-cont d-flex flex-row">
 	<div class="row" style="width:100% !important">
 
-		<div class=" col-md-3  col-sm-3 col-xs-12  flex-column align-items-center justify-content-start ">
-			<ul class="collection">
+		<div class=" col-md-3  col-sm-3 col-xs-12  flex-column align-items-center justify-content-start clients-section">
+			<ul class="collection" id = "quotation-list-container">
 				<% @quotations.each do |quotation|%>
-					<li class="collection-item"> <%= link_to  "#{quotation.id}-#{quotation.email}", quotation , remote: true%> </li>
+					<li class="collection-item quotation-item"> <%= link_to  "#{quotation.id}-#{quotation.email}", quotation , remote: true%> </li>
 				<% end %>
 			</ul>
 		</div>
 
 
-		<div class=" col-md-9 col-sm-9 col-xs-12 " id="quotation-container" >
+		<div class=" col-md-9 col-sm-9 col-xs-12 clients-section" id="quotation-container" >
 
 			
 		</div>
@@ -21,3 +21,7 @@
 
 	</div>
 </div>
+
+<script>
+	$("#quotation-list-container").on("click","li",function(e){ $(this).find( "a" )[0].click();})
+</script>

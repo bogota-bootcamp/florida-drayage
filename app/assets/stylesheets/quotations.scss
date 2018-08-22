@@ -1,3 +1,161 @@
 // Place all the styles related to the quotations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+ 
+
+.quotation-item{
+
+  text-align: center;
+  cursor: pointer;
+
+  a {
+    color:black;
+    text-decoration: none;
+  }
+
+}
+
+.button-region{
+
+  position: absolute;
+  bottom: 10px;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  width: 89%;
+}
+.button,
+.rerun-button {
+  padding: 10px 20px;
+  border-radius: 3px;
+  background: #FF6F00;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: inline-block;
+  cursor: pointer;
+  margin: 20px;
+}
+.button:hover,
+.rerun-button:hover {
+  background: #e66400;
+}
+.button.rerun-button,
+.rerun-button.rerun-button {
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  margin-bottom: 50px;
+  box-shadow: 0px 10px 15px -6px rgba(0, 0, 0, 0.2);
+  display: none;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.modal-wrap {
+  max-width: 600px;
+  margin: 50px auto;
+  transition: -webkit-transform 300ms ease-in-out;
+  transition: transform 300ms ease-in-out;
+  transition: transform 300ms ease-in-out, -webkit-transform 300ms ease-in-out;
+}
+
+.modal-header {
+  height: 45px;
+  background: white;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-header span {
+  display: block;
+  height: 12px;
+  width: 12px;
+  margin: 5px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.2);
+}
+.modal-header span.is-active {
+  background: rgba(0, 0, 0, 0.4);
+  background: #FF8F00;
+}
+
+.modal-bodies {
+  position: relative;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+}
+
+.modal-body {
+  background: white;
+  padding: 40px 40px;
+  box-shadow: 0px 50px 30px -30px rgba(0, 0, 0, 0.3);
+  margin-bottom: 50px;
+  position: block;
+  top: 0;
+  display: none;
+  box-sizing: border-box;
+  width: 100%;
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+  height: 600px;
+}
+.modal-body.is-showing {
+  display: block;
+}
+
+.animate-out {
+  -webkit-animation: out 700ms linear;
+          animation: out 700ms linear;
+}
+
+.animate-in {
+  -webkit-animation: in 700ms linear;
+          animation: in 700ms linear;
+  display: block;
+}
+
+.animate-up {
+  -webkit-transform: translateY(-500px) rotate(30deg);
+          transform: translateY(-500px) rotate(30deg);
+}
+
+@-webkit-keyframes out {
+  0% {
+    -webkit-transform: translateY(0px) rotate(0deg);
+            transform: translateY(0px) rotate(0deg);
+  }
+
+}
+
+@keyframes out {
+  0% {
+    -webkit-transform: translateY(0px) rotate(0deg);
+            transform: translateY(0px) rotate(0deg);
+  }
+}
+@-webkit-keyframes in {
+  0% {
+    opacity: 0;
+    -webkit-transform: rotateX(-90deg);
+            transform: rotateX(-90deg);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+  }
+}
+@keyframes in {
+  0% {
+    opacity: 0;
+
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+  }
+}
+

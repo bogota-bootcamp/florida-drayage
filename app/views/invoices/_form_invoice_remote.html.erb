@@ -1,5 +1,6 @@
 <%= form_for [@quotation, @invoice], remote:true do |f| %>
+	<h4>Suggested Price: $<%= @quotation.suggested_price %></h4>
 	<label>Price($USD):</label>
-	<%= f.text_field :price, class: "validate", :html=>{:id=>"icon_prefix"} ,required: true, layout: false%>
+	<%= f.text_field :price, class: "validate", :html=>{:id=>"icon_prefix"} ,required: true,layout: false%>
 	<%= f.submit%>
  <% end %>

@@ -14,19 +14,23 @@ class QuotationsController < ApplicationController
 	end
 
 	def show
+		user= current_user		
 		@quotation = Quotation.find(params[:id])
 		@invoices = @quotation.invoices		
 		@invoice = @quotation.invoices.new
+		unless (user && (user.has_role? :admin ))	
+			render "quotations/_quotation_header", layout:true
+		end
 	end
 
 	def create
-		quotation= Quotation.new(quotation_parameters)
-		if quotation.save
+		@quotation= Quotation.new(quotation_parameters)
+		if @quotation.save
 			mail=QuotationMailer.new_quotation(@quotation)
-      #response = mail.deliver_now
-			flash[:success] = "Invoice created"			
+      response = mail.deliver_now
+			flash[:success] = "Quote created"			
 		else
-			errors= quotation.errors.full_messages
+			errors= @quotation.errors.full_messages
 			flash[:danger] = errors			
 		end
 		redirect_to root_path
