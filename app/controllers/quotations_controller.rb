@@ -28,7 +28,7 @@ class QuotationsController < ApplicationController
 		if @quotation.save
 			mail=QuotationMailer.new_quotation(@quotation)
       response = mail.deliver_now
-			flash[:success] = "Invoice created"			
+			flash[:success] = "Quote created"			
 		else
 			errors= @quotation.errors.full_messages
 			flash[:danger] = errors			

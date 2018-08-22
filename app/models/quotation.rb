@@ -10,8 +10,8 @@ class Quotation < ApplicationRecord
 	validates :equipment_type, :presence=> true
 	
 	def suggested_price
-		 zipcode= Zipcode.find_by(code:self.destination_zipcode) 
-		 price= zipcode.price
+		 zipcode = Zipcode.find_by(code:self.destination_zipcode)
+		 zipcode ? zipcode.price : nil
 	end	
 
 end
