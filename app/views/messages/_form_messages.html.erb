@@ -1,4 +1,4 @@
-<%= form_for [@conversation,@message]  ,:remote => true do |f| %>
+<%= form_for [@conversation,@message]   do |f| %>
 
 <div class="chat-footer d-flex flex-row">
 	<div class="form-cont ">
@@ -8,9 +8,18 @@
 	</div>
 	<div class="send-cont row col-3">
 		<!-- <%= f.submit 'Send', class: "btn-send" %> -->
-		<%= f.button :submit , class: "btn-send" do %>
+		<%= f.button :submit ,id:"conversation-button",class: "btn-send" do %>
 			<i class="material-icons send" style="font-size: 20px;">send</i>
 		<% end %>
 	</div>
 </div
 <% end %>
+
+<script >
+	$('#message_body').keypress(function (e) {
+  if (e.which == 13) {
+  	e.preventDefault()
+    $("#conversation-button").click()
+  }
+});
+</script>
