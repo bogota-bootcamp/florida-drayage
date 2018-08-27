@@ -29,35 +29,35 @@
         <div class="row">
           <div class="input-field col s6">
             <i class="material-icons prefix">account_circle</i>          
-            <%= f.text_field :first_name, class: "validate", :html=>{:id=>"icon_prefix"}%>
-            <label for="icon_prefix">First Name</label>
+            <%= f.text_field :first_name, class: "validate", id:"quotation_first_name"%>
+            <label for="quotation_first_name">First Name</label>
           </div>
 
           <div class="input-field col s6">
             <i class="material-icons prefix">account_circle</i>          
-            <%= f.text_field :last_name, class: "validate", :html=>{:id=>"icon_prefix"}%>
-            <label for="icon_prefix">Last Name</label>
+            <%= f.text_field :last_name, class: "validate", id:"quotation_last_name" %>
+            <label for="quotation_last_name">Last Name</label>
           </div>
         </div>
         <div class="row">      
           <div class="input-field col s6">
             <i class="material-icons prefix">account_circle</i>        
-            <%= f.text_field :title, class: "validate", :html=>{:id=>"icon_prefix"}%>
-            <label for="icon_prefix">Title</label>
+            <%= f.text_field :title, class: "validate", id:"quotation_title"%>
+            <label for="quotation_title">Title</label>
           </div>
         </div>
         <div class="row">      
           <div class="input-field col s6">
             <i class="material-icons prefix">domain</i>          
-            <%= f.text_field :company, class: "validate", :html=>{:id=>"icon_prefix"}%>
-              <label for="icon_prefix">Company</label>
+            <%= f.text_field :company, class: "validate", id:"quotation_company"%>
+              <label for="quotation_company">Company</label>
             </div>
         </div>
         <div class="row">
           <div class="input-field col s6">
             <i class="material-icons prefix">phone</i>
-            <%= f.text_field :phone, class: "validate", :html=>{:id=>"icon_prefix"}%>
-            <label for="icon_telephone">Telephone</label>
+            <%= f.text_field :phone, class: "validate", id:"quotation_phone"%>
+            <label for="quotation_phone">Telephone</label>
           </div>
         </div>
         <div class="text-center button-region">
@@ -72,30 +72,30 @@
       <div class="row">
         <div class="input-field col s6">
           <i class="material-icons prefix">email</i>          
-          <%= f.email_field :email, :html=>{:id=>"icon_prefix"}%>
-          <label for="icon_prefix">E-mail</label>
+          <%= f.email_field :email, id:"quotation_email"%>
+          <label for="quotation_email">E-mail</label>
         </div>
       </div>
 
       <div class="row">
         <div class="input-field col s6">
           <i class="material-icons prefix">comment</i>          
-          <%= f.text_area :comments, class: "validate materialize-textarea", :html=>{:id=>"icon_prefix"}%>
-          <label for="icon_prefix">Comments</label>
+          <%= f.text_area :comments, class: "validate materialize-textarea", id:"quotation_comments"%>
+          <label for="quotation_comments">Comments</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col m12 s12">
           <i class="material-icons prefix">markunread_mailbox</i>     
-          <%= f.text_field :origin_city, class: "validate autocomplete city", :html=>{:id=>"icon_prefix"}%>
-          <label for="icon_prefix">Origin city</label>
+          <%= f.text_field :origin_city, class: "validate autocomplete city", id:"quotation_origin_city"%>
+          <label for="quotation_origin_city">Origin city</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col m12 s12">
           <i class="material-icons prefix">map</i>          
-          <%= f.text_field :origin_zipcode, class: "validate  ", :html=>{:id=>"icon_prefix"}%>
-          <label for="icon_prefix">Origin Zipcode</label> 
+          <%= f.text_field :origin_zipcode, class: "validate  ", id:"quotation_origin_zipcode"%>
+          <label for="quotation_origin_zipcode">Origin Zipcode</label> 
         </div>
       </div>
       <div class="text-center button-region">
@@ -113,22 +113,22 @@
         <div class="row">
           <div class="input-field col m12 s12">
             <i class="material-icons prefix">markunread_mailbox</i> 
-            <%= f.text_field :destination_city, class: "validate autocomplete city", :html=>{:id=>"icon_prefix"}%>
-            <label for="icon_prefix">Destination city</label>
+            <%= f.text_field :destination_city, class: "validate autocomplete city", id:"quotation_destination_city"%>
+            <label for="quotation_destination_city">Destination city</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col m12 s12">
             <i class="material-icons prefix">map</i>          
-            <%= f.text_field :destination_zipcode, class: "validate ", :html=>{:id=>"icon_prefix"}%>
-            <label for="icon_prefix">Destination Zipcode</label>
+            <%= f.text_field :destination_zipcode, class: "validate ", id:"quotation_destination_zipcode"%>
+            <label for="quotation_destination_zipcode">Destination Zipcode</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s6">
             <i class="material-icons prefix">comment</i>          
-            <%= f.text_field :commodity, class: "validate", :html=>{:id=>"icon_prefix"}%>
-            <label for="icon_prefix">commodity</label>
+            <%= f.text_field :commodity, class: "validate", id:"quotation_commodity"%>
+            <label for="quotation_commodity">commodity</label>
           </div>
         </div>
         <div class="row">
@@ -158,32 +158,32 @@
       <div class="row">
         <div class="input-field col s6">
           <i class="material-icons prefix">comment</i>          
-          <input class="validate" html="{:id=>&quot;icon_prefix&quot;}"  type="text" name="quotation[overweight]" id="quotation_overweight">
-            <label for="icon_prefix">Overweight</label>
+          <input class="validate"   type="text" name="quotation[overweight]" id="quotation_overweight">
+            <label for="quotation_overweight">Overweight</label>
           </div>
       </div>
 
       <div class="row">
         <div class="input-field col s6">
           <i class="material-icons prefix">date_range</i>          
-          <%= f.text_field :pickup_date, class: "validate datepicker", :html=>{:id=>"icon_prefix"}%>
-          <label for="icon_prefix">PickUp Date</label>
+          <%= f.text_field :pickup_date, class: "validate datepicker", id:"quotation_pickup_date"%>
+          <label for="quotation_pickup_date">PickUp Date</label>
         </div>
       </div>
 
       <div class="row">
         <div class="input-field col s6">
           <i class="material-icons prefix">date_range</i>          
-          <%= f.text_field :drop_date, class: "validate datepicker", :html=>{:id=>"icon_prefix"}%>
-          <label for="icon_prefix">Drop Date</label>
+          <%= f.text_field :drop_date, class: "validate datepicker", id:"quotation_drop_date"%>
+          <label for="quotation_drop_date">Drop Date</label>
         </div>
       </div>
 
       <div class="row">
         <div class="input-field col s6">
           <i class="material-icons prefix">comment</i>          
-          <%= f.text_field :equipment_type, class: "validate", :html=>{:id=>"icon_prefix"}%>
-          <label for="icon_prefix">Equipment Type</label>
+          <%= f.text_field :equipment_type, class: "validate", id:"quotation_equipment_type"%>
+          <label for="quotation_equipment_type">Equipment Type</label>
         </div>
       </div> 
 
