@@ -19,7 +19,7 @@
     </article>
 
     <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-            data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+            data-key="<%= Rails.configuration.stripe[:publishable_key] %>"            
             data-description=<%= "Invoice:#{@invoice.id}"%>
             data-amount= <%= "#{@invoice.price*100}"%>
             data-locale="auto"></script>
