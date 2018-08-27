@@ -3,8 +3,8 @@ class InvoicesController < ApplicationController
     @quotation= Quotation.find(params[:quotation_id])    
     @invoice=@quotation.invoices.new(invoice_parameters)
     if @invoice.save    
-      mail=InvoiceMailer.new_invoice(@quotation,@invoice)
-      response = mail.deliver_now
+      #mail=InvoiceMailer.new_invoice(@quotation,@invoice)
+      #response = mail.deliver_now
       flash[:success] = "Invoice created"
     else
       @errors= invoice.errors.full_messages
