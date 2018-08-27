@@ -21,13 +21,17 @@
       <div class= "cont-flash-messages">
         <% flash.each do |key, value| %> 
           <% if value.is_a?(Array) %>
-            <% value.each do |element|%>
+            <% value.each do |key,element|%>
+              <% key = key == 'notice'? 'info' : key %>
+              <% key = key == 'alert'? 'warning' : key %>              
               <div class="alert alert-<%= key %> alert-dismissible" style= "z-index: 1040;">
                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                 <%= element %>                
               </div>
             <% end %>
           <% else %>
+            <% key = key == 'notice'? 'info' : key %>
+            <% key = key == 'alert'? 'warning' : key %>   
             <div class="alert alert-<%= key %>" style= "z-index: 1040;">
               <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
               <%= value %>            
