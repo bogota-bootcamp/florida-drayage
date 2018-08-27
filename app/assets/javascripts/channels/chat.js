@@ -10,6 +10,12 @@
         if (data.action === "new-message") {
           $("#message_body").val("")
           $("#" + data.conversation_id).append(data.msg);
+          if ($(".chat-container-admin").length >0){
+            $(".chat-container-admin").stop().animate({ scrollTop: $(".chat-container-admin")[0].scrollHeight}, 1000); 
+          }
+          if ($(".chat-user-cont").length >0) {
+            $(".chat-user-cont").stop().animate({ scrollTop: $(".chat-user-cont")[0].scrollHeight}, 1000);
+          }
           return
         }
 
