@@ -308,7 +308,7 @@ function foward($step, $pag){
     $step.next().removeClass('animate-in')
           .addClass('is-showing');
     
-  }, 1200);
+  }, 500);
 }
 
 function back($step, $pag){
@@ -322,14 +322,14 @@ function back($step, $pag){
          .prev().addClass('animate-in');
     $pag.removeClass('is-active')
           .prev().addClass('is-active');
-  }, 200);
+  }, 500);
   
   // after the animation, adjust the classes
   setTimeout(function(){
     $step.prev().removeClass('animate-in')
           .addClass('is-showing');
     
-  }, 1200);
+  }, 500);
 }
 </script>
 
