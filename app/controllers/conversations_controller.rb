@@ -43,8 +43,8 @@ class ConversationsController < ApplicationController
       cookies[:conversation_id] =@conversation.id
       #response = render :partial => "conversations/client_cart",:locals=>{conversation: @conversation} 
       ActionCable.server.broadcast "user_admin", {action: "new-conversation", conversation: @conversation }
-      mail=ConversationMailer.new_conversation(@conversation)
-      response = mail.deliver_now
+      #mail=ConversationMailer.new_conversation(@conversation)
+      #response = mail.deliver_now
       flash[:success] = "Conversation created"  
     else
       @errors= @conversation.errors.full_messages
