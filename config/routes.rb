@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   
   get "conversations", to: "conversations#index"
 
-  get "quotations", to: "quotations#index" 
+  get "quotations", to: "quotations#index"
+
+  post "quotationvalidation", to: "quotations#validate" 
 
   resources :quotations do
     patch "invoices/:id", to: "invoices#upload"

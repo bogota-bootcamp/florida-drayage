@@ -333,5 +333,33 @@ function back($step, $pag){
 }
 </script>
 
+<script type="text/javascript">
+  $("#new_quotation").on('keypress', 'input', function(e) {
+  if(e.keyCode == 13) {    
+    e.preventDefault();
+    return false;
+  }
+});
+</script>
 
-
+<script type="text/javascript">
+  $("#new_quotation").submit(function(e){
+      e.preventDefault()
+      var data= $("#new_quotation").serialize()
+      $.post({
+      url: "/quotationvalidation",
+      data: data
+    }).done(function(data){console.log(data)
+      if (data.status == "ok"){
+        console.log("blah")
+      }
+      else{
+        $(".cont-flash-messages").html("")
+        data.errors.forEach(function(element){
+          $(".cont-flash-messages").append("<div class='alert alert-danger alert-dismissible' style= 'z-index: 1040;'> <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>"+element+"</div>")
+        })
+        
+      }
+    });
+  })  
+</script>
