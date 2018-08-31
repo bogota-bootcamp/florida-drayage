@@ -46,11 +46,12 @@ class QuotationsController < ApplicationController
   end
 
   def validate
+    p "entro aqui"
     quotation= Quotation.new(quotation_parameters)
     if quotation.valid?
       msg = { :status => "ok" }  
     else
-      msg = { :status => "fail",errors: quotation.errors.full_messages }
+      msg = { :status => "fail",errors: quotation.errors.full_messages, errors_messages:  quotation.errors.messages}
     end
 
     respond_to do |format|      

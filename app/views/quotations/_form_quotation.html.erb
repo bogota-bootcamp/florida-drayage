@@ -276,6 +276,7 @@
       $step = $btn.parents('.modal-body'),
       stepIndex = $step.index()-2,
       $pag = $('.modal-header span').eq(stepIndex);
+      
 
   if(stepIndex === 0 || stepIndex === 1 || stepIndex === 2) { foward($step, $pag); }  
 });
@@ -293,22 +294,54 @@
 function foward($step, $pag){
 
   // animate the step out
-  $step.addClass('animate-out');
+ let data= $("#new_quotation").serialize()      
+    $.post({
+      url: "/quotationvalidation",
+      data: data
+    }).done(function(data){
+      
+      if (data.status == "ok"){
+        animationForward($step,$pag)
+      }
+      else{
+        $step=$step
+        $pag=$pag
+        var valid= true;
+        $(".cont-flash-messages").html("")
+        i=0;
+        for (error in data.errors_messages){
+          if($.inArray($step[0],$("#quotation_"+error).parents()) > 0 ){
+            valid= false
+            element= data.errors[i];
+            $(".cont-flash-messages").append("<div class='alert alert-danger alert-dismissible' style= 'z-index: 1040;'> <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>"+element+"</div>")
+          }
+          i++
+        }
+
+        if (valid){
+          animationForward($step,$pag)
+        }
+      }
+    });
+}
+
+function animationForward($step,$pag){
+    $step.addClass('animate-out');
   
-  // animate the step in
-  setTimeout(function(){
-    $step.removeClass('animate-out is-showing')
-         .next().addClass('animate-in');
-    $pag.removeClass('is-active')
-          .next().addClass('is-active');
-  }, 500);
-  
-  // after the animation, adjust the classes
-  setTimeout(function(){
-    $step.next().removeClass('animate-in')
-          .addClass('is-showing');
+    // animate the step in
+    setTimeout(function(){
+        $step.removeClass('animate-out is-showing')
+             .next().addClass('animate-in');
+        $pag.removeClass('is-active')
+              .next().addClass('is-active');
+      }, 500);
     
-  }, 500);
+    // after the animation, adjust the classes
+    setTimeout(function(){
+      $step.next().removeClass('animate-in')
+            .addClass('is-showing');
+      
+    }, 500);
 }
 
 function back($step, $pag){
@@ -345,21 +378,22 @@ function back($step, $pag){
 <script type="text/javascript">
   $("#new_quotation").submit(function(e){
       e.preventDefault()
-      var data= $("#new_quotation").serialize()
-      $.post({
+      validateForm()
+  })
+
+  function validateForm(){
+    var data= $("#new_quotation").serialize()
+    $.post({
       url: "/quotationvalidation",
       data: data
-    }).done(function(data){console.log(data)
-      if (data.status == "ok"){
-        console.log("blah")
-      }
-      else{
+    }).done(function(data){
+      
+      if (data.status === "fail"){
         $(".cont-flash-messages").html("")
         data.errors.forEach(function(element){
           $(".cont-flash-messages").append("<div class='alert alert-danger alert-dismissible' style= 'z-index: 1040;'> <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>"+element+"</div>")
         })
-        
-      }
+      }    
     });
-  })  
+  }  
 </script>
