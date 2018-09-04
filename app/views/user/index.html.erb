@@ -72,21 +72,6 @@
   </div>
   <!-- ./Section-->
 
-  <div class="wrapper">
-    <div class="flexitem">
-      <div> <p>Service 24 Hours a Day -7 Days a Week <p></div>
-    </div>
-    <div class="flexitem">
-      <div><p>Asset Based</p></div>
-    </div>
-    <div class="flexitem">
-      <div><p>ELD Compliant</p></div>
-    </div>
-    <div class="flexitem">
-      <div><p>GPS Enabled Trucks and Chassis</p></div>
-    </div>
-  </div>
-
   <div class="row d-flex section-box justify-content-md-center" id="advantages" >
     <div class="col-12 d-flex  flex-column justify-content-center align-items-center">
       <p class="title-text">Advantages</p>        
@@ -159,21 +144,3 @@
  
 </section>
 
-<script type="text/javascript">
-  $(".wrapper").on('click', '.flexitem', function (e) {
-    // your function here
-      $(".flex-sibling").removeClass("flex-sibling")
-      if ($(this).hasClass( "flex-active" )){
-        $(".flex-active").removeClass("flex-active")
-
-
-      }
-      else{
-        $(".flex-active").removeClass("flex-active")
-        $(this).addClass("flex-active")
-                $(this).next().addClass("flex-sibling")
-
-      }
-
-    });
-</script>

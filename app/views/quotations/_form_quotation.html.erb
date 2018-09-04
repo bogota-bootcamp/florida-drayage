@@ -32,20 +32,16 @@
             <%= f.text_field :first_name, class: "validate", id:"quotation_first_name"%>
             <label for="quotation_first_name" class= "label-cursor">First Name</label>
           </div>
+        </div>
 
+        <div class="row">  
           <div class="input-field col s6">
             <i class="material-icons prefix">account_circle</i>          
             <%= f.text_field :last_name, class: "validate", id:"quotation_last_name" %>
             <label for="quotation_last_name" class= "label-cursor">Last Name</label>
           </div>
         </div>
-        <div class="row">      
-          <div class="input-field col s6">
-            <i class="material-icons prefix">account_circle</i>        
-            <%= f.text_field :title, class: "validate", id:"quotation_title"%>
-            <label for="quotation_title" class= "label-cursor">Title</label>
-          </div>
-        </div>
+
         <div class="row">      
           <div class="input-field col s6">
             <i class="material-icons prefix">domain</i>          
@@ -94,7 +90,7 @@
       <div class="row">
         <div class="input-field col m12 s12">
           <i class="material-icons prefix">map</i>          
-          <%= f.text_field :origin_zipcode, class: "validate  ", id:"quotation_origin_zipcode"%>
+          <%= f.text_field :origin_zipcode, class: "validate  autocomplete", id:"quotation_origin_zipcode"%>
           <label for="quotation_origin_zipcode" class= "label-cursor">Origin Zipcode</label> 
         </div>
       </div>
@@ -120,7 +116,7 @@
         <div class="row">
           <div class="input-field col m12 s12">
             <i class="material-icons prefix">map</i>          
-            <%= f.text_field :destination_zipcode, class: "validate ", id:"quotation_destination_zipcode"%>
+            <%= f.text_field :destination_zipcode, class: "validate", id:"quotation_destination_zipcode"%>
             <label for="quotation_destination_zipcode" class= "label-cursor">Destination Zipcode</label>
           </div>
         </div>
@@ -316,8 +312,7 @@ function foward($step, $pag){
             $(".cont-flash-messages").append("<div class='alert alert-danger alert-dismissible' style= 'z-index: 1040;'> <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>"+element+"</div>")
           }
           i++
-        }
-
+        }        
         if (valid){
           animationForward($step,$pag)
         }
