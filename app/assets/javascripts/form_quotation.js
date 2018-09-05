@@ -14,14 +14,14 @@ function foward($step, $pag){
     }
     else{      
       $(".cont-flash-messages").html("")        
-      if (formIsValid($step)){
+      if (formIsValid($step,data)){
         animationForward($step,$pag)
       }
     }
   });
 }
 
-function formIsValid($step){
+function formIsValid($step,data){
   valid= true
   i=0;
   for (error in data.errors_messages){
