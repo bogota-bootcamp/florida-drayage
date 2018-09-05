@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   get "quotations", to: "quotations#index"
 
-  post "quotationvalidation", to: "quotations#validate" 
+  post "quotation_validation", to: "quotations#validate" 
 
   resources :quotations do
     patch "invoices/:id", to: "invoices#upload"
