@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_27_151824) do
+ActiveRecord::Schema.define(version: 2018_09_04_202726) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -52,6 +52,23 @@ ActiveRecord::Schema.define(version: 2018_08_27_151824) do
     t.datetime "updated_at", null: false
     t.integer "price"
     t.boolean "paid_out", default: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "company"
+    t.bigint "phone"
+    t.string "email"
+    t.text "comments"
+    t.string "origin_city"
+    t.string "destination_city"
+    t.integer "origin_zipcode"
+    t.integer "destination_zipcode"
+    t.string "commodity"
+    t.boolean "hazardous"
+    t.boolean "bondedargo"
+    t.float "overweight"
+    t.date "pickup_date"
+    t.date "drop_date"
+    t.string "type"
     t.index ["quotation_id"], name: "index_invoices_on_quotation_id"
   end
 
@@ -68,9 +85,8 @@ ActiveRecord::Schema.define(version: 2018_08_27_151824) do
   create_table "quotations", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
-    t.string "title"
     t.string "company"
-    t.bigint "phone"
+    t.integer "phone"
     t.string "email"
     t.text "comments"
     t.datetime "created_at", null: false

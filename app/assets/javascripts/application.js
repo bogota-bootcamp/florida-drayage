@@ -16,8 +16,10 @@
 //= require turbolinks
 //= require popper
 //= require bootstrap-sprockets
+//= require cable
+//= require channels/chat
 //= require materialize
-//= require_tree .
+
 
 
 $(document).ready(function(){

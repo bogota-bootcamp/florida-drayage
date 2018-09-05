@@ -28,7 +28,7 @@ class QuotationsController < ApplicationController
     if @quotation.save
       #mail=QuotationMailer.new_quotation(@quotation)
       #response = mail.deliver_now
-      flash[:success] = "Quote created"     
+      flash[:success] = "Quote ##{@quotation.id} was created"     
     else
       errors= @quotation.errors.full_messages
       flash[:danger] = errors
@@ -50,17 +50,17 @@ class QuotationsController < ApplicationController
     if quotation.valid?
       msg = { :status => "ok" }  
     else
-      msg = { :status => "fail",errors: quotation.errors.full_messages }
+      msg = { :status => "fail",errors: quotation.errors.full_messages, errors_messages:  quotation.errors.messages}
     end
 
     respond_to do |format|      
-      format.json  { render :json => msg } # don't do msg.to_json
+      format.json  { render :json => msg } 
     end
   end
 
   private
   def quotation_parameters
-    params.require(:quotation).permit(:first_name,:last_name,:title,:company,:phone,:email,:comments,:commodity,:hazardous,:bonded_cargo,:overweight,:pickup_date,:drop_date,:equipment_type,:origin_zipcode,:destination_zipcode,:origin_city,:destination_city)
+    params.require(:quotation).permit(:first_name,:last_name,:company,:phone,:email,:comments,:commodity,:hazardous,:bonded_cargo,:overweight,:pickup_date,:drop_date,:equipment_type,:origin_zipcode,:destination_zipcode,:origin_city,:destination_city)
   end
 end
 

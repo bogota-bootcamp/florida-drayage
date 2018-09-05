@@ -16,6 +16,21 @@
     </div>
   </div>
   <div class="card">
+    <div class="card-header" id="headingThree">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          <strong>New Quote </strong>
+        </button>
+      </h5>
+    </div>
+    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+      <div class="card-body">
+        <h4>New Quote</h4>
+        <%= render partial: "/invoices/form_invoice_remote",locals:{quotation: @quotation, invoice: @invoice}%>
+      </div>
+    </div>
+  </div>
+  <div class="card">
     <div class="card-header" id="headingTwo">
       <h5 class="mb-0">
         <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -32,21 +47,6 @@
 						<% end %> 
 					<% end%>
 				</ul>
-      </div>
-    </div>
-  </div>
-  <div class="card">
-    <div class="card-header" id="headingThree">
-      <h5 class="mb-0">
-        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-          <strong>New Invoice </strong>
-        </button>
-      </h5>
-    </div>
-    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-      <div class="card-body">
-        <h4>New Invoice</h4>
-				<%= render partial: "/invoices/form_invoice_remote",locals:{quotation: @quotation, invoice: @invoice}%>
       </div>
     </div>
   </div>

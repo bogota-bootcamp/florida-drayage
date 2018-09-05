@@ -22,7 +22,7 @@
     <span></span>
   </div>
   <div class="modal-bodies">
-    <%= form_for [@quotation]  do |f| %>
+    <%= form_for [@quotation] do |f| %>
     <div class="modal-body modal-body-step-1 is-showing">
       <div class="title">Step 1</div>
       <div class="description"></div>      
@@ -32,20 +32,16 @@
             <%= f.text_field :first_name, class: "validate", id:"quotation_first_name"%>
             <label for="quotation_first_name" class= "label-cursor">First Name</label>
           </div>
+        </div>
 
+        <div class="row">  
           <div class="input-field col s6">
             <i class="material-icons prefix">account_circle</i>          
             <%= f.text_field :last_name, class: "validate", id:"quotation_last_name" %>
             <label for="quotation_last_name" class= "label-cursor">Last Name</label>
           </div>
         </div>
-        <div class="row">      
-          <div class="input-field col s6">
-            <i class="material-icons prefix">account_circle</i>        
-            <%= f.text_field :title, class: "validate", id:"quotation_title"%>
-            <label for="quotation_title" class= "label-cursor">Title</label>
-          </div>
-        </div>
+
         <div class="row">      
           <div class="input-field col s6">
             <i class="material-icons prefix">domain</i>          
@@ -94,7 +90,7 @@
       <div class="row">
         <div class="input-field col m12 s12">
           <i class="material-icons prefix">map</i>          
-          <%= f.text_field :origin_zipcode, class: "validate  ", id:"quotation_origin_zipcode"%>
+          <%= f.text_field :origin_zipcode, class: "validate  autocomplete", id:"quotation_origin_zipcode"%>
           <label for="quotation_origin_zipcode" class= "label-cursor">Origin Zipcode</label> 
         </div>
       </div>
@@ -120,7 +116,7 @@
         <div class="row">
           <div class="input-field col m12 s12">
             <i class="material-icons prefix">map</i>          
-            <%= f.text_field :destination_zipcode, class: "validate ", id:"quotation_destination_zipcode"%>
+            <%= f.text_field :destination_zipcode, class: "validate", id:"quotation_destination_zipcode"%>
             <label for="quotation_destination_zipcode" class= "label-cursor">Destination Zipcode</label>
           </div>
         </div>
@@ -200,166 +196,4 @@
   </div>
 </div>
 
-<script>
-  $(document).ready(function(){
-    $('.carousel.carousel-slider').carousel({
-      fullWidth: true,
-      indicators: true
-    });
-    $.ajaxSetup({
-        headers: {
-    'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
-      }
-      });
-    $("form").submit(function(e) {
-
-    var form = $(this);
-    var url = form.attr('action');
-
-    $.ajax({
-           type: "POST",
-           url: url,
-           data: form.serialize(), // serializes the form's elements.          
-         });
-
-        e.preventDefault(); // avoid to execute the actual submit of the form.
-      });
-
-
-    $('.datepicker').datepicker();
-    $.ajax({
-        url: "/cities",
-        context: document.body
-      })
-      .done(function(data) {
-        $('input.autocomplete').autocomplete({
-        data: data,
-        });
-      });
-
-    $("#quotation_origin_zipcode").focus(function(){
-       let cityo=$("#quotation_origin_city").val()
-       if (cityo !== "") {
-        $.ajax({
-        url: "/zipcodes?name="+cityo,
-        context: document.body
-        })
-        .done(function(data) {
-          $('#quotation_origin_zipcode').autocomplete({
-          data: data,
-          });
-        
-        });
-      }
-    })
-
-    $("#quotation_destination_zipcode").focus(function(){
-       let cityo=$("#quotation_destination_city").val()
-        if (cityo !== "") {
-        $.ajax({
-        url: "/zipcodes?name="+cityo,
-        context: document.body
-        })
-        .done(function(data) {
-          $('#quotation_destination_zipcode').autocomplete({
-          data: data,
-          });
-        });
-      }
-    })
-  });
-</script>
-<script type="text/javascript">
-
-  $('.foward').click(function(){
-  var $btn = $(this),
-      $step = $btn.parents('.modal-body'),
-      stepIndex = $step.index()-2,
-      $pag = $('.modal-header span').eq(stepIndex);
-
-  if(stepIndex === 0 || stepIndex === 1 || stepIndex === 2) { foward($step, $pag); }  
-});
-
-  $('.back').click(function(){
-  var $btn = $(this),
-      $step = $btn.parents('.modal-body'),
-      stepIndex = $step.index()-2,
-      $pag = $('.modal-header span').eq(stepIndex);
-
-  if(stepIndex === 3 || stepIndex === 1 || stepIndex === 2) { back($step, $pag); }  
-});
-
-
-function foward($step, $pag){
-
-  // animate the step out
-  $step.addClass('animate-out');
-  
-  // animate the step in
-  setTimeout(function(){
-    $step.removeClass('animate-out is-showing')
-         .next().addClass('animate-in');
-    $pag.removeClass('is-active')
-          .next().addClass('is-active');
-  }, 500);
-  
-  // after the animation, adjust the classes
-  setTimeout(function(){
-    $step.next().removeClass('animate-in')
-          .addClass('is-showing');
-    
-  }, 500);
-}
-
-function back($step, $pag){
-
-  // animate the step out
-  $step.addClass('animate-out');
-  
-  // animate the step in
-  setTimeout(function(){
-    $step.removeClass('animate-out is-showing')
-         .prev().addClass('animate-in');
-    $pag.removeClass('is-active')
-          .prev().addClass('is-active');
-  }, 500);
-  
-  // after the animation, adjust the classes
-  setTimeout(function(){
-    $step.prev().removeClass('animate-in')
-          .addClass('is-showing');
-    
-  }, 500);
-}
-</script>
-
-<script type="text/javascript">
-  $("#new_quotation").on('keypress', 'input', function(e) {
-  if(e.keyCode == 13) {    
-    e.preventDefault();
-    return false;
-  }
-});
-</script>
-
-<script type="text/javascript">
-  $("#new_quotation").submit(function(e){
-      e.preventDefault()
-      var data= $("#new_quotation").serialize()
-      $.post({
-      url: "/quotationvalidation",
-      data: data
-    }).done(function(data){console.log(data)
-      if (data.status == "ok"){
-        console.log("blah")
-      }
-      else{
-        $(".cont-flash-messages").html("")
-        data.errors.forEach(function(element){
-          $(".cont-flash-messages").append("<div class='alert alert-danger alert-dismissible' style= 'z-index: 1040;'> <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>"+element+"</div>")
-        })
-        
-      }
-    });
-  })  
-</script>
+<%= javascript_include_tag "form_quotation" %>
