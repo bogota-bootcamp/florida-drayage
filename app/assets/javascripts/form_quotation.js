@@ -182,4 +182,6 @@ $(document).ready(function(){
     validateForm(this)       
   })
 
+  $('select').formSelect();
+
 });
