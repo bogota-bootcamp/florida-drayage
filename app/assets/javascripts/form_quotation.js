@@ -75,10 +75,6 @@ function back($step, $pag){
   }, 500);
 }
 
-
-
-
-
 function validateForm(form){
   $form= $(form)
   var data= $form.serialize()

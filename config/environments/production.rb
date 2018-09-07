@@ -94,5 +94,6 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.assets.precompile += %w( form_quotation.js )
+  config.assets.precompile += %w( form_invoice.js )
   
 end
