@@ -1,6 +1,9 @@
 <div class="chat-cont">
 	<div class="container">
-  <%= render partial: "/quotations/quotation_header"%>
+  <%= render partial: "/invoices/show_invoice_no_edit.html"%>
+  <ul class="collapsible" id="upload-container">
+		<%=  render partial: "/invoices/upload_list", locals:{quotation:@quotation,_invoice:@invoice},layout:false %>
+	</ul>
   <% unless @invoice.paid_out %>
     <%= render partial: "/invoices/invoice_to_paid" %>  
   <% end %>

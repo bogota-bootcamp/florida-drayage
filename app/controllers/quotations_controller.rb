@@ -17,7 +17,7 @@ class QuotationsController < ApplicationController
     user= current_user    
     @quotation = Quotation.find(params[:id])
     @invoices = @quotation.invoices   
-    @invoice = @quotation.invoices.new
+    @invoice = @quotation.invoices.new(clone_quote_information_to_invoice(@quotation))
     unless (user && (user.has_role? :admin )) 
       render "quotations/_quotation_header", layout:true
     end
@@ -61,6 +61,10 @@ class QuotationsController < ApplicationController
   private
   def quotation_parameters
     params.require(:quotation).permit(:first_name,:last_name,:company,:phone,:email,:comments,:commodity,:hazardous,:bonded_cargo,:overweight,:pickup_date,:drop_date,:equipment_type,:origin_zipcode,:destination_zipcode,:origin_city,:destination_city)
+  end
+
+  def clone_quote_information_to_invoice(quote)
+    quote.slice(:first_name,:last_name,:company,:phone,:email,:comments,:commodity,:hazardous,:bonded_cargo,:overweight,:pickup_date,:drop_date,:equipment_type,:origin_zipcode,:destination_zipcode,:origin_city,:destination_city)
   end
 end
 

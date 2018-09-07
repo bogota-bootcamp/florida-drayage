@@ -27,7 +27,7 @@ class InvoicesController < ApplicationController
 
     invoice= Invoice.find(params[:id])
     quotation= Quotation.find(params[:quotation_id])
-    #debugger
+
 
     customer = Stripe::Customer.create(
       :email => params[:stripeEmail],
@@ -60,7 +60,7 @@ class InvoicesController < ApplicationController
   private
 
   def invoice_parameters
-    params.require(:invoice).permit(:price, uploads:[])
+    params.require(:invoice).permit(:price, :first_name,:last_name,:company,:phone,:email,:comments,:commodity,:hazardous,:bonded_cargo,:overweight,:pickup_date,:drop_date,:equipment_type,:origin_zipcode,:destination_zipcode,:origin_city,:destination_city,uploads:[])
   end
 end
 
