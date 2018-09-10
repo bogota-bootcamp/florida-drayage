@@ -42,6 +42,18 @@ class QuotationsController < ApplicationController
     redirect_to root_path
   end
 
+  def update
+    @quote = Quotation.find params[:id]
+
+    respond_to do |format|
+      if @quote.update_attributes(quotation_parameters)        
+        format.json { respond_with_bip(@quote) }
+      else        
+        format.json { respond_with_bip(@quote) }
+      end
+    end
+  end
+
   def delete
   end
 
@@ -67,7 +79,3 @@ class QuotationsController < ApplicationController
     quote.slice(:first_name,:last_name,:company,:phone,:email,:comments,:commodity,:hazardous,:bonded_cargo,:overweight,:pickup_date,:drop_date,:equipment_type,:origin_zipcode,:destination_zipcode,:origin_city,:destination_city)
   end
 end
-
-
-
-  

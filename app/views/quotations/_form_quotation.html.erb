@@ -128,25 +128,26 @@
             <label for="quotation_commodity" class= "label-cursor">commodity</label>
           </div>
         </div>
+
         <div class="row">
           <div class="input-field col m12 s12">       
             <label>        
-              <input type="checkbox" name="quotation[hazardous]" id="quotation_bonded_cargo">
+              <%= f.check_box :hazardous %>
               <span>Hazardous</span>
             </label>
           </div>
 
           <div class="input-field col m12 s12">      
             <label>
-              <input type="checkbox" name="quotation[bonded_cargo]" id="quotation_bonded_cargo">
+              <%= f.check_box :bonded_cargo%>
               <span>Bonded Cargo</span>
             </label>         
           </div>            
         </div>
-      <div class="text-center button-region">
-        <div class="button back">Back</div>
-        <div class="button foward">Next</div> 
-      </div>
+        <div class="text-center button-region">
+          <div class="button back">Back</div>
+          <div class="button foward">Next</div> 
+        </div>
     </div>
 
     <div class="modal-body modal-body-step-2">
