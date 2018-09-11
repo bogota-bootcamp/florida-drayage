@@ -1,7 +1,9 @@
 class InvoicesController < ApplicationController
 	def create    
-    @quotation= Quotation.find(params[:quotation_id])    
-    @invoice=@quotation.invoices.new(invoice_parameters)
+    @quotation= Quotation.find(params[:quotation_id])  
+    invoice_params = invoice_parameters.merge(clone_quote_information_to_invoice(@quotation))
+    @invoice=@quotation.invoices.new(invoice_params)
+    debugger
     if @invoice.save    
       #mail=InvoiceMailer.new_invoice(@quotation,@invoice)
       #response = mail.deliver_now
@@ -60,7 +62,11 @@ class InvoicesController < ApplicationController
   private
 
   def invoice_parameters
-    params.require(:invoice).permit(:price, :first_name,:last_name,:company,:phone,:email,:comments,:commodity,:hazardous,:bonded_cargo,:overweight,:pickup_date,:drop_date,:equipment_type,:origin_zipcode,:destination_zipcode,:origin_city,:destination_city,uploads:[])
+    params.require(:invoice).permit(:price, uploads:[])
+  end
+
+  def clone_quote_information_to_invoice(quote)
+    quote.slice(:first_name,:last_name,:company,:phone,:email,:comments,:commodity,:hazardous,:bonded_cargo,:overweight,:pickup_date,:drop_date,:equipment_type,:origin_zipcode,:destination_zipcode,:origin_city,:destination_city)
   end
 end
 
