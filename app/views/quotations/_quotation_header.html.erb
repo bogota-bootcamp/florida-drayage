@@ -115,7 +115,7 @@
     <div class="input-field col s6">
       <i class="material-icons prefix icon-color">date_range</i>          
       <%= f.text_field :pickup_date, class: "validate datepicker", id:"quotation_pickup_date"%>
-      <label for="quotation_pickup_date" class= "label-cursor">PickUp Date</label>
+      <label for="quotation_pickup_date" class= "label-cursor active">PickUp Date</label>
     </div>
   </div>
 
@@ -123,9 +123,9 @@
     <div class="input-field col s6">
       <i class="material-icons prefix icon-color">date_range</i>          
       <%= f.text_field :drop_date, class: "validate datepicker", id:"quotation_drop_date"%>
-      <label for="quotation_drop_date" class= "label-cursor">Drop Date</label>
+      <label for="quotation_drop_date" class= "label-cursor active">Drop Date</label>
     </div>
-  </div
+  </div>
 
   <div class="row">
     <div class="input-field col s6">     
@@ -137,4 +137,4 @@
 
 <% end %>
 
-
+<%= javascript_include_tag "form_quotation" %>

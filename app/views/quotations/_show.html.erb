@@ -28,6 +28,7 @@
     <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
       <div class="card-body">
         <h4>New Quote</h4>
+        <%= render partial: "/quotations/quotation_header.html.erb"%>
         <%= render partial: "/invoices/form_invoice_remote",locals:{quotation: @quotation, invoice: @invoice}%>
       </div>
     </div>
