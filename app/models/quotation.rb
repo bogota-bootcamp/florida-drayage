@@ -13,11 +13,9 @@ class Quotation < ApplicationRecord
     "20 ft. Chassis",
     "45 ft. Chassis",
     "Tri-Axle Chassis",
-    "26 Ft. Trucks",
-    "Power Units",
-    "Flatbeds",
-    "Step Deck Trailers",
-    "53 Ft. Trailers"]
+    "Flat Rack",
+    "Live Load",
+    "Drop/Pick"]
     
   def suggested_price
      zipcode = Zipcode.find_by(code:self.destination_zipcode)
