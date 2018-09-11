@@ -28,7 +28,7 @@ class QuotationsController < ApplicationController
     if @quotation.save
       #mail=QuotationMailer.new_quotation(@quotation)
       #response = mail.deliver_now
-      flash[:success] = "Quote ##{@quotation.id} was created"     
+      flash[:success] = ["Thank you for submitting your quote request."," One of our Drayage Specialists will contact you shortly."]     
     else
       errors= @quotation.errors.full_messages
       flash[:danger] = errors
