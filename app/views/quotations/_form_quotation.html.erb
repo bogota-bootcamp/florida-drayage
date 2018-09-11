@@ -25,17 +25,146 @@
     <%= form_for [@quotation] do |f| %>
     <div class="modal-body modal-body-step-1 is-showing">
       <div class="title">Step 1</div>
-      <div class="description"></div>      
+      <div class="description"></div>
         <div class="row">
+          <div class="input-field col m12 s12">
+            <i class="material-icons prefix">markunread_mailbox</i>     
+            <%= f.text_field :origin_city, class: "validate autocomplete city", id:"quotation_origin_city"%>
+            <label for="quotation_origin_city" class= "label-cursor">Origin city</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col m12 s12">
+            <i class="material-icons prefix">map</i>          
+            <%= f.text_field :origin_zipcode, class: "validate  autocomplete", id:"quotation_origin_zipcode"%>
+            <label for="quotation_origin_zipcode" class= "label-cursor">Origin Zipcode</label> 
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="input-field col m12 s12">
+            <i class="material-icons prefix">markunread_mailbox</i> 
+            <%= f.text_field :destination_city, class: "validate autocomplete city", id:"quotation_destination_city"%>
+            <label for="quotation_destination_city" class= "label-cursor">Destination city</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col m12 s12">
+            <i class="material-icons prefix">map</i>          
+            <%= f.text_field :destination_zipcode, class: "validate", id:"quotation_destination_zipcode"%>
+            <label for="quotation_destination_zipcode" class= "label-cursor">Destination Zipcode</label>
+          </div>
+        </div>
+        
+        <div class="text-center button-region">
+          <div class="button foward" class= "label-cursor">Next</div>
+        </div>      
+    </div>
+
+    <div class="modal-body modal-body-step-2">
+    
+      <div class="title">Step 2</div>
+      <div class="description"></div>      
+      <div class="row">
+        <div class="input-field col s6">
+          <i class="material-icons prefix">comment</i>          
+          <%= f.text_field :commodity, class: "validate", id:"quotation_commodity"%>
+          <label for="quotation_commodity" class= "label-cursor">commodity</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col m12 s12">       
+          <label>        
+            <input type="checkbox" name="quotation[hazardous]" id="quotation_bonded_cargo">
+            <span>Hazardous</span>
+          </label>
+        </div>
+
+        <div class="input-field col m12 s12">      
+          <label>
+            <input type="checkbox" name="quotation[bonded_cargo]" id="quotation_bonded_cargo">
+            <span>Bonded Cargo</span>
+          </label>         
+        </div>
+
+        <div class="input-field col m12 s12">      
+          <label>
+            <input type="checkbox" name="quotation[residencial]" id="quotation_bonded_cargo">
+            <span>Residencial</span>
+          </label>         
+        </div>             
+      </div>
+      <br>
+      <br>
+      <div class="row">
+        <div class="input-field col s6">
+          <i class="material-icons prefix">comment</i>          
+          <input class="validate"   type="text" name="quotation[overweight]" id="quotation_overweight">
+            <label for="quotation_overweight" class= "label-cursor">Weight</label>
+          </div>
+      </div>
+
+      <div class="text-center button-region">
+        <div class="button back">Back</div>
+        <div class="button foward">Next</div>        
+      </div>     
+    </div>
+
+    <div class="modal-body modal-body-step-3">
+
+      <div class="title">Step 3</div>
+      <div class="description"></div>
+
+      <div class="row">
+        <div class="input-field col s6">
+          <i class="material-icons prefix">date_range</i>          
+          <%= f.text_field :pickup_date, class: "validate datepicker", id:"quotation_pickup_date"%>
+          <label for="quotation_pickup_date" class= "label-cursor">Estimated PickUp Date</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s6">
+          <i class="material-icons prefix">date_range</i>          
+          <%= f.text_field :drop_date, class: "validate datepicker", id:"quotation_drop_date"%>
+          <label for="quotation_drop_date" class= "label-cursor">Estimated Drop Date</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s6">
+          <i class="material-icons prefix">local_shipping</i>          
+          <%= f.select(:equipment_type, Quotation::EQUIPMENT_TYPES, {include_blank: "Select something"}) %>
+          <label for="quotation_equipment_type" class= "label-cursor">Equipment Type</label>
+        </div>
+      </div> 
+
+      <div class="row">
+        <div class="input-field col s6">
+          <i class="material-icons prefix">comment</i>          
+          <%= f.text_area :comments, class: "validate materialize-textarea", id:"quotation_comments"%>
+          <label for="quotation_comments" class= "label-cursor">Comments</label>
+        </div>
+      </div>
+       
+      <div class="text-center button-region">
+        <div class="button back">Back</div>
+        <div class="button foward">Next</div> 
+      </div>
+ 
+    </div>
+
+    <div class="modal-body modal-body-step-2">
+
+      <div class="title">Step 4</div>
+      <div class="description"></div>
+            <div class="row">
           <div class="input-field col s6">
             <i class="material-icons prefix">account_circle</i>          
             <%= f.text_field :first_name, class: "validate", id:"quotation_first_name"%>
             <label for="quotation_first_name" class= "label-cursor">First Name</label>
           </div>
-        </div>
-
-        
-        <div class="row">  
+ 
           <div class="input-field col s6">
             <i class="material-icons prefix">account_circle</i>          
             <%= f.text_field :last_name, class: "validate", id:"quotation_last_name" %>
@@ -57,15 +186,6 @@
             <label for="quotation_phone" class= "label-cursor">Telephone</label>
           </div>
         </div>
-        <div class="text-center button-region">
-          <div class="button foward" class= "label-cursor">Next</div>
-        </div>      
-    </div>
-
-    <div class="modal-body modal-body-step-2">
-      <div class="title">Step 2</div>
-      <div class="description"></div>      
-
       <div class="row">
         <div class="input-field col s6">
           <i class="material-icons prefix">email</i>          
@@ -74,119 +194,8 @@
         </div>
       </div>
 
-      <div class="row">
-        <div class="input-field col s6">
-          <i class="material-icons prefix">comment</i>          
-          <%= f.text_area :comments, class: "validate materialize-textarea", id:"quotation_comments"%>
-          <label for="quotation_comments" class= "label-cursor">Comments</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col m12 s12">
-          <i class="material-icons prefix">markunread_mailbox</i>     
-          <%= f.text_field :origin_city, class: "validate autocomplete city", id:"quotation_origin_city"%>
-          <label for="quotation_origin_city" class= "label-cursor">Origin city</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col m12 s12">
-          <i class="material-icons prefix">map</i>          
-          <%= f.text_field :origin_zipcode, class: "validate  autocomplete", id:"quotation_origin_zipcode"%>
-          <label for="quotation_origin_zipcode" class= "label-cursor">Origin Zipcode</label> 
-        </div>
-      </div>
-      <div class="text-center button-region">
-        <div class="button back">Back</div>
-        <div class="button foward">Next</div>        
-      </div>
-      
-    </div>
-
-    <div class="modal-body modal-body-step-3">
-      <div class="title">Step 3</div>
-      <div class="description"></div>
-   
-
-        <div class="row">
-          <div class="input-field col m12 s12">
-            <i class="material-icons prefix">markunread_mailbox</i> 
-            <%= f.text_field :destination_city, class: "validate autocomplete city", id:"quotation_destination_city"%>
-            <label for="quotation_destination_city" class= "label-cursor">Destination city</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col m12 s12">
-            <i class="material-icons prefix">map</i>          
-            <%= f.text_field :destination_zipcode, class: "validate", id:"quotation_destination_zipcode"%>
-            <label for="quotation_destination_zipcode" class= "label-cursor">Destination Zipcode</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s6">
-            <i class="material-icons prefix">comment</i>          
-            <%= f.text_field :commodity, class: "validate", id:"quotation_commodity"%>
-            <label for="quotation_commodity" class= "label-cursor">commodity</label>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="input-field col m12 s12">       
-            <label>        
-              <%= f.check_box :hazardous %>
-              <span>Hazardous</span>
-            </label>
-          </div>
-
-          <div class="input-field col m12 s12">      
-            <label>
-              <%= f.check_box :bonded_cargo%>
-              <span>Bonded Cargo</span>
-            </label>         
-          </div>            
-        </div>
-        <div class="text-center button-region">
-          <div class="button back">Back</div>
-          <div class="button foward">Next</div> 
-        </div>
-    </div>
-
-    <div class="modal-body modal-body-step-2">
-      <div class="title">Step 4</div>
-      <div class="description"></div>      
-      <div class="row">
-        <div class="input-field col s6">
-          <i class="material-icons prefix">comment</i>          
-          <input class="validate"   type="text" name="quotation[overweight]" id="quotation_overweight">
-            <label for="quotation_overweight" class= "label-cursor">Overweight</label>
-          </div>
-      </div>
-
-      <div class="row">
-        <div class="input-field col s6">
-          <i class="material-icons prefix">date_range</i>          
-          <%= f.text_field :pickup_date, class: "validate datepicker", id:"quotation_pickup_date"%>
-          <label for="quotation_pickup_date" class= "label-cursor">PickUp Date</label>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="input-field col s6">
-          <i class="material-icons prefix">date_range</i>          
-          <%= f.text_field :drop_date, class: "validate datepicker", id:"quotation_drop_date"%>
-          <label for="quotation_drop_date" class= "label-cursor">Drop Date</label>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="input-field col s6">
-          <i class="material-icons prefix">local_shipping</i>          
-          <%= f.select(:equipment_type, Quotation::EQUIPMENT_TYPES, {include_blank: "Select something"}) %>
-          <label for="quotation_equipment_type" class= "label-cursor">Equipment Type</label>
-        </div>
-      </div> 
-
       <div class="text-center button-region">    
-      <!-- <input type="submit" name="commit" value="Send" class="btn-send" data-disable-with="Send" /> -->
+        <!--<input type="submit" name="commit" value="Send" class="btn-send" data-disable-with="Send" /> -->
         <div class="button back">Back</div>
         <%= f.button :submit , class: "btn-send button" do %>
           <i class="material-icons send" style="font-size: 20px;">send</i>
