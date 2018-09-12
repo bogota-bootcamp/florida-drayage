@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_07_212021) do
-
+ActiveRecord::Schema.define(version: 2018_09_12_171928) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -69,6 +68,7 @@ ActiveRecord::Schema.define(version: 2018_09_07_212021) do
     t.date "pickup_date"
     t.date "drop_date"
     t.string "equipment_type"
+    t.boolean "residencial", default: false
     t.index ["quotation_id"], name: "index_invoices_on_quotation_id"
   end
 
@@ -102,6 +102,7 @@ ActiveRecord::Schema.define(version: 2018_09_07_212021) do
     t.string "equipment_type"
     t.string "origin_city"
     t.string "destination_city"
+    t.boolean "residencial", default: false
   end
 
   create_table "roles", force: :cascade do |t|
