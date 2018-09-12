@@ -65,29 +65,38 @@
     
       <div class="title">Step 2</div>
       <div class="description"></div>      
-       <div class="row">
-          <div class="input-field col s6">
-            <i class="material-icons prefix">comment</i>          
-            <%= f.text_field :commodity, class: "validate", id:"quotation_commodity"%>
-            <label for="quotation_commodity" class= "label-cursor">commodity</label>
-          </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <i class="material-icons prefix">comment</i>          
+          <%= f.text_field :commodity, class: "validate", id:"quotation_commodity"%>
+          <label for="quotation_commodity" class= "label-cursor">commodity</label>
         </div>
-        <div class="row">
-          <div class="input-field col m12 s12">       
-            <label>        
-              <input type="checkbox" name="quotation[hazardous]" id="quotation_bonded_cargo">
-              <span>Hazardous</span>
-            </label>
-          </div>
+      </div>
+      <div class="row">
+        <div class="input-field col m12 s12">       
+          <label>        
+            <input type="checkbox" name="quotation[hazardous]" id="quotation_bonded_cargo">
+            <span>Hazardous</span>
+          </label>
+        </div>
 
-          <div class="input-field col m12 s12">      
-            <label>
-              <input type="checkbox" name="quotation[bonded_cargo]" id="quotation_bonded_cargo">
-              <span>Bonded Cargo</span>
-            </label>         
-          </div>            
+        <div class="input-field col m12 s12">      
+          <label>
+            <input type="checkbox" name="quotation[bonded_cargo]" id="quotation_bonded_cargo">
+            <span>Bonded Cargo</span>
+          </label>         
         </div>
-                <div class="row">
+
+        <div class="input-field col m12 s12">      
+          <label>
+            <input type="checkbox" name="quotation[residencial]" id="quotation_bonded_cargo">
+            <span>Residencial</span>
+          </label>         
+        </div>             
+      </div>
+      <br>
+      <br>
+      <div class="row">
         <div class="input-field col s6">
           <i class="material-icons prefix">comment</i>          
           <input class="validate"   type="text" name="quotation[overweight]" id="quotation_overweight">
@@ -98,8 +107,7 @@
       <div class="text-center button-region">
         <div class="button back">Back</div>
         <div class="button foward">Next</div>        
-      </div>
-     
+      </div>     
     </div>
 
     <div class="modal-body modal-body-step-3">
