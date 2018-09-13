@@ -1,14 +1,18 @@
 <div class="chat-title">
-	<p class="description-chat "> Conversation with: <span class="orange-text-2"><%=@conversation.name %></span></p>
+  <p class="description-chat "> Conversation with: <span class="orange-text-2"><%=@conversation.name %></span></p>
 </div>
 <div class="chat-user-cont">
-		<ul id= '<%= "#{@conversation.id}"%>' class="chat-link">
-		
-		</ul>
+    <ul id= '<%= "#{@conversation.id}"%>' class="chat-link">
+      <% if @messages%>
+        <%@messages.each do |message|%>
+          <%= render partial: "/messages/message",locals:{message: message}%>
+        <%end%>
+      <%end%>
+    </ul>
 </div>
 
 
-	<%= render partial: "messages/form_messages",layout:false%>
-	<script>
-		plantApp()
-	</script>
+  <%= render partial: "messages/form_messages",layout:false%>
+  <script>
+    plantApp()
+  </script>
