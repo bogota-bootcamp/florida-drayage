@@ -4,7 +4,7 @@
   <p> <b>Name: </b><%= "#{@quotation.first_name} #{@quotation.last_name}"%> <br>
       <b>E-mail: </b><%= "#{@quotation.email}"%>
     </p>
-  <%= link_to  quotation_invoice_path(@quotation,_invoice),:class => "secondary-content"  do %>
+  <%= link_to  quotation_invoice_path(@quotation,_invoice), target: '_blank',:class => "secondary-content"  do %>
     <i class="material-icons">send</i>
   <% end%>
 </li>

@@ -75,10 +75,6 @@ function back($step, $pag){
   }, 500);
 }
 
-
-
-
-
 function validateForm(form){
   $form= $(form)
   var data= $form.serialize()
@@ -105,6 +101,10 @@ function validateForm(form){
 }
 
 $(document).ready(function(){
+
+  /* Activating Best In Place */
+  jQuery(".best_in_place").best_in_place();
+  
   /* initialize the fields*/
   $('.datepicker').datepicker();
   $.ajax({
@@ -183,5 +183,6 @@ $(document).ready(function(){
   })
 
   $('select').formSelect();
-
+  /* Activating Best In Place */
+  jQuery(".best_in_place").best_in_place();
 });

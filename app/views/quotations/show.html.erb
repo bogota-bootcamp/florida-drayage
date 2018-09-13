@@ -1,5 +1,6 @@
 <div class="chat-cont">
 	<div id="accordion">
+  <!--
   <div class="card">
     <div class="card-header" id="headingOne">
       <h5 class="mb-0">
@@ -15,6 +16,7 @@
       </div>
     </div>
   </div>
+  -->
   <div class="card">
     <div class="card-header" id="headingThree">
       <h5 class="mb-0">
@@ -26,7 +28,8 @@
     <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
       <div class="card-body">
         <h4>New Invoice</h4>
-        <%= render partial: "/invoices/form_invoice",locals:{quotation: @quotation, invoice: @invoice}%>
+        <%= render partial: "/quotations/quotation_header.html.erb"%>
+        <%= render partial: "/invoices/form_invoice_remote",locals:{quotation: @quotation, invoice: @invoice}%>
       </div>
     </div>
   </div>
