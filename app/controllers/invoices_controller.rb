@@ -3,7 +3,6 @@ class InvoicesController < ApplicationController
     @quotation= Quotation.find(params[:quotation_id])  
     invoice_params = invoice_parameters.merge(clone_quote_information_to_invoice(@quotation))
     @invoice=@quotation.invoices.new(invoice_params)
-    debugger
     if @invoice.save    
       #mail=InvoiceMailer.new_invoice(@quotation,@invoice)
       #response = mail.deliver_now
