@@ -1,4 +1,22 @@
 
+function updateQuotation(){
+  $(".cont-flash-messages").html("")
+  $form= $( this ).closest("form")
+  data = $form.serialize()
+  $.post({
+      url: $form.attr('action'),
+      data: data      
+  }).fail(function(data){      
+      data.responseJSON.forEach(function(element){
+          $(".cont-flash-messages").append("<div class='alert alert-danger alert-dismissible' style= 'z-index: 1040;'> <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>"+element+"</div>")
+      })
+      $.ajax({
+        url: $form.attr('action'),
+        headers:{Accept:"text/javascript, application/javascript, application/ecmascript, application/x-ecmascript, */*; q=0.01"}      
+      });        
+  })
+}
+
 function foward($step, $pag){
 
   // animate the step out
@@ -185,4 +203,6 @@ $(document).ready(function(){
   $('select').formSelect();
   /* Activating Best In Place */
   jQuery(".best_in_place").best_in_place();
+  $("input,select").change(updateQuotation)
+  
 });
