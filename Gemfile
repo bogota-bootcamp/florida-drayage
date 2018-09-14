@@ -38,7 +38,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 # jquery
 gem 'jquery-rails'
 #Bootstrap
-gem 'bootstrap', '~> 4.0.0'
+gem 'bootstrap', '~> 4.1.2'
 
 # materialize
 gem 'materialize-sass', '~> 1.0.0.rc2'
@@ -94,3 +94,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 #
 gem 'best_in_place', '~> 3.0.1'
+
+gem 'rubyzip', '~> 1.2.2'
