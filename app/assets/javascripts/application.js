@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery3
+//= require best_in_place
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks

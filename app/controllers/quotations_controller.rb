@@ -17,7 +17,7 @@ class QuotationsController < ApplicationController
     user= current_user    
     @quotation = Quotation.find(params[:id])
     @invoices = @quotation.invoices   
-    @invoice = @quotation.invoices.new
+    @invoice = @quotation.invoices.new()
     unless (user && (user.has_role? :admin )) 
       render "quotations/_quotation_header", layout:true
     end
@@ -28,7 +28,7 @@ class QuotationsController < ApplicationController
     if @quotation.save
       #mail=QuotationMailer.new_quotation(@quotation)
       #response = mail.deliver_now
-      flash[:success] = "Quote ##{@quotation.id} was created"     
+      flash[:success] = ["Thank you for submitting your quote request."," One of our Drayage Specialists will contact you shortly."]     
     else
       errors= @quotation.errors.full_messages
       flash[:danger] = errors
@@ -40,6 +40,18 @@ class QuotationsController < ApplicationController
        render "user/index" and return    
     end
     redirect_to root_path
+  end
+
+  def update
+    @quote = Quotation.find params[:id]
+
+    respond_to do |format|
+      if @quote.update_attributes(quotation_parameters)        
+        format.json { respond_with_bip(@quote) }
+      else        
+        format.json { respond_with_bip(@quote) }
+      end
+    end
   end
 
   def delete
@@ -60,10 +72,6 @@ class QuotationsController < ApplicationController
 
   private
   def quotation_parameters
-    params.require(:quotation).permit(:first_name,:last_name,:company,:phone,:email,:comments,:commodity,:hazardous,:bonded_cargo,:overweight,:pickup_date,:drop_date,:equipment_type,:origin_zipcode,:destination_zipcode,:origin_city,:destination_city)
+    params.require(:quotation).permit(:first_name,:last_name,:company,:phone,:email,:comments,:commodity,:hazardous,:bonded_cargo,:overweight,:pickup_date,:drop_date,:equipment_type,:origin_zipcode,:destination_zipcode,:origin_city,:destination_city,:residencial)
   end
 end
-
-
-
-  

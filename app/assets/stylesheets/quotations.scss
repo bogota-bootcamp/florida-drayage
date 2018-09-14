@@ -1,12 +1,31 @@
 // Place all the styles related to the quotations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
- 
+.best_in_place,
+.input-pos-form{
+  display:block;
+  
+ }
 
-.quotation-item{
+h5 span{
+  font-size: 1rem;
+  margin-left: 15px;
+  color: #94acb8;
+  font-weight: bold;
+}
+.input-pos-form{
+    margin-left: 3rem;
+    top: .5rem;
+    position: relative;
+ }   
 
-  text-align: center;
+li.quotation-item{
   cursor: pointer;
+  background-color: #fff;
+  line-height: 1.5rem;
+  padding: 19px 17px;
+  margin: 12px 7px;
+  border-bottom: 1px solid #ff9c39;
 
   a {
     color:black;
@@ -54,7 +73,7 @@
 
 .modal-wrap {
   max-width: 600px;
-  margin: 50px auto;
+  margin: 0px auto;
   transition: -webkit-transform 300ms ease-in-out;
   transition: transform 300ms ease-in-out;
   transition: transform 300ms ease-in-out, -webkit-transform 300ms ease-in-out;
