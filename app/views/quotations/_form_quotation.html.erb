@@ -7,13 +7,21 @@
     background-color: #fafafa;
     padding: 0;
     max-height: 70%;
+    height: 394px;
     width: 100%;
     margin: auto;
     overflow-y: auto;
     border-radius: 2px;
     will-change: top, opacity;
-}
+    top:0;
+  }
+  @media only screen and (min-width: 601px){
+    .datepicker-modal {
+        max-width: 625px;
+    }
+  }
 </style>
+
 <div class="modal-wrap">
   <div class="modal-header">
     <span class="is-active"></span>

@@ -1,3 +1,13 @@
+<style>
+  .modal {
+  height: 394px;
+  }
+  @media only screen and (min-width: 601px){
+    .datepicker-modal {
+        max-width: 625px;
+    }
+  }
+</style>
 <%= form_for [@quotation]  do |f| %>
   <div class="row">
     <div class="input-field col s6">
@@ -141,5 +151,6 @@
   </div>
 
 <% end %>
+
 
 <%= javascript_include_tag "form_quotation" %>
