@@ -1,3 +1,13 @@
+<style>
+  .modal {
+  height: 394px;
+  }
+  @media only screen and (min-width: 601px){
+    .datepicker-modal {
+        max-width: 625px;
+    }
+  }
+</style>
 <%= form_for [@quotation]  do |f| %>
   <div class="row">
     <div class="input-field col s6">
@@ -47,36 +57,34 @@
   </div>
   <div class="divider"></div>
   <div class="row">
-    <div class="input-field col s12">
-      <i class="material-icons prefix icon-color">markunread_mailbox</i>
-       <%= best_in_place @quotation, :origin_city, :as => :input, :class=> "input-pos-form" %>      
-      <label for="disabled" class="active">Origin city</label>
+    <div class="input-field col m12 s12">
+      <i class="material-icons prefix icon-color">markunread_mailbox</i>     
+      <%= f.text_field :origin_city, class: "validate autocomplete city", id:"quotation_origin_city"%>
+      <label for="quotation_origin_city " class= "label-cursor active">Origin city</label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col m12 s12">
+      <i class="material-icons prefix icon-color">map</i>          
+      <%= f.text_field :origin_zipcode, class: "validate  autocomplete", id:"quotation_origin_zipcode"%>
+      <label for="quotation_origin_zipcode" class= "label-cursor active">Origin Zipcode</label> 
     </div>
   </div>
 
   <div class="row">
-    <div class="input-field col s6">
-      <i class="material-icons prefix icon-color">map</i>
-      <%= best_in_place @quotation, :origin_zipcode, :as => :input, :class=> "input-pos-form" %>
-      <label for="icon_prefix" class="active">Origin Zipcode</label>
+    <div class="input-field col m12 s12">
+      <i class="material-icons prefix icon-color">markunread_mailbox</i> 
+      <%= f.text_field :destination_city, class: "validate autocomplete city", id:"quotation_destination_city"%>
+      <label for="quotation_destination_city" class= "label-cursor active">Destination city</label>
     </div>
   </div>
-
-  <div class="row">
-    <div class="input-field col s12 ">
-      <i class="material-icons prefix icon-color">markunread_mailbox</i>
-      <%= best_in_place @quotation, :destination_city, :as => :input, :class=> "input-pos-form" %>
-      <label for="disabled" class="active">Destination city</label>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="input-field col s6">
-      <i class="material-icons prefix icon-color">map</i>
-      <%= best_in_place @quotation, :destination_zipcode, :as => :input, :class=> "input-pos-form" %>
-      <label for="disabled" class="active">Destination Zipcode</label>
-      </div>
-  </div>
+          <div class="row">
+          <div class="input-field col m12 s12">
+            <i class="material-icons prefix icon-color">map</i>          
+            <%= f.text_field :destination_zipcode, class: "validate", id:"quotation_destination_zipcode"%>
+            <label for="quotation_destination_zipcode" class= "label-cursor active">Destination Zipcode</label>
+          </div>
+        </div>
   <div class="row">
     <div class="input-field col s6">
       <i class="material-icons prefix icon-color">comment</i>          
@@ -143,5 +151,6 @@
   </div>
 
 <% end %>
+
 
 <%= javascript_include_tag "form_quotation" %>
