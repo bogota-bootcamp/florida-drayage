@@ -1,21 +1,31 @@
 <section id="about-us" class="container-box">
-  <div class="row section-box" id="about">
-        <div class="col-12 col-md-8 d-flex  flex-column justify-content-center align-items-center">
-            <div class="logo-cont d-flex justify-content-center align-items-center">
-                <%= image_tag("logo.svg", class: 'logo-svg') %>
+    <section class="container-images">
+        <img class="mySlides" src="http://dofground.com/images/drayage-01.jpg" >
+        <img class="mySlides" src="http://dofground.com/images/drayage-02.jpg" style="display:none">
+        <img class="mySlides" src="https://static1.squarespace.com/static/569e4bc2e0327c41cdaa8d61/t/57fea79e3e00bebf285e05a8/1476306936653/?format=2500w" style="display:none">
+        <div class="container floating-section">
+                <div class="row">
+                    <div class="col s6">
+                        <div class="logo-cont d-flex justify-content-center align-items-center">
+                            <%= image_tag("logo.svg", class: 'logo-svg') %>
+                        </div>
+                    </div>
+                    <div class="col s6 background-opacity">
+                        <p class="title-text">welcome to drayage</p>
+                        <p class="desc-text">Receive your quote in minutes!</p>  
+                        <p class="desc-text">Upload your documents and pay online.</p> 
+                        <p class="desc-text">Chat with us today!</p>
+                        
+                        <ul class="desc-text ">
+                            <li><span> - </span>Port drayage</li>
+                            <li><span> - </span>Intermodal</li>
+                            <li><span> - </span>Rail</li>
+                        </ul> 
+                    </div>
+                </div>                
             </div>
-        </div>
-
-        <div class="col-12 col-md-4 d-flex flex-column justify-content-center align-items-center">
-          <p class="title-text">welcome to drayage</p>
-          <p class="desc-text">Receive your quote in minutes!  Upload your documents and pay online. Chat with us today!</p>
-          <ul class="desc-text ">
-              <li><span> - </span>Port drayage</li>
-              <li><span> - </span>Intermodal</li>
-              <li><span> - </span>Rail</li>
-          </ul> 
-        </div>
-  </div>
+        
+    </section>  
 
   <div class="section-box" id="services" >
     <div class="row">
@@ -166,4 +176,3 @@
   <%= render partial:"/user/chat_box", layout: false  unless (current_user && (current_user.has_role? :admin)) %>
  
 </section>
-

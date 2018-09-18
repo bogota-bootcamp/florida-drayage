@@ -7,10 +7,21 @@
     // height: 650px;
 }
 
-body{
-	
+.mySlides{
+	width: 100%;
+	height: 100vh;
+}
+.floating-section{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
+.container-images{
+	position: relative;
+    text-align: center;
+}
 
 .section-box{
     // height: 100% !important;
@@ -23,7 +34,7 @@ body{
 .logo-cont {
     width: 300px;
     height: 300px;
-    background: #f3f3f3;
+    background: #607d8bc7;
     border-radius: 50%;
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
@@ -43,13 +54,17 @@ body{
 .service-logo-2  {
   width:60px;
 }
-
+ul.desc-text{
+	display: flex;
+    justify-content: center;
+}
 .title-text {
   font-family: 'Carme';
   font-size:38px;
   color: white;
   font-weight: 600;
   display: block;
+  margin-top: 20px;
 }
 
 .desc-text {

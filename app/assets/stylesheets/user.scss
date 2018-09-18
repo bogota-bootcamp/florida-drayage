@@ -168,5 +168,32 @@ button:focus {
   color: #fff !important;
 }
 
+.carousel-flex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .container {
+    z-index: 2;
+  }
+}
 
+.background-opacity{
+  background-color: #1d2125e6;
+  border-radius: 20px;  
+  padding: 15px;
 
+}
+.col .s6 .background-opacity{
+  padding: 15px;
+}
+
+.carousel .carousel-item>img {
+  width: 100%;
+  height: 100%;
+  
+}
+
+ul.desc-text >li{
+  float: left;
+  padding-right: 20px;
+}
