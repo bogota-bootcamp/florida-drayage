@@ -7,6 +7,5 @@ class Invoice < ApplicationRecord
   validates :company, :presence => true
   validates :phone, :presence => true
   validates :email, :presence => true
-  validates :comments, :presence => true
   validates :equipment_type, :presence=> true
 end

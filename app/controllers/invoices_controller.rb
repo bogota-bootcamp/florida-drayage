@@ -8,8 +8,8 @@ class InvoicesController < ApplicationController
       #response = mail.deliver_now
       flash[:success] = "Invoice created"
     else
-      @errors= invoice.errors.full_messages
-      flash[:danger] = @error
+      @errors= @invoice.errors.full_messages
+      flash[:danger] = @errors      
     end
 
     respond_to do |format|
