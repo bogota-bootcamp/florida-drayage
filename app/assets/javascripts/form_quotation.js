@@ -109,9 +109,7 @@ function validateForm(form){
       })
     }
     else if(data.status === "ok"){
-      url = $form.attr('action');
-      console.log("funciono.")
-      
+      url = $form.attr('action'); 
       $.ajax({
          type: "POST",
          url: url,
