@@ -1,5 +1,6 @@
 <div class="chat-cont">
 	<div class="container">
+  <h4 class="title-quote">Quote <%= @quotation.id %> Invoice <%= @invoice.id%> </h4>
   <%= render partial: "/invoices/show_invoice_no_edit.html"%>
   <ul class="collapsible" id="upload-container">
 		<%=  render partial: "/invoices/upload_list", locals:{quotation:@quotation,_invoice:@invoice},layout:false %>

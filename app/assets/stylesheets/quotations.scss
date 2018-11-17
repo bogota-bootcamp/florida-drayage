@@ -5,6 +5,10 @@
 .input-pos-form{
   display:block;  
  }
+h5.title-quote{
+  text-align: center;
+  color: #979797;
+}
 
 h5 span{
   font-size: 1rem;
@@ -121,6 +125,12 @@ li.quotation-item{
 }
 .modal-body.is-showing {
   display: block;
+}
+
+li.active{
+  span.title{
+    color: white;
+  }
 }
 
 .animate-out {

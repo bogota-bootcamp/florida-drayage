@@ -25,7 +25,7 @@ class QuotationsController < ApplicationController
 
   def create
     @quotation= Quotation.new(quotation_parameters)
-    if @quotation.save
+    if not_double && @quotation.save
       #mail=QuotationMailer.new_quotation(@quotation)
       #response = mail.deliver_now
       flash[:success] = ["Thank you for submitting your quote request."," One of our Drayage Specialists will contact you shortly."]     
@@ -73,5 +73,9 @@ class QuotationsController < ApplicationController
   private
   def quotation_parameters
     params.require(:quotation).permit(:first_name,:last_name,:company,:phone,:email,:comments,:commodity,:hazardous,:bonded_cargo,:overweight,:pickup_date,:drop_date,:equipment_type,:origin_zipcode,:destination_zipcode,:origin_city,:destination_city,:residencial)
+  end
+
+  def not_double
+    !(@quotation.email == Quotation.last.email && Quotation.last.created_at > 1.minute.ago)
   end
 end

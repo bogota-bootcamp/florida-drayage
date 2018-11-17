@@ -94,6 +94,7 @@ function back($step, $pag){
 }
 
 function validateForm(form){
+
   $form= $(form)
   var data= $form.serialize()
   $.post({
@@ -108,11 +109,12 @@ function validateForm(form){
       })
     }
     else if(data.status === "ok"){
-      url = $form.attr('action');
+      url = $form.attr('action'); 
       $.ajax({
          type: "POST",
          url: url,
-         data: $form.serialize(), // serializes the form's elements.          
+         data: $form.serialize() // serializes the form's elements. 
+                 
        });
     }    
   });
@@ -195,9 +197,12 @@ $(document).ready(function(){
     }
   });
 
+  console.log("something")
+
   $("#new_quotation").submit(function(e){
     e.preventDefault()
-    validateForm(this)       
+    validateForm(this)
+    return false;   
   })
 
   $('select').formSelect();
