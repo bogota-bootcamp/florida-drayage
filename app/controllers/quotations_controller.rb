@@ -19,7 +19,7 @@ class QuotationsController < ApplicationController
     @invoices = @quotation.invoices   
     @invoice = @quotation.invoices.new()
     unless (user && (user.has_role? :admin )) 
-      render "quotations/_quotation_header", layout:true
+      render "quotations/_quotation_show", layout:true
     end
   end
 
