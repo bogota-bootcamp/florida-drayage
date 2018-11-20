@@ -3,11 +3,11 @@
 
 <p style="color: #B2B2B2 ;text-align:center; padding-top: 5px; font-size: 14px">Chat with a representative</p>
 <div class="input-field">	
-  <%= f.text_field :name, placeholder: "write your name here",class: "form-control form-new-conversation"%>
+  <%= f.text_field :name, placeholder: "write your name here",class: "form-control form-new-conversation",:required => true%>
 </div>
 
 <div class="input-field">	
-   <%= f.text_field :mail, placeholder: "youremail@example.com", class: "form-control form-new-conversation"%>
+   <%= f.text_field :mail, placeholder: "youremail@example.com", class: "form-control form-new-conversation",:required => true,type:'email'%>
 </div>
 <div style="text-align: center;">
 	<%= f.button :submit , class: "btn-send" do %>
