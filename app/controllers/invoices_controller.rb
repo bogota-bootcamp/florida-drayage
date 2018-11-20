@@ -4,8 +4,8 @@ class InvoicesController < ApplicationController
     invoice_params = invoice_parameters.merge(clone_quote_information_to_invoice(@quotation))
     @invoice=@quotation.invoices.new(invoice_params)
     if @invoice.save    
-      #mail=InvoiceMailer.new_invoice(@quotation,@invoice)
-      #response = mail.deliver_now
+      mail=InvoiceMailer.new_invoice(@quotation,@invoice)
+      response = mail.deliver_now
       flash[:success] = "Invoice created"
     else
       @errors= @invoice.errors.full_messages
