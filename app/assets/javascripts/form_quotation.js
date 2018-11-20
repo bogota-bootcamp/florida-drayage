@@ -197,8 +197,6 @@ $(document).ready(function(){
     }
   });
 
-  console.log("something")
-
   $("#new_quotation").submit(function(e){
     e.preventDefault()
     validateForm(this)
