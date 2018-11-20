@@ -96,4 +96,5 @@ Rails.application.configure do
   config.assets.precompile += %w( form_quotation.js )
   config.assets.precompile += %w( form_invoice.js )
   
+  Rails.application.routes.default_url_options[:host] = ENV['host']
 end
