@@ -19,15 +19,15 @@ class QuotationsController < ApplicationController
     @invoices = @quotation.invoices   
     @invoice = @quotation.invoices.new()
     unless (user && (user.has_role? :admin )) 
-      render "quotations/_quotation_header", layout:true
+      render "quotations/_quotation_show", layout:true
     end
   end
 
   def create
     @quotation= Quotation.new(quotation_parameters)
     if not_double && @quotation.save
-      #mail=QuotationMailer.new_quotation(@quotation)
-      #response = mail.deliver_now
+      mail=QuotationMailer.new_quotation(@quotation)
+      response = mail.deliver_now
       flash[:success] = ["Thank you for submitting your quote request."," One of our Drayage Specialists will contact you shortly."]     
     else
       errors= @quotation.errors.full_messages

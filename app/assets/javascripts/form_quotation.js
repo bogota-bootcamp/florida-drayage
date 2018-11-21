@@ -197,8 +197,6 @@ $(document).ready(function(){
     }
   });
 
-  console.log("something")
-
   $("#new_quotation").submit(function(e){
     e.preventDefault()
     validateForm(this)
@@ -208,6 +206,6 @@ $(document).ready(function(){
   $('select').formSelect();
   /* Activating Best In Place */
   jQuery(".best_in_place").best_in_place();
-  $("input,select").change(updateQuotation)
+  $("#new_quotation > input,#new_quotation > select").change(updateQuotation)
   
 });
