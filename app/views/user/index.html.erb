@@ -106,9 +106,12 @@
   <!-- ./Section-->
 
   <div class="row d-flex section-box justify-content-md-center" id="advantages" >
-    <div class="col-12 d-flex  flex-column justify-content-center align-items-center">
+    <div class="col-12 d-flex  justify-content-center align-items-center">
       <p class="title-text">Advantages</p>        
-    </div>
+    </div>     
+    
+       
+    <!-- 
     <div class="d-flex section-box justify-content-md-center">
         <ul class="collection">
           <li class="collection-item">Service 24 Hours a Day -7 Days a Week</li>
@@ -121,8 +124,26 @@
           <li class="collection-item">Secured Yard</li>
         </ul>
     </div>
+    -->
   </div>
-
+  <div class="row section-box container-fluid" >
+    <div id="advantage-container" class="col-xs-12 col-sm-12 col-md-12">
+        <div class="advantage-menu">
+          <ul>
+            <li class="collection-item">Service 24 Hours a Day -7 Days a Week</li>
+            <li class="collection-item">Asset Based</li>
+            <li class="collection-item">ELD Compliant</li>
+            <li class="collection-item">GPS Enabled Trucks and Chassis</li>
+            <li class="collection-item">Competitive Rates</li>
+            <li class="collection-item">Pilot Car Services</li>
+            <li class="collection-item">Online Payment</li>
+            <li class="collection-item">Secured Yard</li>
+          </ul>
+        </div>
+        <div class="advantage-info"></div>
+                                
+    </div> 
+  <div>
   <div class="row d-flex section-box justify-content-md-center" id="Quote" >
     <div class="col-12 d-flex  flex-column justify-content-center align-items-center">
       <p class="title-text">Quick Quote</p>
@@ -146,3 +167,4 @@
   <%= render partial:"/user/chat_box", layout: false  unless (current_user && (current_user.has_role? :admin)) %>
  
 </section>
+

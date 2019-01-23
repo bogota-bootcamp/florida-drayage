@@ -258,3 +258,21 @@ footer{
 	left: 0;
 	width: 100%;
 }
+
+#advantage-container{
+	-webkit-box-shadow: -2px 9px 44px -1px rgba(0,0,0,0.73);
+	-moz-box-shadow: -2px 9px 44px -1px rgba(0,0,0,0.73);
+	box-shadow: -2px 9px 44px -1px rgba(0,0,0,0.73);
+	display: flex;
+	flex-direction: row;
+	background-color: white;
+
+	.advantage-menu{
+		flex:1;
+		text-align: center;
+	}
+
+	.advantage-info{
+		flex: 2;
+	}
+}
