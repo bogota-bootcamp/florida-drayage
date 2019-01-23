@@ -38,3 +38,18 @@ $(document).ready(function(){
         setTimeout(carousel1, 5000); // Change image every 2 seconds
     }
 })
+
+
+function indexUserInitialize(){
+  setInterval(function(){
+    i=$("div.advantage-menu ul li").index($('.active'))
+    i = (i+1)% ($("div.advantage-menu ul li").length)
+    $("div.advantage-menu ul li.active").removeClass("active")
+    $($("div.advantage-menu ul li")[i]).addClass("active")
+
+    $(".advantage-show.active").removeClass("active")
+    $($(".advantage-show")[i]).addClass("active")
+
+  },8000)      
+
+}

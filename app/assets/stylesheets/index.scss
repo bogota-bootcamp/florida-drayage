@@ -270,9 +270,35 @@ footer{
 	.advantage-menu{
 		flex:1;
 		text-align: center;
+		margin: auto 10px;
+		li.collection-item.active{			
+			background-color:  #FF6F00;
+			border: 2px solid white;
+			color: white;
+			
+		}
+		li.collection-item{
+			
+			min-height: 40px;			
+			color: #FF6F00;
+			
+			
+		}
 	}
 
 	.advantage-info{
 		flex: 2;
+
+		.advantage-show{			
+			display: none;
+			.advantage-image{
+				width: 100px;
+				margin: 10px auto;
+			}
+			
+		}
+		.advantage-show.active{
+			display: block;
+		}
 	}
 }
