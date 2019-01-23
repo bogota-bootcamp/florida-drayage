@@ -6,9 +6,7 @@
     // height: 650px;
 }
 
-i{
-	color:#FF6F00;
-}
+
 
 .mySlides{
 	width: 100%;
@@ -35,16 +33,17 @@ i{
 }
 
 .logo-cont {
-    width: 300px;
-    height: 300px;
-    background: #607d8bc7;
+    width: 60vh;
+    height: 60vh;
+    background: #dde8ee6e;
     border-radius: 50%;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);	
+    margin: 0 auto;
 }
 
 
 .logo-svg {
-    width: 250px;
+    width: 55vh;
 }
 
 .logo-svg-small {
@@ -171,7 +170,7 @@ footer{
 }
 
 #live-chat input[type="text"] {
-	border: 1px solid #ccc;
+	border: 0px 0px 1px 0px solid #ccc;
 	border-radius: 3px;
 	padding: 8px;
 	outline: none;
@@ -272,9 +271,9 @@ footer{
 		text-align: center;
 		margin: auto 10px;
 		li.collection-item.active{			
-			background-color:  #FF6F00;
+			
 			border: 2px solid white;
-			color: white;
+			border-right: 4px solid #FF6F00;			
 			
 		}
 		li.collection-item{
