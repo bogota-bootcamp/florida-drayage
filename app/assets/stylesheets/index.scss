@@ -1,11 +1,12 @@
 .container-box {
     // background: rgb(255,156,57);
     // background: linear-gradient(180deg, rgba(255,156,57,1) 0%, rgba(255,219,54,1) 100%);
-    background: rgb(255,156,57);
-    background: linear-gradient(180deg, rgba(255,156,57,1) 0%, rgba(255,183,77,1) 100%);
+    background: rgb(0,136,178);
     width: 100%;
     // height: 650px;
 }
+
+
 
 .mySlides{
 	width: 100%;
@@ -32,16 +33,17 @@
 }
 
 .logo-cont {
-    width: 300px;
-    height: 300px;
-    background: #607d8bc7;
+    width: 60vh;
+    height: 60vh;
+    background: #dde8ee6e;
     border-radius: 50%;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);	
+    margin: 0 auto;
 }
 
 
 .logo-svg {
-    width: 250px;
+    width: 55vh;
 }
 
 .logo-svg-small {
@@ -97,6 +99,26 @@ ul.desc-text{
   color: white;
   font-size: 16px;
 }
+footer{
+	background-color: black;
+	text-align: center;
+	div.footer-container{
+		display: flex;
+		flex-direction: row;
+		
+		.footer-row{
+			padding: 18px;
+			flex:1;
+			span{
+				i{
+					margin-right: 10px;
+				}
+			}
+		}
+		
+	}
+	
+}
 
 
 // chat-box
@@ -148,7 +170,7 @@ ul.desc-text{
 }
 
 #live-chat input[type="text"] {
-	border: 1px solid #ccc;
+	border: 0px 0px 1px 0px solid #ccc;
 	border-radius: 3px;
 	padding: 8px;
 	outline: none;
@@ -234,4 +256,48 @@ ul.desc-text{
 	top: 0;
 	left: 0;
 	width: 100%;
+}
+
+#advantage-container{
+	-webkit-box-shadow: -2px 9px 44px -1px rgba(0,0,0,0.73);
+	-moz-box-shadow: -2px 9px 44px -1px rgba(0,0,0,0.73);
+	box-shadow: -2px 9px 44px -1px rgba(0,0,0,0.73);
+	display: flex;
+	flex-direction: row;
+	background-color: white;
+
+	.advantage-menu{
+		flex:1;
+		text-align: center;
+		margin: auto 10px;
+		li.collection-item.active{			
+			
+			border: 2px solid white;
+			border-right: 4px solid #FF6F00;			
+			
+		}
+		li.collection-item{
+			
+			min-height: 40px;			
+			color: #FF6F00;
+			
+			
+		}
+	}
+
+	.advantage-info{
+		flex: 2;
+
+		.advantage-show{			
+			display: none;
+			.advantage-image{
+				width: 100px;
+				margin: 10px auto;
+			}
+			
+		}
+		.advantage-show.active{
+			display: block;
+		}
+	}
 }

@@ -10,6 +10,7 @@
                             <%= image_tag("logo.svg", class: 'logo-svg') %>
                         </div>
                     </div>
+                    <!--
                     <div class="col s6 background-opacity">
                         <p class="title-text">Welcome to Drayage</p>
                         <p class="desc-text">Receive your quote in minutes!</p>  
@@ -22,6 +23,7 @@
                             <li><span> - </span>Rail</li>
                         </ul> 
                     </div>
+                    -->
                 </div>                
             </div>
         
@@ -84,7 +86,7 @@
           <!-- ./Services -->
           <!-- Services -->
           <div class="col-xs-12 col-sm-12 col-md-4">
-              <div class="image-flip" ">
+              <div class="image-flip">
                   <div class="mainflip">
                       <div class="frontside">
                           <div class="card card-item">
@@ -106,9 +108,12 @@
   <!-- ./Section-->
 
   <div class="row d-flex section-box justify-content-md-center" id="advantages" >
-    <div class="col-12 d-flex  flex-column justify-content-center align-items-center">
+    <div class="col-12 d-flex  justify-content-center align-items-center">
       <p class="title-text">Advantages</p>        
-    </div>
+    </div>     
+    
+       
+    <!-- 
     <div class="d-flex section-box justify-content-md-center">
         <ul class="collection">
           <li class="collection-item">Service 24 Hours a Day -7 Days a Week</li>
@@ -121,42 +126,118 @@
           <li class="collection-item">Secured Yard</li>
         </ul>
     </div>
+    -->
   </div>
-
-  <div class="row d-flex section-box justify-content-md-center " id="contact">
-    <div class="col-12 d-flex  flex-column justify-content-center align-items-center">
-      <p class="title-text">Contact</p>
-      <p class="desc-text">Write About the services of Drayage that you offer for your costumers.</p>
-    </div>
-
-    <div class="col-s6">
-      <div class=" row contact-table" style="margin-left: 0; margin-right: 0">
-        <div class="col-6 d-flex flex-column justify-content-center align-items-center  contact-border-1">
-            <i class="material-icons c-icon">email</i>
-
-          <p class="contact-text">sales@drayage-fla.com</p>
+  <div class="row section-box container-fluid" >
+    <div id="advantage-container" class="col-xs-12 col-sm-12 col-md-12">
+        <div class="advantage-menu">
+          <ul>
+            <li class="collection-item active">Service 24 Hours a Day -7 Days a Week</li>
+            <li class="collection-item">Asset Based</li>
+            <li class="collection-item">ELD Compliant</li>
+            <li class="collection-item">GPS Enabled Trucks and Chassis</li>
+            <li class="collection-item">Competitive Rates</li>
+            <li class="collection-item">Pilot Car Services</li>
+            <li class="collection-item">Online Payment</li>
+            <li class="collection-item">Secured Yard</li>
+          </ul>
         </div>
-        <div class="col-6  d-flex flex-column justify-content-center align-items-center">
-            <i class="material-icons c-icon">phone</i>
-            <p class="contact-text">+1-202-555-0109</p>
+        <div class="advantage-info">
+            <div class="advantage-show active">
+                <div class="advantage-image">
+                    <%= image_tag('service 27_7')%>
+                </div>
+                <div>
+                    <p>
+                    is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    </p>
+                </div>
+            </div>
 
-        </div>
-        <div class="col-6 d-flex flex-column justify-content-center align-items-center contact-border-1 contact-border-2">
-          <i class="material-icons c-icon">place</i>
-          <p class="contact-text">New York, NY 10005</p>
-        </div>
-        <div class="col-6 d-flex flex-column justify-content-center align-items-center contact-border-2">
-          <i class="fab fa-linkedin c-icon"></i>
-          <p class="contact-text">Some social network</p>
-        </div>
-      </div>
-    </div>
-  </div> 
+            <div class="advantage-show">
+                <div class="advantage-image">
+                    <%= image_tag('asset_based')%>
+                </div>
+                <div>
+                    <p>
+                        is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    </p>
+                </div>
+            </div> 
 
+            <div class="advantage-show">
+                <div class="advantage-image">
+                    <%= image_tag('ELD_compliant')%>
+                </div>
+                <div>
+                    <p>
+                    is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    </p>
+                </div>
+            </div> 
+
+            <div class="advantage-show">
+                <div class="advantage-image">
+                    <%= image_tag('GPS_enabled_truck')%>
+                </div>
+                <div>
+                    <p>
+                    is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    </p>
+                </div>
+            </div> 
+
+            <div class="advantage-show">
+                <div class="advantage-image">
+                    <%= image_tag('competetive_rates')%>
+                </div>
+                <div>
+                    <p>
+                    is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    </p>
+                </div>
+            </div> 
+
+            <div class="advantage-show">
+                <div class="advantage-image">
+                    <%= image_tag('pilot_car_services')%>
+                </div>
+                <div>
+                    <p>
+                    is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    </p>
+                </div>
+            </div> 
+
+            <div class="advantage-show">
+                <div class="advantage-image">
+                    <%= image_tag('online_payment')%>
+                </div>
+                <div>
+                    <p>
+                    is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    </p>
+                </div>
+            </div> 
+
+            <div class="advantage-show">
+                <div class="advantage-image">
+                    <%= image_tag('secured_yard')%>
+                </div>
+                <div>
+                    <p>
+                    is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    </p>
+                </div>
+            </div>             
+        </div>
+                                
+    </div> 
+  <div>
   <div class="row d-flex section-box justify-content-md-center" id="Quote" >
     <div class="col-12 d-flex  flex-column justify-content-center align-items-center">
       <p class="title-text">Quick Quote</p>
-      <p class="desc-text">Send us a quote, we will contact you soon </p>
+      <p class="desc-text">Our free online quotation will you some real money. You can fill out our form below and compare our prices to other shipping company quotes. It is quick and easy to use, our quote will go straight to your inbox, so you get quick response from us. You can always give us a call to see if there is anything else that Florida Drayage can do for you.</p>
     </div>
     <div  style ="width: 100%">
       <%= render partial: "/quotations/form_quotation"%>
@@ -176,3 +257,6 @@
   <%= render partial:"/user/chat_box", layout: false  unless (current_user && (current_user.has_role? :admin)) %>
  
 </section>
+<script>
+    indexUserInitialize();
+</script>

@@ -7,8 +7,8 @@
     <ul class="navbar-nav ml-auto">
       <!--<li><a href="" class="nav-link">Payment</a></li> -->
       <li><%=link_to "Services","#{root_path}#services", id: "services-link",:class => "nav-link" %></li>
-      <li><%=link_to "Contact","#{root_path}#contact", id: "contact-link",:class => "nav-link" %></li>
       <li><%=link_to "Quote","#{root_path}#Quote", id: "contact-link",:class => "nav-link" %></li>
+      <li><%=link_to "Contact","#{root_path}#contact", id: "contact-link",:class => "nav-link" %></li>     
       <% unless user_signed_in?%>            
             <li><a href="/users/sign_in" class="nav-link"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
          <% else%>

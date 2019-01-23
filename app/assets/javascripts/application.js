@@ -25,9 +25,8 @@
 
 $(document).ready(function(){
     var myIndex = 0;
-    carousel();
-    
-    function carousel() {
+    carousel1();    
+    function carousel1() {
         var i;
         var x = document.getElementsByClassName("mySlides");
         for (i = 0; i < x.length; i++) {
@@ -36,6 +35,21 @@ $(document).ready(function(){
         myIndex++;
         if (myIndex > x.length) {myIndex = 1}    
         x[myIndex-1].style.display = "block";  
-        setTimeout(carousel, 5000); // Change image every 2 seconds
+        setTimeout(carousel1, 5000); // Change image every 2 seconds
     }
 })
+
+
+function indexUserInitialize(){
+  setInterval(function(){
+    i=$("div.advantage-menu ul li").index($('.active'))
+    i = (i+1)% ($("div.advantage-menu ul li").length)
+    $("div.advantage-menu ul li.active").removeClass("active")
+    $($("div.advantage-menu ul li")[i]).addClass("active")
+
+    $(".advantage-show.active").removeClass("active")
+    $($(".advantage-show")[i]).addClass("active")
+
+  },8000)      
+
+}
