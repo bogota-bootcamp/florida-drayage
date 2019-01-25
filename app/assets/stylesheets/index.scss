@@ -6,7 +6,15 @@
     // height: 650px;
 }
 
+form.new_quotation{
+	i{
+		color:#FF6F00;
+	}
 
+	i.send{
+		color:white;
+	}
+}
 
 .mySlides{
 	width: 100%;
@@ -300,4 +308,13 @@ footer{
 			display: block;
 		}
 	}
+}
+
+nav{
+
+	font-family: Eunomia;
+}
+
+.squadron{
+	font-family: "SFViperSquadron";
 }

@@ -190,3 +190,22 @@ li.active{
   cursor:pointer
 }
 
+
+.switch{
+  label.label-cursor{
+    font-size: 2rem;
+    color: #9e9e9e !important;
+  }
+}
+
+.switch label input[type=checkbox]:checked+.lever {
+  background-color: #FF8F00 !important;
+}
+
+.switch label input[type=checkbox]:checked+.lever:after {
+  background-color:  #FF8F00 !important;
+}
+
+.switch{
+  text-align: center;
+}
