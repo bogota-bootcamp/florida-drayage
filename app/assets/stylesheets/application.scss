@@ -15,19 +15,19 @@
  // Custom bootstrap variables must be set or imported *before* bootstrap.
  @font-face {
     font-family: "SFViperSquadron";
-    src: url(/assets/SFViperSquadron.ttf); 
+    src: font-url("/assets/SFViperSquadron.ttf"); 
     
     
   }
 
   @font-face {
     font-family: "Eunomia";
-    src: url(/assets/Eunomia-Regular.otf);    
+    src: font-url("/assets/Eunomia-Regular.otf");    
   }
 
   @font-face {
     font-family: "SFViperSquadronSolid";
-    src: url(/assets/fonts/SFViperSquadronSolid.ttf) format("truetype");     
+    src: font-url("/assets/fonts/SFViperSquadronSolid.ttf");     
    
   }
 
