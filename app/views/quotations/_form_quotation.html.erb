@@ -35,6 +35,21 @@
       <div class="title">Step 1</div>
       <div class="description"></div>
         <div class="row">
+        
+          <div class="input-field col m12 s12">
+          <!-- Switch -->
+            <div class="switch">
+              <label class= "label-cursor ">
+                Import
+                <%= f.check_box :export %>
+                <span class="lever"></span>
+                Export
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
           <div class="input-field col m12 s12">
             <i class="material-icons prefix">markunread_mailbox</i>     
             <%= f.text_field :origin_city, class: "validate autocomplete city", id:"quotation_origin_city"%>
@@ -56,13 +71,7 @@
             <label for="quotation_destination_city" class= "label-cursor">Destination city</label>
           </div>
         </div>
-        <div class="row">
-          <div class="input-field col m12 s12">
-            <i class="material-icons prefix">map</i>          
-            <%= f.text_field :destination_zipcode, class: "validate", id:"quotation_destination_zipcode"%>
-            <label for="quotation_destination_zipcode" class= "label-cursor">Destination Zipcode</label>
-          </div>
-        </div>
+        
         
         <div class="text-center button-region">
           <div class="button foward" class= "label-cursor">Next</div>
@@ -72,7 +81,14 @@
     <div class="modal-body modal-body-step-2">
     
       <div class="title">Step 2</div>
-      <div class="description"></div>      
+      <div class="description"></div>
+      <div class="row">
+          <div class="input-field col m12 s12">
+            <i class="material-icons prefix">map</i>          
+            <%= f.text_field :destination_zipcode, class: "validate", id:"quotation_destination_zipcode"%>
+            <label for="quotation_destination_zipcode" class= "label-cursor">Destination Zipcode</label>
+          </div>
+      </div>      
       <div class="row">
         <div class="input-field col s6">
           <i class="material-icons prefix">comment</i>          

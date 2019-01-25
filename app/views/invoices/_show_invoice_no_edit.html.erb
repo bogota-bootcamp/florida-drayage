@@ -1,4 +1,15 @@
 <%= form_for [@quotation,@invoice]  do |f| %>
+	<div class= "row">    
+		<div class="switch">
+			<label class= "label-cursor ">
+			Import
+			<%= f.check_box :export, { :checked => @quotation.export ,disabled: true }%>
+			<span class="lever"></span>
+			Export
+			</label>
+		</div>  
+  	</div>
+
 	<div class="row">
 		<div class="input-field col s6">
 			<i class="material-icons prefix icon-color">account_circle</i>
