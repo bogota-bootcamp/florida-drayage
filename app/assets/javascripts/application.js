@@ -42,43 +42,25 @@ $(document).ready(function(){
 })
 
 function hideItems(){
-  $(".collection-item").hide()
+  $(".advantage-show ").hide()
+}
+function HideClassListItem() {
+  $('.collection-item').removeClass("active")
+}
+
+function activateClassListItem(currentSlide){
+  HideClassListItem() 
+  $(".l-"+currentSlide).addClass("active")
 }
 
 function filterItem(slideClicked) {
-  if ( slideClicked == 1){
-    hideItems()
-    $(".i-1").show()
-  } else if ( slideClicked == 2){
-    hideItems()
-    $(".i-2").show()
-  }  else if ( slideClicked == 3){
-    hideItems()
-    $(".i-3").show()
-  } else if ( slideClicked == 4){
-    hideItems()
-    $(".i-4").show()
-  } else if ( slideClicked == 5){
-    hideItems()
-    $(".i-5").show()
-  } else if ( slideClicked == 6){
-    hideItems()
-    $(".i-6").show()
-  } else if ( slideClicked == 7){
-    hideItems()
-    $(".i-7").show()
-  } else if ( slideClicked == 8){
-    hideItems()
-    $(".i-8").show()
-  }
-  else {
-    hideItems()
-    $(".i-1").show()
-  }
+  hideItems()
+  $(".i-"+slideClicked).show()
 }
 
 function changeItem(slide){
   currentSlide = slide
+  activateClassListItem(currentSlide)
   filterItem(currentSlide)
 }
 
