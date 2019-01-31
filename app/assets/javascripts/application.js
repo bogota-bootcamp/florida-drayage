@@ -21,7 +21,7 @@
 //= require channels/chat
 //= require materialize
 
-
+var currentSlide = 1 
 
 $(document).ready(function(){
     var myIndex = 0;
@@ -30,14 +30,39 @@ $(document).ready(function(){
         var i;
         var x = document.getElementsByClassName("mySlides");
         for (i = 0; i < x.length; i++) {
-           x[i].style.display = "none";  
+          x[i].style.display = "none";  
         }
         myIndex++;
         if (myIndex > x.length) {myIndex = 1}    
         x[myIndex-1].style.display = "block";  
         setTimeout(carousel1, 5000); // Change image every 2 seconds
     }
+
+    $('.collection-item').on('click', changeItem(currentSlide));
 })
+
+function hideItems(){
+  $(".advantage-show ").hide()
+}
+function HideClassListItem() {
+  $('.collection-item').removeClass("active")
+}
+
+function activateClassListItem(currentSlide){
+  HideClassListItem() 
+  $(".l-"+currentSlide).addClass("active")
+}
+
+function filterItem(slideClicked) {
+  hideItems()
+  $(".i-"+slideClicked).show()
+}
+
+function changeItem(slide){
+  currentSlide = slide
+  activateClassListItem(currentSlide)
+  filterItem(currentSlide)
+}
 
 
 function indexUserInitialize(){
