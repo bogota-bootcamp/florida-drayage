@@ -22,7 +22,7 @@
 //= require materialize
 
 
-
+var currentSlide = 1 
 $(document).ready(function(){
     var myIndex = 0;
     carousel1();    
@@ -37,19 +37,115 @@ $(document).ready(function(){
         x[myIndex-1].style.display = "block";  
         setTimeout(carousel1, 5000); // Change image every 2 seconds
     }
+
+
+    $('.collection-item').on('click', changeItem(currentSlide));
 })
 
-
-function indexUserInitialize(){
-  setInterval(function(){
-    i=$("div.advantage-menu ul li").index($('.active'))
-    i = (i+1)% ($("div.advantage-menu ul li").length)
-    $("div.advantage-menu ul li.active").removeClass("active")
-    $($("div.advantage-menu ul li")[i]).addClass("active")
-
-    $(".advantage-show.active").removeClass("active")
-    $($(".advantage-show")[i]).addClass("active")
-
-  },8000)      
-
+function filterItem(slideClicked) {
+  if ( slideClicked == 1){
+    $(".i-1").show()
+    $(".i-2").hide()
+    $(".i-3").hide()
+    $(".i-4").hide()
+    $(".i-5").hide()
+    $(".i-6").hide()
+    $(".i-7").hide()
+    $(".i-8").hide()
+  } else if ( slideClicked == 2){
+    $(".i-2").show()
+    $(".i-1").hide()
+    $(".i-3").hide()
+    $(".i-4").hide()
+    $(".i-5").hide()
+    $(".i-6").hide()
+    $(".i-7").hide()
+    $(".i-8").hide()
+  }  else if ( slideClicked == 3){
+    $(".i-3").show()
+    $(".i-1").hide()
+    $(".i-2").hide()
+    $(".i-4").hide()
+    $(".i-5").hide()
+    $(".i-6").hide()
+    $(".i-7").hide()
+    $(".i-8").hide()
+  } else if ( slideClicked == 4){
+    $(".i-4").show()
+    $(".i-1").hide()
+    $(".i-2").hide()
+    $(".i-3").hide()
+    $(".i-5").hide()
+    $(".i-6").hide()
+    $(".i-7").hide()
+    $(".i-8").hide()
+  } else if ( slideClicked == 5){
+    $(".i-5").show()
+    $(".i-1").hide()
+    $(".i-2").hide()
+    $(".i-3").hide()
+    $(".i-4").hide()
+    $(".i-6").hide()
+    $(".i-7").hide()
+    $(".i-8").hide()
+  } else if ( slideClicked == 6){
+    $(".i-6").show()
+    $(".i-1").hide()
+    $(".i-2").hide()
+    $(".i-3").hide()
+    $(".i-4").hide()
+    $(".i-5").hide()
+    $(".i-7").hide()
+    $(".i-8").hide()
+  } else if ( slideClicked == 7){
+    $(".i-7").show()
+    $(".i-1").hide()
+    $(".i-2").hide()
+    $(".i-3").hide()
+    $(".i-4").hide()
+    $(".i-5").hide()
+    $(".i-6").hide()
+    $(".i-8").hide()
+  } else if ( slideClicked == 8){
+    $(".i-8").show()
+    $(".i-1").hide()
+    $(".i-2").hide()
+    $(".i-3").hide()
+    $(".i-4").hide()
+    $(".i-5").hide()
+    $(".i-6").hide()
+    $(".i-7").hide()
+  }
+  else {
+    $(".i-1").show()
+    $(".i-2").hide()
+    $(".i-3").hide()
+    $(".i-4").hide()
+    $(".i-5").hide()
+    $(".i-6").hide()
+    $(".i-7").hide()
+    $(".i-8").hide()
+  }
 }
+
+function changeItem(slide){
+  currentSlide = slide
+  filterItem(currentSlide)
+}
+
+
+// function indexUserInitialize(){
+//   setInterval(function(){
+//     i=$("div.advantage-menu ul li").index($('.active'))
+//     i = (i+1)% ($("div.advantage-menu ul li").length)
+//     $("div.advantage-menu ul li.active").removeClass("active")
+//     $($("div.advantage-menu ul li")[i]).addClass("active")
+
+//     $(".advantage-show.active").removeClass("active")
+//     $($(".advantage-show")[i]).addClass("active")
+
+//   },8000)      
+
+// }
+
+
