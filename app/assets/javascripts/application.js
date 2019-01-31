@@ -21,7 +21,7 @@
 //= require channels/chat
 //= require materialize
 
-
+var currentSlide = 1 
 
 $(document).ready(function(){
     var myIndex = 0;
@@ -30,14 +30,107 @@ $(document).ready(function(){
         var i;
         var x = document.getElementsByClassName("mySlides");
         for (i = 0; i < x.length; i++) {
-           x[i].style.display = "none";  
+          x[i].style.display = "none";  
         }
         myIndex++;
         if (myIndex > x.length) {myIndex = 1}    
         x[myIndex-1].style.display = "block";  
         setTimeout(carousel1, 5000); // Change image every 2 seconds
     }
+
+    $('.collection-item').on('click', changeItem(currentSlide));
 })
+
+function filterItem(slideClicked) {
+  if ( slideClicked == 1){
+    $(".i-1").show()
+    $(".i-2").hide()
+    $(".i-3").hide()
+    $(".i-4").hide()
+    $(".i-5").hide()
+    $(".i-6").hide()
+    $(".i-7").hide()
+    $(".i-8").hide()
+  } else if ( slideClicked == 2){
+    $(".i-2").show()
+    $(".i-1").hide()
+    $(".i-3").hide()
+    $(".i-4").hide()
+    $(".i-5").hide()
+    $(".i-6").hide()
+    $(".i-7").hide()
+    $(".i-8").hide()
+  }  else if ( slideClicked == 3){
+    $(".i-3").show()
+    $(".i-1").hide()
+    $(".i-2").hide()
+    $(".i-4").hide()
+    $(".i-5").hide()
+    $(".i-6").hide()
+    $(".i-7").hide()
+    $(".i-8").hide()
+  } else if ( slideClicked == 4){
+    $(".i-4").show()
+    $(".i-1").hide()
+    $(".i-2").hide()
+    $(".i-3").hide()
+    $(".i-5").hide()
+    $(".i-6").hide()
+    $(".i-7").hide()
+    $(".i-8").hide()
+  } else if ( slideClicked == 5){
+    $(".i-5").show()
+    $(".i-1").hide()
+    $(".i-2").hide()
+    $(".i-3").hide()
+    $(".i-4").hide()
+    $(".i-6").hide()
+    $(".i-7").hide()
+    $(".i-8").hide()
+  } else if ( slideClicked == 6){
+    $(".i-6").show()
+    $(".i-1").hide()
+    $(".i-2").hide()
+    $(".i-3").hide()
+    $(".i-4").hide()
+    $(".i-5").hide()
+    $(".i-7").hide()
+    $(".i-8").hide()
+  } else if ( slideClicked == 7){
+    $(".i-7").show()
+    $(".i-1").hide()
+    $(".i-2").hide()
+    $(".i-3").hide()
+    $(".i-4").hide()
+    $(".i-5").hide()
+    $(".i-6").hide()
+    $(".i-8").hide()
+  } else if ( slideClicked == 8){
+    $(".i-8").show()
+    $(".i-1").hide()
+    $(".i-2").hide()
+    $(".i-3").hide()
+    $(".i-4").hide()
+    $(".i-5").hide()
+    $(".i-6").hide()
+    $(".i-7").hide()
+  }
+  else {
+    $(".i-1").show()
+    $(".i-2").hide()
+    $(".i-3").hide()
+    $(".i-4").hide()
+    $(".i-5").hide()
+    $(".i-6").hide()
+    $(".i-7").hide()
+    $(".i-8").hide()
+  }
+}
+
+function changeItem(slide){
+  currentSlide = slide
+  filterItem(currentSlide)
+}
 
 
 function indexUserInitialize(){
