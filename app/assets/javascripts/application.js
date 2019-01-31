@@ -41,89 +41,39 @@ $(document).ready(function(){
     $('.collection-item').on('click', changeItem(currentSlide));
 })
 
+function hideItems(){
+  $(".collection-item").hide()
+}
+
 function filterItem(slideClicked) {
   if ( slideClicked == 1){
+    hideItems()
     $(".i-1").show()
-    $(".i-2").hide()
-    $(".i-3").hide()
-    $(".i-4").hide()
-    $(".i-5").hide()
-    $(".i-6").hide()
-    $(".i-7").hide()
-    $(".i-8").hide()
   } else if ( slideClicked == 2){
+    hideItems()
     $(".i-2").show()
-    $(".i-1").hide()
-    $(".i-3").hide()
-    $(".i-4").hide()
-    $(".i-5").hide()
-    $(".i-6").hide()
-    $(".i-7").hide()
-    $(".i-8").hide()
   }  else if ( slideClicked == 3){
+    hideItems()
     $(".i-3").show()
-    $(".i-1").hide()
-    $(".i-2").hide()
-    $(".i-4").hide()
-    $(".i-5").hide()
-    $(".i-6").hide()
-    $(".i-7").hide()
-    $(".i-8").hide()
   } else if ( slideClicked == 4){
+    hideItems()
     $(".i-4").show()
-    $(".i-1").hide()
-    $(".i-2").hide()
-    $(".i-3").hide()
-    $(".i-5").hide()
-    $(".i-6").hide()
-    $(".i-7").hide()
-    $(".i-8").hide()
   } else if ( slideClicked == 5){
+    hideItems()
     $(".i-5").show()
-    $(".i-1").hide()
-    $(".i-2").hide()
-    $(".i-3").hide()
-    $(".i-4").hide()
-    $(".i-6").hide()
-    $(".i-7").hide()
-    $(".i-8").hide()
   } else if ( slideClicked == 6){
+    hideItems()
     $(".i-6").show()
-    $(".i-1").hide()
-    $(".i-2").hide()
-    $(".i-3").hide()
-    $(".i-4").hide()
-    $(".i-5").hide()
-    $(".i-7").hide()
-    $(".i-8").hide()
   } else if ( slideClicked == 7){
+    hideItems()
     $(".i-7").show()
-    $(".i-1").hide()
-    $(".i-2").hide()
-    $(".i-3").hide()
-    $(".i-4").hide()
-    $(".i-5").hide()
-    $(".i-6").hide()
-    $(".i-8").hide()
   } else if ( slideClicked == 8){
+    hideItems()
     $(".i-8").show()
-    $(".i-1").hide()
-    $(".i-2").hide()
-    $(".i-3").hide()
-    $(".i-4").hide()
-    $(".i-5").hide()
-    $(".i-6").hide()
-    $(".i-7").hide()
   }
   else {
+    hideItems()
     $(".i-1").show()
-    $(".i-2").hide()
-    $(".i-3").hide()
-    $(".i-4").hide()
-    $(".i-5").hide()
-    $(".i-6").hide()
-    $(".i-7").hide()
-    $(".i-8").hide()
   }
 }
 
