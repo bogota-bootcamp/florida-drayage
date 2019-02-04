@@ -77,6 +77,8 @@ class QuotationsController < ApplicationController
   end
 
   def not_double(quo)
-    !(quo == Quotation.last.email && Quotation.last.created_at > 1.minute.ago)
+    if Quotation.last.email || Quotation.last.created_at
+      !(quo == Quotation.last.email && Quotation.last.created_at > 1.minute.ago)
+    end
   end
 end
