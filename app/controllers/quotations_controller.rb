@@ -25,19 +25,20 @@ class QuotationsController < ApplicationController
 
   def create
     @quotation= Quotation.new(quotation_parameters)
-    if not_double && @quotation.save
+    if not_double(params[:quotation][:email]) && @quotation.save 
       mail=QuotationMailer.new_quotation(@quotation)
       response = mail.deliver_now
-      flash[:success] = ["Thank you for submitting your quote request."," One of our Drayage Specialists will contact you shortly."]     
+      flash[:success] = ["Thank you for submitting your quote request."," One of our Drayage Specialists will contact you shortly."] 
+        
     else
       errors= @quotation.errors.full_messages
       flash[:danger] = errors
       @conversation = Conversation.find_by_id(cookies[:conversation_id])          
       unless cookies[:conversation_id]&&@conversation
         @conversation=Conversation.new
-       end 
-       @message=@conversation.messages.new
-       render "user/index" and return    
+      end 
+        @message=@conversation.messages.new
+        render "user/index" and return    
     end
     redirect_to root_path
   end
@@ -75,7 +76,7 @@ class QuotationsController < ApplicationController
     params.require(:quotation).permit(:first_name,:last_name,:company,:phone,:email,:comments,:commodity,:hazardous,:bonded_cargo,:overweight,:pickup_date,:drop_date,:equipment_type,:origin_zipcode,:destination_zipcode,:origin_city,:destination_city,:residencial,:export)
   end
 
-  def not_double
-    !(@quotation.email == Quotation.last.email && Quotation.last.created_at > 1.minute.ago)
+  def not_double(quo)
+    !(quo == Quotation.last.email && Quotation.last.created_at > 1.minute.ago)
   end
 end

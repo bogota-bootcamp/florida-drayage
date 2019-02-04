@@ -8,7 +8,7 @@
 
 form.new_quotation{
 	i{
-		color:#FF6F00;
+		color:#FFD200;
 	}
 
 	i.send{
@@ -280,12 +280,13 @@ footer{
 		margin: auto 10px;
 		li.collection-item.active{
 			font-weight: 600;			
-			border-bottom: 3px solid #FF6F00;
+			border-bottom: 3px solid #FFD200;
 		}
 		li.collection-item{
 			min-height: 40px;			
-			color: #FF6F00;
-			border-bottom: 1px solid #FF6F00;
+			color: #2B2B2B;
+			font-family: 'Carme';
+			border-bottom: 1px solid #FFD200;
 			display: flex;
 			align-items: center;
 			justify-content: center;

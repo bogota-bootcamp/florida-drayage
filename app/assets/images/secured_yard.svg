@@ -3,8 +3,9 @@
 <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 496 496" style="enable-background:new 0 0 496 496;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:#FF6F00;}
-	.st1{fill:#FFA253;}
+	.st0{fill:#FFD200;}
+	.st1{fill:#FF6F00;}
+	.st2{fill:#FFA253;}
 </style>
 <g>
 	<g>
@@ -41,6 +42,7 @@
 		<rect x="448" y="448" class="st0" width="16" height="16"/>
 	</g>
 </g>
-<rect x="-221" y="33.5" class="st0" width="150" height="94"/>
-<rect x="-229" y="154.5" class="st1" width="150" height="94"/>
+<rect x="-221" y="33.5" class="st1" width="150" height="94"/>
+<rect x="-229" y="154.5" class="st2" width="150" height="94"/>
+<rect x="-288" y="281" class="st0" width="150" height="94"/>
 </svg>

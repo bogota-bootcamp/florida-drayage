@@ -50,7 +50,7 @@ li.quotation-item{
 .rerun-button {
   padding: 10px 20px;
   border-radius: 3px;
-  background: #FF6F00;
+  background: #FFD200;
   color: white;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -60,7 +60,7 @@ li.quotation-item{
 }
 .button:hover,
 .rerun-button:hover {
-  background: #e66400;
+  background: #d89f0a;
 }
 .button.rerun-button,
 .rerun-button.rerun-button {
@@ -100,7 +100,7 @@ li.quotation-item{
 }
 .modal-header span.is-active {
   background: rgba(0, 0, 0, 0.4);
-  background: #FF8F00;
+  background: #FFD200;
 }
 
 .modal-bodies {
@@ -199,11 +199,11 @@ li.active{
 }
 
 .switch label input[type=checkbox]:checked+.lever {
-  background-color: #FF8F00 !important;
+  background-color: #FFD200 !important;
 }
 
 .switch label input[type=checkbox]:checked+.lever:after {
-  background-color:  #FF8F00 !important;
+  background-color:  #FFD200 !important;
 }
 
 .switch{

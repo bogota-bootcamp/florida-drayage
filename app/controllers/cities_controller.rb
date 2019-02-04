@@ -9,7 +9,7 @@ class CitiesController < ApplicationController
 	end
 
 	def zipcodes
-		city= City.find_by(name: params[:name])
+		city = City.find_by(name: params[:name])
 		zipcodes= city.zipcodes.pluck(:id,:code)
 		response= {} 
 		zipcodes.each do |element|
