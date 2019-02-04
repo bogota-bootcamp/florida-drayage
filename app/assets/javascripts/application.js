@@ -25,18 +25,19 @@ var currentSlide = 1
 
 $(document).ready(function(){
     var myIndex = 0;
-    carousel1();    
-    function carousel1() {
-        var i;
-        var x = document.getElementsByClassName("mySlides");
-        for (i = 0; i < x.length; i++) {
-          x[i].style.display = "none";  
-        }
-        myIndex++;
-        if (myIndex > x.length) {myIndex = 1}    
-        x[myIndex-1].style.display = "block";  
-        setTimeout(carousel1, 5000); // Change image every 2 seconds
-    }
+    // carousel1();    
+    // function carousel1() {
+    //     var i;
+    //     var x = document.getElementsByClassName("mySlides");
+    //     for (i = 0; i < x.length; i++) {
+    //       console.log("Aqui")
+    //       x[i].style.display = "none";  
+    //     }
+    //     myIndex++;
+    //     if (myIndex > x.length) {myIndex = 1}    
+    //     x[myIndex-1].style.display = "block";  
+    //     setTimeout(carousel1, 5000); // Change image every 2 seconds
+    // }
 
     $('.collection-item').on('click', changeItem(currentSlide));
 })
