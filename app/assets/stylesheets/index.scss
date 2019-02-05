@@ -2,11 +2,11 @@
     // background: rgb(255,156,57);
     // background: linear-gradient(180deg, rgba(255,156,57,1) 0%, rgba(255,219,54,1) 100%);
 	// background: rgb(0,136,178);
-	background-image: url("blueTriangle.jpg");
+	background-image: url("triangle.svg");
     width: 100%;
 	// height: 650px;
 	background-size: cover;
-    background-position: 0px 680px;
+    // background-position: 0px 680px;
 }
 
 form.new_quotation{
@@ -275,7 +275,8 @@ footer{
 	box-shadow: -2px 9px 44px -1px rgba(0,0,0,0.73);
 	display: flex;
 	flex-direction: row;
-	background-color: white;
+	background-color: #37474F;
+	color: white;
 
 	.advantage-menu{
 		flex:1;
@@ -287,7 +288,7 @@ footer{
 		}
 		li.collection-item{
 			min-height: 40px;			
-			color: #2B2B2B;
+			color: white;
 			font-family: 'Carme';
 			border-bottom: 1px solid #FFD200;
 			display: flex;
@@ -299,7 +300,7 @@ footer{
 
 	.advantage-info{
 		flex: 2;
-
+		margin-top: 25px;
 		.advantage-show{			
 			display: none;
 			.advantage-image{
