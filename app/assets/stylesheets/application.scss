@@ -28,9 +28,14 @@
   @font-face {
     font-family: "SFViperSquadronSolid";
     src: font-url("SFViperSquadronSolid.ttf");     
-   
   }
 
 @import "bootstrap";
-@import "*";
-
+@import "conversations";
+@import "index";
+@import "invoices";
+@import "messages";
+@import "nav";
+@import "payments";
+@import "quotations";
+@import "user";
