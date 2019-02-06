@@ -2,7 +2,7 @@
     // background: rgb(255,156,57);
     // background: linear-gradient(180deg, rgba(255,156,57,1) 0%, rgba(255,219,54,1) 100%);
 	// background: rgb(0,136,178);
-	background-image: url("triangle.svg");
+	background-image: url(<%= asset_path "triangle.svg" %>);
     width: 100%;
 	// height: 650px;
 	background-size: cover;
