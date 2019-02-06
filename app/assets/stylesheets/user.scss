@@ -135,7 +135,7 @@ box-shadow:0 1px 0 0 #ffd200 !important}
 textarea.materialize-textarea:focus:not([readonly])+label,
 input.valid[type=text]:not(.browser-default):focus.valid ~ label,
 .dropdown-content li>span{
-  color: #ffd200 !important;
+  color: #2b2b2b !important;
   }
 
  input[type=email]:not(.browser-default):focus:not([readonly]){
@@ -151,7 +151,9 @@ input[type=email]:not(.browser-default):focus:not([readonly])+label{
     border-right: 2px solid #ffd200 !important;
     border-bottom: 2px solid #ffd200 !important;
   }
-.datepicker-date-display,
+.datepicker-date-display {
+      background: linear-gradient(to bottom, #ff7b00 0%,#fccd4d 52%,#ffd200 57%,#fccd4d 78%,#fbdf93 100%);
+}
 button:focus {
       background-color: #ffd200 !important;
 }
