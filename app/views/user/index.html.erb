@@ -254,16 +254,19 @@
 
 
 
+
 <!---floating Button -->
-<!---<div class="fixed-action-btn">
+-<div class="fixed-action-btn" id="chat-button" onclick="displayChat()">
   <a class="btn-floating btn-large blue">
     <i class="large material-icons">chat_bubble_outline</i>
   </a>
-  <div class="chat-box"></div>
-</div> -->
+  <!-- <div class="chat-box"></div> -->
+</div>
   <%= render partial:"/user/chat_box", layout: false  unless (current_user && (current_user.has_role? :admin)) %>
  
 </section>
-<!-- <script>
-    indexUserInitialize();
-</script> -->
+<script>
+   // indexUserInitialize();
+    displayChat()
+    showButtonChat()
+</script>
