@@ -1,10 +1,10 @@
 	<div id="live-chat">
 
-		<header class="clearfix">		
+		<header class="clearfix header-chat">		
 
 			<h4><%= @conversation.name || "Chat with us"%></h4>
 
-			<!-- <span class="chat-message-counter">3</span> -->
+			<%= image_tag('close.svg', class: 'close-logo', onclick:"showButtonChat()")%>
 
 		</header>
 
@@ -30,19 +30,3 @@
 
 <!-- chat box -->
 
-<script type="text/javascript">
-$('#live-chat header').on('click', function() {
-
-  $('.chat').slideToggle(300, 'swing');
-  $('.chat-message-counter').fadeToggle(300, 'swing');
-
-});
-
-$('.chat-close').on('click', function(e) {
-
-  e.preventDefault();
-  $('#live-chat').fadeOut(300);
-
-});
-
-</script>

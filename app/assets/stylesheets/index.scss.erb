@@ -143,11 +143,12 @@ footer{
 /* ---------- LIVE-CHAT ---------- */
 
 #live-chat {
-	bottom: 0;
+	bottom: 4vh;
 	font-size: 12px;
 	right: 24px;
 	position: fixed;
 	width: 300px;
+	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
 #live-chat header {
@@ -342,4 +343,41 @@ nav{
 }
 .text-center-welcome {
 	text-align: center;
+}
+
+
+
+
+@keyframes jump {
+	0%{transform: translateY(0);}
+	20%{transform: translateY(0);}
+	40%{transform: translateY(-10px);}
+	50%{transform: translateY(0);}
+	60%{transform: translateY(-5px);}
+	80%{transform: translateY(0);}
+	100%{transform: translateY(0);}
+}
+
+
+.btn-floating {
+	background:  #FFD200 !important;
+	-webkit-animation: jump 1.5s ease 0s infinite normal ;
+	animation: jump 1.5s ease 0s infinite normal ;
+}
+
+.chat-logo {
+	width: 30px;
+}
+
+.close-logo {
+	width:25px;
+	position: absolute;
+	right: 10px;
+}
+
+.header-chat {
+	display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 }
