@@ -95,3 +95,18 @@ body{
   padding:0 15px
 }
 
+
+
+@media only screen and (max-width: 1090px){
+  nav a, nav a:hover, nav a:visited {
+    color: #ffd200 !important;
+  }
+  nav a:hover {
+
+    border-bottom: 1px solid #ffd200 !important;
+  }
+
+  .navbar-nav {
+    margin-top: 30px;
+  }
+}
