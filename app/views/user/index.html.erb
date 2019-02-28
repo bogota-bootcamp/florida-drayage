@@ -256,17 +256,16 @@
 
 
 <!---floating Button -->
--<div class="fixed-action-btn" id="chat-button" onclick="displayChat()">
-  <a class="btn-floating btn-large jump">
-    <%= image_tag('white-chat.svg', class: 'chat-logo')%>
-  </a>
-  <!-- <div class="chat-box"></div> -->
+<div class="fixed-action-btn" id="chat-button" onclick="displayChat()">
+    <a class="btn-floating btn-large jump">
+        <%= image_tag('white-chat.svg', class: 'chat-logo')%>
+    </a>
+    <!-- <div class="chat-box"></div> -->
 </div>
-  <%= render partial:"/user/chat_box", layout: false  unless (current_user && (current_user.has_role? :admin)) %>
- 
+<%= render partial:"/user/chat_box", layout: false  unless (current_user && (current_user.has_role? :admin)) %>
+
 </section>
 <script>
-   // indexUserInitialize();
-    
-    showButtonChat()
+// indexUserInitialize();
+showButtonChat()
 </script>
