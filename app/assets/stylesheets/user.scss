@@ -180,19 +180,35 @@ button:focus {
 }
 
 .background-opacity{
-  background-color: #1d2125e6;
-  border-radius: 20px;  
+  background: #dde8ee4a;
+  border-right: 2px white solid;
   padding: 15px;
-
 }
 .col .s6 .background-opacity{
   padding: 15px;
 }
 
+.copy-container {
+  position: absolute;
+  right: -150px;
+  top: 40vh;
+}
+
+.copy-title {
+  color: white;
+  font-weight: 600;
+  text-align: left;
+  font-size: 30px;
+}
+.copy-text {
+  color: white;
+  text-align: left;
+  width: 60vh;
+}
+
 .carousel .carousel-item>img {
   width: 100%;
   height: 100%;
-  
 }
 
 ul.desc-text >li{
