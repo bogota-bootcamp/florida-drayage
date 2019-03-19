@@ -2,4 +2,4 @@
 <p>
   You have successfully created a Quote  to Florida-drayage.com
 </p>
-You can see the Quote at <%= link_to("here", ENV['SITE_NAME'] + @quotation.id) %>
+You can see the Quote at <%= link_to("here", ENV['SITE_NAME'] + @quotation.id.to_s) %>
