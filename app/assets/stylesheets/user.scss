@@ -22,9 +22,15 @@ ul.collection li span {
 	background-color: white;
 	box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 }
-
+.card-title {
+  font-family: 'proxima';
+}
 .card-item{
   min-height: 514px;
+  font-family: 'proxima';
+}
+.card-text {
+  font-family: 'proxima';
 }
 
 .flex-active{

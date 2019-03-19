@@ -16,8 +16,6 @@
  @font-face {
     font-family: "SFViperSquadron";
     src: font-url("/assets/SFViperSquadron.ttf"); 
-    
-    
   }
 
   @font-face {
@@ -28,6 +26,11 @@
   @font-face {
     font-family: "SFViperSquadronSolid";
     src: font-url("SFViperSquadronSolid.ttf");     
+  }
+
+  @font-face {
+    font-family: "proxima";
+    src: font-url("/assets/proxima-400.woff2"); 
   }
 
 @import "bootstrap";
