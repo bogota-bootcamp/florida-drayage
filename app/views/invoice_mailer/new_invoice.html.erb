@@ -1,2 +1,5 @@
 A new invoice has been created, you can see it in the following link
-<%= link_to "invoice", quotation_invoice_url(@quotation,@invoice) %>
+<%= link_to("invoice", ENV['SITE_NAME'] + "quotations/#{@quotation.id}/invoices/#{@invoice.id}") %>
+
+
+
