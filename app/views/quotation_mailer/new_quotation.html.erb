@@ -1,5 +1,5 @@
-<h1>Welcome to Florida-drayage.com, <%= "#{@quotation.first_name} #{@quotation.last_name}" %></h1>
+<h1>Welcome to Drayage Florida, <%= "#{@quotation.first_name} #{@quotation.last_name}" %></h1>
 <p>
   You have successfully created a Quote  to Florida-drayage.com
 </p>
-You can see the Quote at <%= link_to("here", ENV['SITE_NAME'] + "quotations/#{@quotation.id}") %>
+You can see the Quote<%= link_to("here", ENV['SITE_NAME'] + "quotations/#{@quotation.id}") %>
