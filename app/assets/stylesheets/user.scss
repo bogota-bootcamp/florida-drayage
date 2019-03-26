@@ -113,6 +113,7 @@ ul.collection li span {
 
 .icon-color, .icon-color:hover {
   color: #ffd200 !important;
+  
 }
 
 
@@ -185,8 +186,13 @@ button:focus {
   }
 }
 
-.background-opacity{
-  background: #dde8ee4a;
+.background-opacity-left{
+  background: #00000038;
+  border-left: 2px white solid;
+  padding: 15px;
+}
+.background-opacity-right{
+  background: #00000038;
   border-right: 2px white solid;
   padding: 15px;
 }
@@ -194,17 +200,45 @@ button:focus {
   padding: 15px;
 }
 
-.copy-container {
+.y-button {
+  // width: 80px;
+  padding: 15px;
+  height: 35px;
+  background: #ffd200;
+  border-radius: 10px;
+  color: white;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+  cursor: pointer;
+  
+}
+
+.y-button:hover {
+  background: #fcc02a;
+}
+.text-y-button {
+  margin-bottom: 0;
+}
+.copy-container-up {
+  position: absolute;
+  left: -170px;
+  top: -60px;
+  display: flex;
+}
+.copy-container-down {
   position: absolute;
   right: -160px;
-  top: 40vh;
+  top: 58vh;
 }
 
 .copy-title {
   color: white;
   font-weight: 600;
   text-align: left;
-  font-size: 30px;
+  font-size: 20px;
 }
 .copy-text {
   color: white;
