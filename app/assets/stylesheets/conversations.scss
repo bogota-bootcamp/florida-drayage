@@ -13,7 +13,7 @@
 // clients section
  .clients-section {
    background: #f3f3fd ;
-    height:90vh;
+    height:100vh;
     overflow-y: auto;
   }
 
@@ -34,6 +34,15 @@
     justify-content: center;
     align-items: center;
   }
+  .flex-b-end {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .padding-righ {
+    padding-right: 20px;
+  }
 
   .col-height {
     height: 100%;
@@ -43,7 +52,7 @@
     padding: 0 !important;
   }
   .user-icon {
-    font-size: 24px;
+    font-size: 35px !important;
     color: #eb6422;
   }
   .client-name, .client-name:visited,.client-name:hover {
@@ -126,5 +135,5 @@
 }
 
 .input-admin {
-  height: 80px;
+  min-height: 100px;
 }
