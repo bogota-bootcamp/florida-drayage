@@ -1,9 +1,9 @@
 
 <%= form_for @conversation, html:{id: "create-conversation"} do |f| %>
 
-<p style="color: #B2B2B2 ;text-align:center; padding-top: 5px; font-size: 14px">Chat with a representative</p>
+<p style="color: #B2B2B2 ;text-align:center; padding-top: 5px; font-size: 16px; font-weight:600">Chat with a representative</p>
 <div class="input-field">	
-  <%= f.text_field :name, placeholder: "write your name here",class: "form-control form-new-conversation",:required => true%>
+  <%= f.text_field :name, placeholder: "write your name here",class: "form-control form-new-conversation input-name-chat-form",:required => true%>
 </div>
 
 <div class="input-field">	
