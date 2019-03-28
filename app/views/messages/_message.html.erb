@@ -1,1 +1,8 @@
-<li class="<%=message.sender%>"> <p><%= message.body  %> </p></li>
+<div class="<%=message.sender%>">
+    <p class="<%= message.sender == 'client' ? 'message-head' : 'message-head-admin' %> ">
+        <i class="material-icons user-icon-client">person_pin</i>
+        <span class="client-title"><%= message.sender == 'client' ? @conversation.name : 'admin' %></span>
+        <span>says:</span>
+    </p>
+    <p><i class="fas fa-play arrow-client-icon"></i><%= message.body  %></p>
+</div>
