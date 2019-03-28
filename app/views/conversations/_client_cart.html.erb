@@ -7,7 +7,7 @@
 				<p class="client-name client-border"><%=link_to "#{conversation.id}-#{conversation.name}",conversation, class: "client-name", remote: true%></p>
 				<p class="client-mail"><%= conversation.mail %> </p>
 			</div>
-			<div class="col-3 col-height padding-0 flex-b">
+			<div class="col-3 col-height padding-right flex-b-end">
 				<%=link_to "x",conversation , class: "go-chat", remote: true, method: :delete,data: {confirm: "Are you sure?"}%>
 			</div>
 		</div>
