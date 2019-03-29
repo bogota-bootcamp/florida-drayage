@@ -106,19 +106,44 @@
   text-transform: capitalize;
 }
 
+.message-head {
+  display: flex;
+  align-items: center;
+  padding-bottom: 5px; 
+  border-bottom: 1.5px solid #2b2b2b;
+}
+.message-head-admin {
+  display: flex;
+  align-items: center;
+  padding-bottom: 5px; 
+  background: #fbd731e3;
+  border-radius: 5px;
+}
+.arrow-client-icon {
+  font-size: 8px;
+  margin-right: 10px;
+}
+
 .admin {
-  border: 2px solid #eb6422;
   min-height: 50px;
   width: 50%;
   float: right;
   margin: 10px;
-  color: #2b2b2b;
   padding: 5px;
-  /* background: #eb6422; */
   border-radius: 10px 10px 1px 10px;
+  background: #dee2e6;
+  color: #2b2b2b;
+  font-weight: 500;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.client-title {
+  margin:0  10px;
+  font-size: 15px;
+  text-transform: capitalize;
+  font-weight: 600;
 }
 .client {
-  border: 2px solid #eb6422;
   min-height: 50px;
   width: auto;
   min-width: 50%;
@@ -126,8 +151,10 @@
   margin: 10px;
   color: #2b2b2b;
   padding: 5px;
-  /* background: #eb6422; */
   border-radius: 10px 10px 10px 1px;
+  background: #fbd731e3;
+  font-weight: 500;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 
 }
 
@@ -146,43 +173,12 @@
 }
 
 @media only screen and (max-width: 900px){
-  .message-head {
-    display: flex;
-    align-items: center;
-    padding-bottom: 5px; 
-    border-bottom: 1.5px solid #2b2b2b;
-  }
-  .message-head-admin {
-    display: flex;
-    align-items: center;
-    padding-bottom: 5px; 
-    background: #fbd731e3;
-    border-radius: 5px;
-  }
+
   .client {
     width: 95%;
-    background: #fbd731e3;
-    border: none;
-    color: #2b2b2b;
-    font-weight: 500;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   }
-  .client-title {
-    margin:0  10px;
-    font-size: 15px;
-    text-transform: capitalize;
-    font-weight: 600;
-  }
+
   .admin {
     width: 95%;
-    background: #dee2e6;
-    border: none;
-    color: #2b2b2b;
-    font-weight: 500;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  }
-  .arrow-client-icon {
-    font-size: 8px;
-    margin-right: 10px;
   }
 }
