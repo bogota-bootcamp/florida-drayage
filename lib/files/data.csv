@@ -439,6 +439,7 @@ ZIP code,City,Price
 32633,Evinston,1100
 32634,Fairfield,1100
 32693,Fanning Springs,1280
+32256,FEC,000
 33854,Fedhaven,755
 33930,Felda,575
 32948,Fellsmere,670
@@ -1573,6 +1574,10 @@ ZIP code,City,Price
 33980,Port Charlotte,665
 33981,Port Charlotte,665
 33983,Port Charlotte,665
+33316,Port Everglades,000
+33132,Port Miami,000
+33404,Port of Palm Beach,000
+33602,Port of Tampa Bay,000
 32123,Port Orange,890
 32127,Port Orange,890
 32128,Port Orange,890
