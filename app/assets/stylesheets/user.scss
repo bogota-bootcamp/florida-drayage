@@ -188,14 +188,16 @@ button:focus {
 }
 
 .background-opacity-left{
-  background: #00000038;
+  background: #00000069;
   border-left: 2px white solid;
   padding: 15px;
+  border-radius: 0px 10px 10px 0px;
 }
 .background-opacity-right{
-  background: #00000038;
+  background: #00000069;
   border-right: 2px white solid;
   padding: 15px;
+  border-radius: 10px 0px 0px 10px;
 }
 .col .s6 .background-opacity{
   padding: 15px;
@@ -232,14 +234,20 @@ button:focus {
 .copy-container-down {
   position: absolute;
   right: -160px;
-  top: 58vh;
+  top: 50vh;
 }
 
 .copy-title {
   color: white;
   font-weight: 600;
   text-align: left;
-  font-size: 20px;
+  font-size: 30px;
+}
+.copy-title-b {
+  color: white;
+  font-weight: 600;
+  text-align: left;
+  font-size: 25px;
 }
 .copy-text {
   color: white;
@@ -255,4 +263,34 @@ button:focus {
 ul.desc-text >li{
   float: left;
   padding-right: 20px;
+}
+
+
+@media only screen and (max-width: 1200px){
+	.copy-container-up {
+		position: absolute;
+    left: 2vh;
+    top: -11vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  
+  .copy-container-down {
+    position: absolute;
+    left: 0px;
+    top: 53vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .copy-title {
+    font-size: 25px;
+  }
+  .copy-title-b {
+    font-size: 20px;
+  }
+
 }
