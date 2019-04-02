@@ -123,7 +123,7 @@
     <div class="row">
       <div class="input-field col s6">
         <i class="material-icons prefix icon-color">local_shipping</i>          
-        <%= f.select(:equipment_type, Quotation::EQUIPMENT_TYPES, {include_blank: "Select something"}) %>
+        <%= f.select(:equipment_type, Quotation::EQUIPMENT_TYPES, {include_blank: "Select Equipment"}) %>
         <label for="invoice_equipment_type" class= "label-cursor <%= 'active' unless (@invoice.equipment_type.nil? || @invoice.equipment_type.empty?) %>">Equipment Type</label>
       </div>
     </div> 

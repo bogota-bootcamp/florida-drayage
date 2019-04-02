@@ -122,7 +122,11 @@ li.quotation-item{
   width: 100%;
   -webkit-transform-origin: top left;
           transform-origin: top left;
-  height: 600px;
+  height: 680px;
+}
+
+.modal-body-step-2 {
+  padding-top: 150px;
 }
 .modal-body.is-showing {
   display: block;

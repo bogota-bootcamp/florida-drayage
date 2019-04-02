@@ -9,19 +9,18 @@ class Quotation < ApplicationRecord
   validates :equipment_type, :presence=> true
   validate :commodity_presence_if_hazardous
   
-  EQUIPMENT_TYPES =   ["40 ft. Chassis", 
-    "20 ft. Chassis",
-    "45 ft. Chassis",
-    "Tri-Axle Chassis",
-    "Flat Rack",
+  EQUIPMENT_TYPES = [ 
+    "20 ft. Container",
+    "45 ft. Container",
     "Live Load",
-    "Drop/Pick"]
+    "Drop/Pick"
+  ]
   
 
 
   def suggested_price
-     zipcode = Zipcode.find_by(code:self.destination_zipcode)
-     zipcode ? zipcode.price : nil
+    zipcode = Zipcode.find_by(code:self.destination_zipcode)
+    zipcode ? zipcode.price : nil
   end
   
   private
