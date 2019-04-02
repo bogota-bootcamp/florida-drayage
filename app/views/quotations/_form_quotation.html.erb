@@ -52,8 +52,8 @@
         <div class="row">
           <div class="input-field col m12 s12">
             <i class="material-icons prefix">markunread_mailbox</i>     
-            <%= f.text_field :origin_city, class: "validate autocomplete city", id:"quotation_origin_city"%>
-            <label for="quotation_origin_city" class= "label-cursor">Origin city</label>
+            <%= f.select(:origin_city, Quotation::ORIGIN_CITY, {include_blank: " Select Origin Port/Rail"}) %>
+            <label for="quotation_equipment_type" class= "label-cursor">Origin Port/Rail</label>
           </div>
         </div>
 
@@ -221,10 +221,9 @@
       </div>
 
       <div class="text-center button-region">    
-        <!--<input type="submit" name="commit" value="Send" class="btn-send" data-disable-with="Send" /> -->
-        <div class="button back">Back</div>
-        <%= f.button :submit , class: "btn-send button" do %>
-          <i class="material-icons send" style="font-size: 20px;">send</i>
+              <div class="button back">Back</div>
+        <%= f.button :submit , class: "btn-send-form button" do %>
+          <i class="material-icons send" style="font-size: 20px; ">send</i>
         <% end %>             
       </div>       
     </div>

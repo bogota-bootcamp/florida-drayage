@@ -15,6 +15,14 @@ class Quotation < ApplicationRecord
     "Live Load",
     "Drop/Pick"
   ]
+
+  ORIGIN_CITY = [
+    "Port Miami",
+    "Port Everglades",
+    "Port of Palm Beach",
+    "Port of Tampa Bay",
+    "FEC"
+  ]
   
 
 

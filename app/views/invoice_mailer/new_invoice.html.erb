@@ -1,6 +1,6 @@
 <h1>A new invoice has been created</h1>
 <p>you can see it in the following link</p> 
-<%= link_to("invoice", ENV['SITE_NAME'] + "quotations/#{@quotation.id}/invoices/#{@invoice.id}") %>
+<%= link_to("invoice", "#{ENV['SITE_NAME']}/quotations/#{@quotation.id}/invoices/#{@invoice.id}") %>
 
 
 
