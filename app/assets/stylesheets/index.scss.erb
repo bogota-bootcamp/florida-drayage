@@ -77,7 +77,8 @@ ul.desc-text{
   color: #FFD200;
   font-weight: 600;
   display: block;
-  margin-top: 20px;
+	margin-top: 20px;
+	text-align:center;
 }
 
 .desc-text {
@@ -366,6 +367,11 @@ nav{
 }
 .text-center-welcome {
 	text-align: center;
+	font-size: 25px;
+}
+.text-bullet-welcome {
+	text-align: left;
+	margin-left: 9vh;
 }
 
 .links-sign-cont {
@@ -426,9 +432,14 @@ nav{
 	width: 95% !important;
 }
 
-@media only screen and (max-width: 1000px){
-
-	.title-text {
-		text-align:center;
+@media only screen and (max-width: 900px){
+	.text-bullet-welcome {
+		text-align: left;
+		margin-left: 0vh;
+	}
+	.logo-cont {
+    width: 45vh;
+    height: 45vh;
 	}
 }
+
