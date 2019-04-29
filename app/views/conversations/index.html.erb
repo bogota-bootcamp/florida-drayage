@@ -1,5 +1,5 @@
 <div class="container-fluid chat-cont d-flex flex-row">
-	<div class="row" style="width:100% !important">
+	<div class="row" style="width:100% !important; margin-bottom: 20px !important">
 
 
 		<div class=" col-md-6 col-sm-12 col-xs-12 chat section" >
@@ -14,7 +14,6 @@
 		<div class=" col-md-6  col-sm-12 col-xs-12  flex-column align-items-center justify-content-start clients-section">
 			<ul id="cart-container">
 				<% @conversations.each do |conversation| %>
-
 					<%= render partial:"conversations/client_cart", layout: false , locals: {conversation: conversation} %>
 				<% end%>
 			</ul>
