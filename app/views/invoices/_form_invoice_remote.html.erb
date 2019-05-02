@@ -2,7 +2,7 @@
   <h4 class="suggested-title">Suggested Price: $<%= @quotation.suggested_price %></h4>
   <label class="label-title">Price($USD):</label>
   <%= f.text_field :price, class: "validate invoice-price-input", :html=>{:id=>"icon_prefix"} ,required: true,layout: false%>
-  <%= f.submit%>
+  <%= f.submit class:"create-invoice-btn"%>
  
  <% end %>
 
