@@ -1,9 +1,12 @@
-
-
 <div class="container-fluid chat-cont d-flex flex-row">
 	<div class="row" style="width:100% !important">
 
-		<div class=" col-md-3  col-sm-3 col-xs-12  flex-column align-items-center justify-content-start clients-section">
+		<div class=" col-md-8 col-sm-7 col-xs-12" id="quotation-container" >
+			<p class="title-2">Quotations</p>
+			<p class="description-chat">Select one user from the list for see the quotations</p>
+		</div>
+
+		<div class=" col-md-4  col-sm-5 col-xs-12  flex-column align-items-center justify-content-start clients-section">
 			<ul class="collection" id = "quotation-list-container">
 				<% @quotations.each do |quotation|%>
 					<li class="quotation-item"> <%= link_to   quotation , remote: true do %> 
@@ -13,14 +16,6 @@
 				<% end %>
 			</ul>
 		</div>
-
-
-		<div class=" col-md-9 col-sm-9 col-xs-12 clients-section" id="quotation-container" >
-
-			
-		</div>
-
-		
 
 	</div>
 </div>
