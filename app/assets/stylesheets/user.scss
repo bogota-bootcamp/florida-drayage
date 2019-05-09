@@ -169,11 +169,13 @@ button:focus {
 .datepicker-table td.is-selected {
     background-color:#ffd200 !important;}
 
-.datepicker-table td.is-today, .datepicker-cancel, 
-.datepicker-done{
+.datepicker-table td.is-today{
      color: #ffd200 !important; 
 }
-
+.datepicker-done,
+.datepicker-cancel {
+  color: #2b2b2b !important;
+}
 .btn-link:hover{
   color: #fff !important;
 }
