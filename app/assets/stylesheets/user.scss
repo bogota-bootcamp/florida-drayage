@@ -190,13 +190,13 @@ button:focus {
 }
 
 .background-opacity-left{
-  background: #00000069;
+  background: rgba(43,43,43,0.4);
   border-left: 2px white solid;
   padding: 15px;
   border-radius: 0px 10px 10px 0px;
 }
 .background-opacity-right{
-  background: #00000069;
+  background: rgba(43,43,43,0.6);
   border-right: 2px white solid;
   padding: 15px;
   border-radius: 10px 0px 0px 10px;
