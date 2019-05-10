@@ -165,7 +165,17 @@
         </div>
       </div> 
 
-      <div class="row  mobile-width">
+          <div class="row mobile-width">
+          <%= image_tag('aditionalServices.png',size: '28', class: 'iconpatch')%>
+      <div class="input-field col s6 formpatch">
+                 
+        <%= f.select(:additional_service, Quotation::ADDITIONAL_SERVICES, {include_blank: "Select Service"}) %>
+        <label for="invoice_additional_service" class= "label-cursor"> Additional Services</label>
+      </div>
+    </div> 
+
+
+      <div class="row">
         <div class="input-field col s6">
           <i class="material-icons prefix">comment</i>          
           <%= f.text_area :comments, class: "validate materialize-textarea", id:"quotation_comments"%>
