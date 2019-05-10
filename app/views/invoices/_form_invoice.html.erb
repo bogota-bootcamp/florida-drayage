@@ -127,6 +127,14 @@
         <label for="invoice_equipment_type" class= "label-cursor <%= 'active' unless (@invoice.equipment_type.nil? || @invoice.equipment_type.empty?) %>">Equipment Type</label>
       </div>
     </div> 
+    
+    <div class="row">
+      <div class="input-field col s6">
+        <i class="material-icons prefix icon-color">local_shipping</i>          
+        <%= f.select(:additional_service, Quotation::ADDITIONAL_SERVICES, {include_blank: "Select Service"}) %>
+        <label for="invoice_additional_service" class= "label-cursor <%= 'active' unless (@invoice.additional_service.nil? || @invoice.additional_service.empty?) %>">Additional Services</label>
+      </div>
+    </div> 
 
 
   <h4>Suggested Price: $<%= @quotation.suggested_price %></h4>

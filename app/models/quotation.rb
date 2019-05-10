@@ -7,6 +7,7 @@ class Quotation < ApplicationRecord
   validates :phone, :presence => true
   validates :email, :presence => true
   validates :equipment_type, :presence=> true
+  validates :additional_service, :presence=> true
   validate :commodity_presence_if_hazardous
 
   EQUIPMENT_TYPES = [
@@ -28,6 +29,14 @@ class Quotation < ApplicationRecord
     "FEC"
   ]
 
+<<<<<<< HEAD
+=======
+  ADDITIONAL_SERVICES = [
+    "Live Load",
+    "Drop/Pick"
+  ]
+  
+>>>>>>> master
 
 
   def suggested_price

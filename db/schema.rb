@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_24_200124) do
+ActiveRecord::Schema.define(version: 2019_05_09_192125) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(version: 2019_01_24_200124) do
     t.string "first_name"
     t.string "last_name"
     t.string "company"
-    t.bigint "phone"
+    t.integer "phone"
     t.string "email"
     t.text "comments"
     t.string "origin_city"
@@ -71,6 +71,7 @@ ActiveRecord::Schema.define(version: 2019_01_24_200124) do
     t.string "equipment_type"
     t.boolean "residencial", default: false
     t.boolean "export", default: false
+    t.string "additional_service"
     t.index ["quotation_id"], name: "index_invoices_on_quotation_id"
   end
 
@@ -106,6 +107,7 @@ ActiveRecord::Schema.define(version: 2019_01_24_200124) do
     t.string "destination_city"
     t.boolean "residencial", default: false
     t.boolean "export", default: false
+    t.string "additional_service"
   end
 
   create_table "roles", force: :cascade do |t|

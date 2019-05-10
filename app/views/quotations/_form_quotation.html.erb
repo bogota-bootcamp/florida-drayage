@@ -58,8 +58,9 @@
           </div>
         </div>
 
+
         <div class="hidden-impo-expo">
-          <div class="row">
+          <div class="row mobile-width">
             <div class="input-field col m12 s12">
               <i class="material-icons prefix">markunread_mailbox</i>
               <%= f.select(:origin_city, Quotation::PORT, {include_blank: " Select Origin Port/Rail"}) %>
@@ -68,7 +69,7 @@
           </div>
 
 
-          <div class="row">
+          <div class="row mobile-width">
             <div class="input-field col m12 s12">
               <i class="material-icons prefix">markunread_mailbox</i>
               <%= f.text_field :destination_city, class: "validate autocomplete city", id:"quotation_destination_city"%>
@@ -76,7 +77,7 @@
             </div>
           </div>
 
-          <div class="row">
+          <div class="row mobile-width">
             <div class="input-field col m12 s12">
               <i class="material-icons prefix">map</i>
               <%= f.text_field :destination_zipcode, class: "validate", id:"quotation_destination_zipcode"%>
@@ -86,7 +87,7 @@
         </div>
 
           <div class="hiddenexpo hidden-impo-expo">
-            <div class="row">
+            <div class="row mobile-width">
               <div class="input-field col m12 s12">
                 <i class="material-icons prefix">markunread_mailbox</i>
                 <%= f.text_field :origin_city, class: "validate autocomplete city", id:"quotation_origin_city"%>
@@ -94,7 +95,7 @@
               </div>
             </div>
 
-            <div class="row">
+            <div class="row mobile-width">
               <div class="input-field col m12 s12">
                 <i class="material-icons prefix">map</i>
                 <%= f.text_field :origin_zipcode, class: "validate  autocomplete", id:"quotation_origin_zipcode"%>
@@ -102,7 +103,7 @@
               </div>
             </div>
 
-            <div class="row">
+            <div class="row mobile-width">
               <div class="input-field col m12 s12">
                 <i class="material-icons prefix">markunread_mailbox</i>
                 <%= f.select(:destination_city, Quotation::PORT, {include_blank: " Select Destination Port/Rail"}) %>
@@ -119,17 +120,28 @@
     <div class="modal-body modal-body-step-2">
 
       <div class="title">Step 2</div>
+<<<<<<< HEAD
       <div class="description"></div>
       <div class="row">
+=======
+      <div class="description"></div>
+      <div class="row  mobile-width">
+>>>>>>> master
         <div class="input-field col s6">
           <i class="material-icons prefix">comment</i>
           <%= f.text_field :commodity, class: "validate", id:"quotation_commodity"%>
           <label for="quotation_commodity" class= "label-cursor">Commodity</label>
         </div>
       </div>
+<<<<<<< HEAD
       <div class="row">
         <div class="input-field col m12 s12">
           <label>
+=======
+      <div class="row mobile-width">
+        <div class="input-field col m12 s12">
+          <label>
+>>>>>>> master
             <input type="checkbox" name="quotation[hazardous]" id="quotation_bonded_cargo">
             <span>Hazardous</span>
           </label>
@@ -151,7 +163,7 @@
       </div>
       <br>
       <br>
-      <div class="row">
+      <div class="row  mobile-width">
         <div class="input-field col s6">
           <i class="material-icons prefix">comment</i>
           <input class="validate"   type="text" name="quotation[overweight]" id="quotation_overweight">
@@ -170,7 +182,7 @@
       <div class="title">Step 3</div>
       <div class="description"></div>
 
-      <div class="row">
+      <div class="row  mobile-width">
         <div class="input-field col s6">
           <i class="material-icons prefix">date_range</i>
           <%= f.text_field :pickup_date, class: "validate datepicker", id:"quotation_pickup_date"%>
@@ -178,7 +190,7 @@
         </div>
       </div>
 
-      <div class="row">
+      <div class="row  mobile-width">
         <div class="input-field col s6">
           <i class="material-icons prefix">date_range</i>
           <%= f.text_field :drop_date, class: "validate datepicker", id:"quotation_drop_date"%>
@@ -186,13 +198,23 @@
         </div>
       </div>
 
-      <div class="row">
+      <div class="row  mobile-width">
         <div class="input-field col s6">
           <i class="material-icons prefix">local_shipping</i>
           <%= f.select(:equipment_type, Quotation::EQUIPMENT_TYPES, {include_blank: "Select Equipment"}) %>
           <label for="quotation_equipment_type" class= "label-cursor">Equipment Type</label>
         </div>
       </div>
+
+          <div class="row mobile-width">
+          <%= image_tag('aditionalServices.png',size: '28', class: 'iconpatch')%>
+      <div class="input-field col s6 formpatch">
+
+        <%= f.select(:additional_service, Quotation::ADDITIONAL_SERVICES, {include_blank: "Select Service"}) %>
+        <label for="invoice_additional_service" class= "label-cursor"> Additional Services</label>
+      </div>
+    </div>
+
 
       <div class="row">
         <div class="input-field col s6">
@@ -213,7 +235,7 @@
 
       <div class="title">Step 4</div>
       <div class="description"></div>
-            <div class="row">
+        <div class="row  mobile-width">
           <div class="input-field col s6">
             <i class="material-icons prefix">account_circle</i>
             <%= f.text_field :first_name, class: "validate", id:"quotation_first_name"%>
@@ -227,7 +249,11 @@
           </div>
         </div>
 
+<<<<<<< HEAD
         <div class="row">
+=======
+        <div class="row mobile-width">
+>>>>>>> master
           <div class="input-field col s6">
             <i class="material-icons prefix">domain</i>
             <%= f.text_field :company, class: "validate", id:"quotation_company"%>
