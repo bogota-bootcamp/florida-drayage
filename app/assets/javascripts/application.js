@@ -21,21 +21,21 @@
 //= require channels/chat
 //= require materialize
 
-var currentSlide = 1 
+var currentSlide = 1
 var activeChat = false
 
 $(document).ready(function(){
     var myIndex = 0;
-    carousel1();    
+    carousel1();
     function carousel1() {
         var i;
         var x = document.getElementsByClassName("mySlides");
         for (i = 0; i < x.length; i++) {
-          x[i].style.display = "none";  
+          x[i].style.display = "none";
         }
         myIndex++;
-        if (myIndex > x.length) {myIndex = 1}    
-        x[myIndex-1].style.display = "block";  
+        if (myIndex > x.length) {myIndex = 1}
+        x[myIndex-1].style.display = "block";
         setTimeout(carousel1, 5000); // Change image every 2 seconds
     }
 
@@ -50,7 +50,7 @@ function HideClassListItem() {
 }
 
 function activateClassListItem(currentSlide){
-  HideClassListItem() 
+  HideClassListItem()
   $(".l-"+currentSlide).addClass("active")
 }
 
@@ -66,7 +66,7 @@ function changeItem(slide){
 }
 
 function hideButtonChat(){
-    $("#chat-button").hide() 
+    $("#chat-button").hide()
 }
 function showButtonChat(){
     $("#chat-button").show()
@@ -80,7 +80,7 @@ function displayChat() {
     $("#live-chat").toggle()
     hideButtonChat()
   }
-  
+
 }
 
 function indexUserInitialize(){
@@ -92,6 +92,11 @@ function indexUserInitialize(){
 
     $(".advantage-show.active").removeClass("active")
     $($(".advantage-show")[i]).addClass("active")
-  },8000)      
+  },8000)
+
+}
+
+function importExport(){
+  $('.hidden-impo-expo').toggle();
 
 }
