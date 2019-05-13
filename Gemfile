@@ -8,6 +8,14 @@ gem 'rails', '~> 5.2.0'
 
 #Fix to security vulnerability
 gem 'actionview', '~> 5.2.2.1'
+gem 'railties', '>= 5.2.2.1'
+gem 'nokogiri', '>= 1.8.5'
+gem 'activejob', '>= 5.2.1.1'
+gem 'activestorage', '>= 5.2.1.1'
+gem 'rack', '>= 2.0.6'
+gem 'loofah', '>= 2.2.3'
+
+
 
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
@@ -41,14 +49,14 @@ gem 'bootsnap', '>= 1.1.0', require: false
 # jquery
 gem 'jquery-rails'
 #Bootstrap
-gem 'bootstrap', '~> 4.1.2'
+gem 'bootstrap', '>= 4.3.1'
 
 # materialize
 gem 'materialize-sass', '~> 1.0.0.rc2'
 gem 'material_icons'
 
 # devise
-gem 'devise'
+gem 'devise', '>= 4.6.0'
 
 # rolify
 gem 'authority'
