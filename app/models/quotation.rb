@@ -29,14 +29,10 @@ class Quotation < ApplicationRecord
     "FEC"
   ]
 
-<<<<<<< HEAD
-=======
   ADDITIONAL_SERVICES = [
     "Live Load",
     "Drop/Pick"
   ]
-  
->>>>>>> master
 
 
   def suggested_price
