@@ -33,7 +33,6 @@ class Quotation < ApplicationRecord
     "Live Load",
     "Drop/Pick"
   ]
-  
 
 
   def suggested_price
