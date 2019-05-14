@@ -48,7 +48,7 @@ form.new_quotation{
     height: 50vh;
     background: rgba(221,232,238,0.4);
     border-radius: 50%;
-	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);	
+	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
     margin: 0 auto;
 }
 
@@ -132,7 +132,7 @@ footer{
 		display: flex;
 		flex-direction: row;
 		justify-content: center;
-		
+
 		.footer-row{
 			padding: 18px;
 			text-align: left;
@@ -148,7 +148,7 @@ footer{
 			font-size:12px;
 		}
 	}
-	
+
 }
 
 
@@ -299,21 +299,21 @@ footer{
 	background-color: #37474F;
 	color: white;
 	min-height: 60vh;
-	
+
 
 	.advantage-menu{
-		
+
 		flex:1;
 		text-align: center;
 		margin: auto 10px;
 		li.collection-item.active{
-			font-weight: 600;			
+			font-weight: 600;
 			border-bottom: 3px solid #FFD200;
 			font-family: 'proxima';
 			font-size: 20px;
 		}
 		li.collection-item{
-			min-height: 40px;			
+			min-height: 40px;
 			color: white;
 			font-family: 'Carme';
 			border-bottom: 1px solid #FFD200;
@@ -330,20 +330,20 @@ footer{
 		flex: 2;
 		margin-top: 25px;
 		margin-bottom: 20px;
-		
-		.advantage-show{			
+
+		.advantage-show{
 			display: none;
-			
+
 			.advantage-image{
 				width: 150px;
 				margin: 10px auto;
 				margin-bottom:20px;
 			}
-			
+
 		}
 		.advantage-show.active{
 			display: block;
-			
+
 		}
 	}
 }
@@ -357,7 +357,7 @@ nav{
 
 .squadron{
 	font-family: "SFViperSquadron";
-	
+
 }
 
 .collection-container {
@@ -367,7 +367,7 @@ nav{
 .advantage-txt {
 	width: 85%;
 	margin: 0 auto;
-	
+
 }
 
 .width-80 {
@@ -444,6 +444,9 @@ nav{
 	width: 95% !important;
 }
 
+
+// Advantages mobile accordion
+
 @media only screen and (min-width: 800px){
 	.accordion {
 		display: none;
@@ -473,8 +476,8 @@ nav{
 
 	.logo-cont {
 		margin-top: 25px;
-		height:40vh;	
-		width:40vh;	
+		height:40vh;
+		width:40vh;
 	}
 	#advantage-container {
 		min-height: 80vh;
@@ -489,7 +492,7 @@ nav{
 		width:100vw;
 	}
 
-	
+
 	.logo-svg {
 			width: 35vh;
 	}
@@ -504,6 +507,21 @@ nav{
 	.mySlides {
 		object-fit: cover;
 	}
-	
+
 }
 
+// Avantages mobile accordion end
+
+
+// Avantages bootstrap accordion custom
+
+.accordion-custom{
+	background-color: #37474F;
+	color: white;
+	border: none;
+
+}
+
+#accordionAdvantages .card {
+	border: none;
+}
