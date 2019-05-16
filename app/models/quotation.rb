@@ -21,6 +21,7 @@ class Quotation < ApplicationRecord
     "40ft flat rack",
     "40ft open top",
     "45ft container"
+    
   ]
 
   PORT = [
