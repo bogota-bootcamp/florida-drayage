@@ -11,11 +11,13 @@ class Quotation < ApplicationRecord
   validate :commodity_presence_if_hazardous
 
   EQUIPMENT_TYPES = [
-    # "20ft triaxle chassis",
-    # "20ft flat rack",
+    "20ft chassis",
+    "20ft triaxle chassis",
+    "20ft flat rack",
     "20ft open top",
-    # "40ft triaxle chassis",
-    # "40ft flat rack",
+    "40ft chassis",
+    "40ft triaxle chassis",
+    "40ft flat rack",
     "40ft open top",
     "20ft container",
     "45ft container"
