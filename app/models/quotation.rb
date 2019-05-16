@@ -15,12 +15,13 @@ class Quotation < ApplicationRecord
     "20ft triaxle chassis",
     "20ft flat rack",
     "20ft open top",
+    "20ft container",
     "40ft chassis",
     "40ft triaxle chassis",
     "40ft flat rack",
     "40ft open top",
-    "20ft container",
     "45ft container"
+    
   ]
 
   PORT = [
