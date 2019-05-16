@@ -4,7 +4,7 @@ namespace :import do
 
 	desc "create cuty record and price-zipcode with the data in file.csv"
 	task uploaddata: :environment do
-		Dir.glob('lib/files/data.csv').each do |archivo|			
+		Dir.glob('lib/files/data.csv').each do |archivo|
 			CSV.foreach(archivo, headers:true) do |row|
 				name=row["City"]
 				code= row["ZIP code"]
@@ -18,3 +18,5 @@ namespace :import do
 		end
 	end
 end
+
+# run command line > rake import:uploaddata

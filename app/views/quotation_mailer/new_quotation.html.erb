@@ -1,5 +1,9 @@
 <h1>Welcome to Drayage Florida, <%= "#{@quotation.first_name} #{@quotation.last_name}" %></h1>
-<p>
-  You have successfully created a Quote  to Florida-drayage.com
-</p>
-You can see the Quote<%= link_to("here", "#{ENV['SITE_NAME']}/quotations/#{@quotation.id}") %>
+<p>Thank you for submitting your free quotation with Drayage Florida! You can see your Quote at any time by clicking
+  <%= link_to("here", "#{ENV['SITE_NAME']}/quotations/#{@quotation.id}") %>. If you have any additional questions please don't hesitate to contact us.</p> <br>
+
+
+<p>Best,</p> <br>
+<p>Drayage Florida Sales Team</p> <br>
+
+<%= image_tag("https://s3.amazonaws.com/assets-d/drayage-florida/logo.svg", class: 'logo-svg-small') %>
