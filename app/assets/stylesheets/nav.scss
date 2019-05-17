@@ -25,7 +25,7 @@ nav{
 .brand-logo {
   margin-left: 20px;
 }
- 
+
 .sidenav {
   background: #212121 !important;
   color: #ffd200 !important;
@@ -44,7 +44,8 @@ body{
 }
 
 .overlay,.sideMenu{
-  position:fixed;bottom:0 
+  position:fixed;
+  bottom:0;
 }
 
 .overlay{
@@ -56,7 +57,7 @@ body{
   z-index:998;
   transition:all ease 0.2s;
 
-  
+
 
 }
 .overlay.open{
@@ -107,6 +108,6 @@ body{
   }
 
   .navbar-nav {
-    margin-top: 30px;
+    margin-top: 0px;
   }
 }

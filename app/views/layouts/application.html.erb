@@ -20,36 +20,33 @@
     <%= render "layouts/nav" %>
     <div class="body-container">
       <div class= "cont-flash-messages">
-        <% flash.each do |key, value| %> 
+        <% flash.each do |key, value| %>
           <% if value.is_a?(Array) %>
-            <% value.each do |element|%>                            
+            <% value.each do |element|%>
               <div class="alert alert-<%= key %> alert-dismissible" style= "z-index: 1040;">
                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                <%= element %>                
+                <%= element %>
               </div>
             <% end %>
           <% else %>
             <% key = key == 'notice'? 'info' : key %>
-            <% key = key == 'alert'? 'warning' : key %>   
+            <% key = key == 'alert'? 'warning' : key %>
             <div class="alert alert-<%= key %>" style= "z-index: 1040;">
               <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-              <%= value %>            
+              <%= value %>
             </div>
-          <% end %>        
+          <% end %>
         <% end %>
       </div>
-      <%= yield %>
     </div>
+      <%= yield %>
     <% if(  user_signed_in?)%>
       <script >
         plantApp()
-      </script>     
+      </script>
     <%end %>
-    <div class="overlay"></div>
+    <div onclick="hideShow()" class="overlay"></div>
     <%= render "layouts/footer" %>
 
   </body>
 </html>
-
-
-
