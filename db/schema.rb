@@ -70,7 +70,7 @@ ActiveRecord::Schema.define(version: 2019_05_09_192125) do
     t.date "drop_date"
     t.string "equipment_type"
     t.boolean "residencial", default: false
-    t.boolean "export", default: false
+    t.boolean "export", default: true
     t.string "additional_service"
     t.index ["quotation_id"], name: "index_invoices_on_quotation_id"
   end
@@ -106,7 +106,7 @@ ActiveRecord::Schema.define(version: 2019_05_09_192125) do
     t.string "origin_city"
     t.string "destination_city"
     t.boolean "residencial", default: false
-    t.boolean "export", default: false
+    t.boolean "export", default: true
     t.string "additional_service"
   end
 
