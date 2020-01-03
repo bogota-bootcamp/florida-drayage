@@ -1,7 +1,6 @@
 class QuotationsController < ApplicationController
 
   def index
-
     user= current_user
     if (user && (user.has_role? :admin ))
       @quotations= Quotation.all
@@ -25,7 +24,7 @@ class QuotationsController < ApplicationController
 
   def create
     @quotation= Quotation.new(quotation_parameters)
-    if @quotation.save
+    if @quotation.save && verify_recaptcha
       mail=QuotationMailer.new_quotation(@quotation)
       response = mail.deliver_now
       flash[:success] = ["Thank you for submitting your quote request."," One of our Drayage Specialists will contact you shortly."]
@@ -60,7 +59,7 @@ class QuotationsController < ApplicationController
 
   def validate
     quotation= Quotation.new(quotation_parameters)
-    if quotation.valid?
+    if quotation.valid? && verify_recaptcha
       msg = { :status => "ok" }
     else
       msg = { :status => "fail",errors: quotation.errors.full_messages, errors_messages:  quotation.errors.messages}

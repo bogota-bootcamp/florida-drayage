@@ -27,10 +27,6 @@
 
 </style>
 
-<script>
-
-</script>
-
 <div class="modal-wrap">
   <div class="modal-header">
     <span class="is-active"></span>
@@ -260,12 +256,13 @@
         <div class="input-field col s6">
           <i class="material-icons prefix">email</i>
           <%= f.email_field :email, id:"quotation_email"%>
-          <label for="quotation_email" class= "label-cursor">E-mail</label>
+          <label for="quotation_email" class="label-cursor">E-mail</label>
         </div>
       </div>
 
       <div class="text-center button-region">
-              <div class="button back">Back</div>
+        <div class="g-recaptcha" data-sitekey="<%= ENV['RECAPTCHA_PUBLIC_KEY'] %>"></div><br>
+        <div class="button back">Back</div>
         <%= f.button :submit , class: "btn-send-form button" do %>
           <i class="material-icons send" style="font-size: 20px; ">send</i>
         <% end %>
