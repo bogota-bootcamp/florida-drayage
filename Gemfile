@@ -70,6 +70,8 @@ gem 'mailjet'
 #stripe for payments
 gem 'stripe'
 
+#recaptcha gem
+gem "recaptcha"
 
 gem "aws-sdk-s3", require: false
 
