@@ -14,6 +14,7 @@ gem 'activejob', '>= 5.2.1.1'
 gem 'activestorage', '>= 5.2.1.1'
 gem 'rack', '>= 2.0.6'
 gem 'loofah', '>= 2.2.3'
+gem 'dotenv-rails', groups: [:development, :test]
 
 
 
@@ -79,7 +80,7 @@ end
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
-  
+
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
@@ -97,7 +98,7 @@ group :test do
   gem 'chromedriver-helper'
 end
 
-group :production do 
+group :production do
   gem 'pg'
 end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
