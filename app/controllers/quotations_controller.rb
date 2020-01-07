@@ -31,6 +31,7 @@ class QuotationsController < ApplicationController
       redirect_to root_path
     else
       p 'no else'
+      flash[:danger] = "Quotation failed. Please try again."
       errors = @quotation.errors.full_messages
       flash[:danger] = errors
       @conversation = Conversation.find_by_id(cookies[:conversation_id])
@@ -59,7 +60,7 @@ class QuotationsController < ApplicationController
 
   def validate
     quotation= Quotation.new(quotation_parameters)
-    if quotation.valid? && verify_recaptcha
+    if quotation.valid?
       msg = { :status => "ok" }
     else
       msg = { :status => "fail", errors: quotation.errors.full_messages, errors_messages: quotation.errors.messages }
