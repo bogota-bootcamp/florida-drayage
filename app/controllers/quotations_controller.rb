@@ -31,20 +31,18 @@ class QuotationsController < ApplicationController
     else
       errors= @quotation.errors.full_messages
       flash[:danger] = errors
-      flash[:error] = "The request wasn't created. Try again please."
       @conversation = Conversation.find_by_id(cookies[:conversation_id])
-      unless cookies[:conversation_id]&&@conversation
-        @conversation=Conversation.new
+      unless cookies[:conversation_id] && @conversation
+        @conversation = Conversation.new
       end
-        @message=@conversation.messages.new
-        render "user/index" and return
+      @message = @conversation.messages.new
+      render "user/index" and return
     end
   redirect_to root_path
   end
 
   def update
     @quote = Quotation.find params[:id]
-
     respond_to do |format|
       if @quote.update_attributes(quotation_parameters)
         format.json { respond_with_bip(@quote) }
@@ -60,11 +58,9 @@ class QuotationsController < ApplicationController
   def validate
     quotation= Quotation.new(quotation_parameters)
     if quotation.valid? && verify_recaptcha
-      flash[:notice] = "Quotation created"
       msg = { :status => "ok" }
     else
-      flash[:notice] = "Quotation was not created. Try Again"
-      msg = { :status => "fail",errors: quotation.errors.full_messages, errors_messages:  quotation.errors.messages}
+      msg = { :status => "fail", errors: quotation.errors.full_messages, errors_messages: quotation.errors.messages }
     end
 
     respond_to do |format|
