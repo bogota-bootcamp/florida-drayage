@@ -24,6 +24,7 @@ class QuotationsController < ApplicationController
 
   def create
     @quotation= Quotation.new(quotation_parameters)
+    p verify_recaptcha
     if @quotation.save && verify_recaptcha
       mail = QuotationMailer.new_quotation(@quotation)
       response = mail.deliver_now
@@ -37,7 +38,6 @@ class QuotationsController < ApplicationController
         @conversation = Conversation.new
       end
       @message = @conversation.messages.new
-      p 'didnt work'
       redirect_to root_path
     end
   end
