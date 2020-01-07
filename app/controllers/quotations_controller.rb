@@ -24,13 +24,13 @@ class QuotationsController < ApplicationController
 
   def create
     @quotation= Quotation.new(quotation_parameters)
-    p verify_recaptcha
-    if @quotation.save && verify_recaptcha
+    if verify_recaptcha && @quotation.save
       mail = QuotationMailer.new_quotation(@quotation)
       response = mail.deliver_now
       flash.now[:success] = "Thank you for submitting your quote request. One of our Drayage Specialists will contact you shortly."
       redirect_to root_path
     else
+      p 'no else'
       errors = @quotation.errors.full_messages
       flash[:danger] = errors
       @conversation = Conversation.find_by_id(cookies[:conversation_id])
@@ -40,6 +40,7 @@ class QuotationsController < ApplicationController
       @message = @conversation.messages.new
       redirect_to root_path
     end
+    p verify_recaptcha
   end
 
   def update
