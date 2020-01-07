@@ -261,7 +261,7 @@
       </div>
 
       <div class="text-center button-region">
-        <div class="g-recaptcha" data-sitekey="<%= ENV['RECAPTCHA_PUBLIC_KEY'] %>"></div><br>
+        <%= recaptcha_tags %>
         <div class="button back">Back</div>
         <%= f.button :submit , class: "btn-send-form button" do %>
           <i class="material-icons send" style="font-size: 20px; ">send</i>

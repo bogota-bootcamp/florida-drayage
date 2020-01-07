@@ -28,17 +28,17 @@ class QuotationsController < ApplicationController
       mail = QuotationMailer.new_quotation(@quotation)
       response = mail.deliver_now
       flash[:success] = "Thank you for submitting your quote request. One of our Drayage Specialists will contact you shortly."
+      redirect_to root_path
     else
-      errors= @quotation.errors.full_messages
+      errors = @quotation.errors.full_messages
       flash[:danger] = errors
       @conversation = Conversation.find_by_id(cookies[:conversation_id])
       unless cookies[:conversation_id] && @conversation
         @conversation = Conversation.new
       end
       @message = @conversation.messages.new
-      render "user/index" and return
+      redirect_to root_path
     end
-  redirect_to root_path
   end
 
   def update
