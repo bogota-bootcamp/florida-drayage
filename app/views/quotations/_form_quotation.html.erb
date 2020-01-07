@@ -268,9 +268,12 @@
         <% end %>
       </div>
     </div>
-
+    <%= javascript_include_tag "form_quotation" %>
+    <% flash.each do |type, msg| %>
+      <div>
+        <%= msg %>
+      </div>
+    <% end %>
     <% end %>
   </div>
 </div>
-
-<%= javascript_include_tag "form_quotation" %>

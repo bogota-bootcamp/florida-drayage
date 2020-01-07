@@ -25,13 +25,13 @@ class QuotationsController < ApplicationController
   def create
     @quotation= Quotation.new(quotation_parameters)
     if @quotation.save && verify_recaptcha
-      mail=QuotationMailer.new_quotation(@quotation)
+      mail = QuotationMailer.new_quotation(@quotation)
       response = mail.deliver_now
-      flash[:success] = ["Thank you for submitting your quote request."," One of our Drayage Specialists will contact you shortly."]
-
+      flash[:success] = "Thank you for submitting your quote request. One of our Drayage Specialists will contact you shortly."
     else
       errors= @quotation.errors.full_messages
       flash[:danger] = errors
+      flash[:error] = "The request wasn't created. Try again please."
       @conversation = Conversation.find_by_id(cookies[:conversation_id])
       unless cookies[:conversation_id]&&@conversation
         @conversation=Conversation.new
@@ -60,8 +60,10 @@ class QuotationsController < ApplicationController
   def validate
     quotation= Quotation.new(quotation_parameters)
     if quotation.valid? && verify_recaptcha
+      flash[:notice] = "Quotation created"
       msg = { :status => "ok" }
     else
+      flash[:notice] = "Quotation was not created. Try Again"
       msg = { :status => "fail",errors: quotation.errors.full_messages, errors_messages:  quotation.errors.messages}
     end
 
