@@ -37,6 +37,7 @@ class QuotationsController < ApplicationController
         @conversation = Conversation.new
       end
       @message = @conversation.messages.new
+      p 'didnt work'
       redirect_to root_path
     end
   end
