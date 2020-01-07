@@ -31,6 +31,7 @@ class QuotationsController < ApplicationController
     else
       errors= @quotation.errors.full_messages
       flash[:danger] = errors
+      flash[:error] = "The request wasn't created. Try again please."
       @conversation = Conversation.find_by_id(cookies[:conversation_id])
       unless cookies[:conversation_id]&&@conversation
         @conversation=Conversation.new
