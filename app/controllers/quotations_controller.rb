@@ -27,11 +27,10 @@ class QuotationsController < ApplicationController
     if verify_recaptcha && @quotation.save
       mail = QuotationMailer.new_quotation(@quotation)
       response = mail.deliver_now
-      flash.now[:success] = "Thank you for submitting your quote request. One of our Drayage Specialists will contact you shortly."
+      flash[:success] = "Thank you for submitting your quote request. One of our Drayage Specialists will contact you shortly."
       redirect_to root_path
     else
-      p 'no else'
-      flash[:danger] = "Quotation failed. Please try again."
+      flash[:warning] = "Quotation failed. Please try again."
       errors = @quotation.errors.full_messages
       flash[:danger] = errors
       @conversation = Conversation.find_by_id(cookies[:conversation_id])
